@@ -1,0 +1,11 @@
+.quote-part {
+  background-color: $third-color;
+  text-align: center;
+  color: white;
+  padding: $common-padding*2;
+  line-height: $line-height;
+  font: {
+    size: 20px;
+    family: $main-font;
+  }
+}

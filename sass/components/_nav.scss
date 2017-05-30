@@ -1,0 +1,97 @@
+.nav {
+  //&:after {
+  //  //@include z-index(base);
+  //  background-color: white;
+  //  content: '';
+  //  position: absolute;
+  //  left: 0;
+  //  top: 0;
+  //  width: 100%;
+  //  height: 100%;
+  //  z-index: 2;
+  //}
+
+  &__wrapper {
+    @extend %container;
+    @extend %clearfix;
+  }
+
+  &__logo {
+    //@include z-index(header);
+    float: left;
+    margin: $common-padding*1.5 0 $common-padding 0;
+    text-transform: uppercase;
+    color: $main-color;
+    position: relative;
+    font: {
+      family: $main-font;
+      weight: bold;
+      size: 25px;
+    }
+  }
+
+  &__button {
+    //@include z-index(header);
+    float: right;
+    margin: $common-padding 0;
+    padding: $common-padding/2;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+
+    &--active {
+      background-color: $third-color;
+    }
+  }
+
+  &__menu {
+    //@include z-index(menu);
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: $menu-bg-color;
+    transform: translateY(-100%);
+    transition: transform 1s;
+  }
+
+  &__menu-item {
+    padding: $common-padding;
+    cursor: pointer;
+    transition: 1s;
+
+    &--active {
+      background-color: $secondary-color;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  &__menu-link {
+    text-decoration: none;
+    padding: $common-padding;
+    text-transform: capitalize;
+    color: $main-color;
+    font: {
+      family: $main-font;
+      weight: 600;
+    }
+
+    &:hover {
+      color: $third-color;
+    }
+  }
+}
+
+.visible {
+  transform: translateY(80px);
+}
