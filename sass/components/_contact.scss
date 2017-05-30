@@ -1,0 +1,57 @@
+.contact {
+  margin-top: $common-padding*2;
+  margin-bottom: $common-padding*2;
+  padding: 0 $common-padding*2;
+  text-align: center;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: $common-padding;
+    color: $secondary-color;
+    font: {
+      family: $main-font;
+      size: 30px;
+      weight: bold;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: $common-padding/2;
+    padding: $common-padding/2;
+    border: 1px solid $main-color;
+    border-radius: $border-radius;
+    outline: none;
+    color: $third-color;
+    font: {
+      family: $main-font;
+      size: 20px;
+    }
+
+    &::placeholder {
+      color: $input-color;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 18px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+      color: white;
+      border-color: $secondary-color;
+    }
+  }
+}

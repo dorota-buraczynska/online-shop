@@ -1,0 +1,13 @@
+.footer {
+  background-color: $third-color;
+  padding: $common-padding;
+
+  &__text {
+    text-align: center;
+    color: white;
+    font: {
+      family: $main-font;
+      size: 14px;
+    }
+  }
+}
