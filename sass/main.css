@@ -111,6 +111,8 @@
     background-image: url("../images/home-page-bg.jpg"); }
   .background__photo--contact {
     background-image: url("../images/contact.jpg"); }
+  .background__photo--shop {
+    background-image: url("../images/shop.jpg"); }
 
 .slider {
   text-align: center;
@@ -330,5 +332,173 @@
   .icons__text {
     font-size: 15px;
     font-family: "Roboto", sans-serif; }
+
+.filter {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center; }
+  .filter__title {
+    border: 3px solid #80a6ad;
+    background-color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin: 20px auto 10px auto;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .filter__title:hover {
+      background-color: #58b193;
+      color: white;
+      border-color: #58b193; }
+  .filter__wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: #fffcf7;
+    display: none; }
+    .filter__wrapper--visible {
+      display: block; }
+  .filter__button {
+    border: none;
+    background-color: #58b193;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .filter__button:hover {
+      background-color: #DAA520;
+      color: white;
+      border-color: #58b193; }
+
+.colors {
+  text-align: center;
+  margin-top: 10px;
+  position: relative; }
+  .colors__input {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer; }
+    .colors__input:before {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      background-color: #fffcf7; }
+    .colors__input:checked:after {
+      transform: translate(-5%, -5%);
+      border: 3px solid #DAA520; }
+    .colors__input:after {
+      top: 15%;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%; }
+    .colors__input[name='red']:after {
+      background-color: red; }
+    .colors__input[name='orange']:after {
+      background-color: orange; }
+    .colors__input[name='blue']:after {
+      background-color: navy; }
+    .colors__input[name='black']:after {
+      background-color: black; }
+    .colors__input[name='white']:after {
+      background-color: white;
+      border: 1px solid black; }
+    .colors__input[name='yellow']:after {
+      background-color: yellow; }
+
+.price-range {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px; }
+  .price-range__input {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+    text-align: center;
+    outline: none;
+    border: 3px solid #58b193;
+    border-radius: 5px;
+    transition: 1s;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif; }
+    .price-range__input:hover {
+      background-color: #DAA520; }
+
+.fabrics {
+  text-align: center;
+  margin-top: 20px; }
+  .fabrics__input {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center; }
+    .fabrics__input:before {
+      position: absolute;
+      content: '';
+      width: 100px;
+      height: 40px;
+      background-color: #fffcf7; }
+    .fabrics__input:checked:after {
+      color: #DAA520; }
+    .fabrics__input:after {
+      position: relative;
+      width: 100px;
+      height: 40px;
+      color: #80a6ad;
+      font-size: 20px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold; }
+    .fabrics__input[name='cotton']:after {
+      content: 'COTTON'; }
+    .fabrics__input[name='denim']:after {
+      content: 'DENIM'; }
+    .fabrics__input[name='jersey']:after {
+      content: 'JERSEY'; }
+
+.sizes {
+  text-align: center;
+  position: relative; }
+  .sizes__input {
+    width: 40px;
+    height: 40px;
+    cursor: pointer; }
+    .sizes__input:before {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-color: #fffcf7; }
+    .sizes__input:checked:after {
+      color: #DAA520; }
+    .sizes__input:after {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      top: 25%;
+      left: 25%;
+      color: #58b193;
+      font-size: 20px;
+      font-family: "Roboto", sans-serif;
+      font-weight: bold; }
+    .sizes__input[name='xs']:after {
+      content: 'XS'; }
+    .sizes__input[name='s']:after {
+      content: 'S'; }
+    .sizes__input[name='m']:after {
+      content: 'M'; }
+    .sizes__input[name='l']:after {
+      content: 'L'; }
 
 /*# sourceMappingURL=main.css.map */

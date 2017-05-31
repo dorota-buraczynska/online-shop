@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="nav">
+    <div class="nav__wrapper">
+        <div class="nav__logo">my-shop</div>
+        <div class="nav__basket"><span class="nav__basket-amount">0</span> </div>
+        <button class="nav__button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    <ul class="nav__menu">
+        <li class="nav__menu-item"><a href="index.html" class="nav__menu-link">home</a></li>
+        <li class="nav__menu-item nav__menu-item--active"><a href="shop.html" class="nav__menu-link">shop</a></li>
+        <li class="nav__menu-item"><a href="" class="nav__menu-link">blog</a></li>
+        <li class="nav__menu-item"><a href="contact.html" class="nav__menu-link">contact</a></li>
+    </ul>
+</nav>
+
+<section class="background">
+    <div class="background__photo background__photo--shop"></div>
+</section>
+
+<section class="filter">
+    <div class="filter__title">shop by</div>
+    <div class="filter__wrapper">
+        <form class="filter__price-range price-range">
+            <input class="price-range__input" type="number" name="min" value="0">
+            <input class="price-range__input" type="number" name="max" value="100">
+        </form>
+        <form class="filter__colors colors">
+            <input class="colors__input" type="checkbox" name="red">
+            <input class="colors__input" type="checkbox" name="blue">
+            <input class="colors__input" type="checkbox" name="orange">
+            <input class="colors__input" type="checkbox" name="white">
+            <input class="colors__input" type="checkbox" name="black">
+            <input class="colors__input" type="checkbox" name="yellow">
+        </form>
+        <form class="filter__sizes sizes">
+            <input class="sizes__input" type="checkbox" name="xs">
+            <input class="sizes__input" type="checkbox" name="s">
+            <input class="sizes__input" type="checkbox" name="m">
+            <input class="sizes__input" type="checkbox" name="l">
+        </form>
+        <form class="filter__fabrics fabrics">
+            <input class="fabrics__input" type="checkbox" name="cotton">
+            <input class="fabrics__input" type="checkbox" name="denim">
+            <input class="fabrics__input" type="checkbox" name="jersey">
+        </form>
+        <button class="filter__button">filter</button>
+    </div>
+</section>
+
+
+
+<section class="social-links">
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://plus.google.com/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></div>
+</section>
+
+<footer class="footer">
+    <p class="footer__text">&copy; 2017 Online-shop by Dorota Buraczyńska</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>

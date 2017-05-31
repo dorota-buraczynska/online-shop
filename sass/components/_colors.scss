@@ -1,0 +1,76 @@
+.colors {
+  text-align: center;
+  margin-top: $common-padding/2;
+  position: relative;
+
+  &__input {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: $common-padding/4;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 30px;
+      height: 30px;
+      background-color: $menu-bg-color;
+    }
+
+    &:checked {
+      &:after {
+        //width: 30px;
+        //height: 30px;
+        transform: translate(-5%, -5%);
+        border: 3px solid $main-color;
+      }
+    }
+
+    &:after {
+      top: 15%;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+
+    &[name='red'] {
+      &:after {
+        background-color: red;
+      }
+    }
+
+    &[name='orange'] {
+      &:after {
+        background-color: orange;
+      }
+    }
+
+    &[name='blue'] {
+      &:after {
+        background-color: navy;
+      }
+    }
+
+    &[name='black'] {
+      &:after {
+        background-color: black;
+      }
+    }
+
+    &[name='white'] {
+      &:after {
+        background-color: white;
+        border: 1px solid black;
+      }
+    }
+
+    &[name='yellow'] {
+      &:after {
+        background-color: yellow;
+      }
+    }
+  }
+}

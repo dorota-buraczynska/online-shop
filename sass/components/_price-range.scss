@@ -1,0 +1,24 @@
+.price-range {
+  text-align: center;
+  padding-top: $common-padding;
+  margin-bottom: $common-padding;
+
+  &__input {
+    width: 60px;
+    padding: $common-padding/4;
+    margin-right: $common-padding/2;
+    text-align: center;
+    outline: none;
+    border: 3px solid $secondary-color;
+    border-radius: $border-radius;
+    transition: 1s;
+    font: {
+      size: 17px;
+      family: $main-font;
+    }
+
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}

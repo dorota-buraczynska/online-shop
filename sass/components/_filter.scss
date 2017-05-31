@@ -1,0 +1,61 @@
+.filter {
+  margin-top: $common-padding*2;
+  margin-bottom: $common-padding*2;
+  text-align: center;
+
+  &__title {
+    border: 3px solid $third-color;
+    background-color: white;
+    padding: $common-padding/2 $common-padding;
+    text-transform: uppercase;
+    margin: $common-padding auto $common-padding/2 auto;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    font: {
+      size: 30px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      border-color: $secondary-color;
+    }
+  }
+
+  &__wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: $menu-bg-color;
+    display: none;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin-top: $common-padding;
+    margin-bottom: $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 18px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $main-color;
+      color: white;
+      border-color: $secondary-color;
+    }
+  }
+}

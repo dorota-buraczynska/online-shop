@@ -6,7 +6,7 @@ $('.nav__button').on('click', function (event) {
 });
 
 $('.nav__menu-item').on('click', function (event) {
-    event.preventDefault();
+    // event.preventDefault();
     var listItemActiveClass = 'nav__menu-item--active';
     $(this).siblings().removeClass(listItemActiveClass);
     $(this).addClass(listItemActiveClass);
@@ -77,3 +77,9 @@ function initMap() {
         map: map
     });
 }
+
+//filter
+$('.filter__title').on('click', function () {
+    var visibleClass = 'filter__wrapper--visible';
+   $('.filter__wrapper').fadeToggle(visibleClass);
+});

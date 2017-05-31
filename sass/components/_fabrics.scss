@@ -1,0 +1,55 @@
+.fabrics {
+  text-align: center;
+  margin-top: $common-padding;
+
+  &__input {
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    text-align: center;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 100px;
+      height: 40px;
+      background-color: $menu-bg-color;
+    }
+
+    &:checked {
+      &:after {
+        color: $main-color;
+      }
+    }
+
+    &:after {
+      position: relative;
+      width: 100px;
+      height: 40px;
+      color: $third-color;
+      font: {
+        size: 20px;
+        family: $main-font;
+        weight: bold;
+      }
+    }
+
+    &[name='cotton'] {
+      &:after {
+        content: 'COTTON';
+      }
+    }
+
+    &[name='denim'] {
+      &:after {
+        content: 'DENIM';
+      }
+    }
+
+    &[name='jersey'] {
+      &:after {
+        content: 'JERSEY';
+      }
+    }
+  }
+}
