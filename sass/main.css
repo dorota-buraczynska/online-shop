@@ -18,66 +18,96 @@
   content: '';
   display: block; }
 
-.nav__logo {
-  float: left;
-  margin: 30px 0 20px 0;
-  text-transform: uppercase;
-  color: #DAA520;
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 25px; }
-.nav__button {
-  float: right;
-  margin: 20px 0;
-  padding: 10px;
-  background-color: #58b193;
-  border-radius: 5px;
-  color: white;
-  border: none;
-  outline: none;
-  font-size: 17px;
-  cursor: pointer;
+.nav {
   position: relative; }
-  .nav__button--active {
-    background-color: #294057; }
-.nav__menu {
-  list-style-type: none;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
-  left: 0;
-  background-color: #fffcf7;
-  transform: translateY(-100%);
-  transition: transform 1s; }
-.nav__menu-item {
-  padding: 20px;
-  cursor: pointer;
-  transition: 1s; }
-  .nav__menu-item--active {
-    background-color: #58b193; }
-    .nav__menu-item--active a {
+  .nav:after {
+    z-index: 1;
+    background-color: white;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  .nav__logo {
+    z-index: 2;
+    float: left;
+    margin: 30px 0 20px 0;
+    text-transform: uppercase;
+    color: #DAA520;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 25px; }
+  .nav__button {
+    z-index: 2;
+    float: right;
+    margin: 20px;
+    padding: 10px;
+    background-color: #58b193;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative; }
+    .nav__button--active {
+      background-color: #80a6ad; }
+  .nav__basket {
+    z-index: 2;
+    float: right;
+    position: relative;
+    background: url("../images/images.png");
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    filter: hue-rotate(272deg);
+    cursor: pointer; }
+  .nav__basket-amount {
+    position: relative;
+    left: 46%;
+    top: 50%;
+    color: white; }
+  .nav__menu {
+    list-style-type: none;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background-color: #fffcf7;
+    transform: translateY(-100%);
+    transition: transform 1s; }
+  .nav__menu-item {
+    padding: 20px;
+    cursor: pointer;
+    transition: 1s; }
+    .nav__menu-item--active {
+      background-color: #58b193; }
+      .nav__menu-item--active .nav__menu-link {
+        color: white; }
+  .nav__menu-link {
+    text-decoration: none;
+    padding: 20px;
+    text-transform: capitalize;
+    color: #DAA520;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600; }
+    .nav__menu-link:hover {
+      color: #80a6ad; }
+    .nav__menu-link--active:hover {
       color: white; }
-.nav__menu-link {
-  text-decoration: none;
-  padding: 20px;
-  text-transform: capitalize;
-  color: #DAA520;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600; }
-  .nav__menu-link:hover {
-    color: #294057; }
 
 .visible {
   transform: translateY(80px); }
 
 .background__photo {
-  background-image: url("http://rachelslookbook.com/wp-content/uploads/2017/05/i-m-priscilla-228220-1024x683.jpg");
   background-size: cover;
   width: 100%;
   height: 450px;
-  background-position: 50%; }
+  background-position: 50%;
+  background-image: url("../images/home-page-bg.jpg"); }
 
 .slider {
   text-align: center;
@@ -90,7 +120,7 @@
     font-family: "Roboto", sans-serif;
     font-size: 30px;
     font-weight: bold;
-    color: #294057;
+    color: #80a6ad;
     text-transform: uppercase;
     margin-bottom: 40px; }
   .slider__items {
@@ -108,7 +138,7 @@
   .slider__dots {
     position: relative;
     top: 0;
-    margin-top: 5px; }
+    margin-top: 20px; }
   .slider__dot {
     display: inline-block;
     width: 20px;
@@ -118,7 +148,7 @@
     margin-right: 5px;
     cursor: pointer; }
     .slider__dot--active {
-      background-color: #294057; }
+      background-color: #80a6ad; }
   .slider__button {
     position: relative;
     top: 0;
@@ -132,12 +162,12 @@
     font-family: "Roboto", sans-serif;
     transition: 1s; }
     .slider__button:hover {
-      background-color: #294057;
+      background-color: #80a6ad;
       color: white;
-      border-color: #294057; }
+      border-color: #80a6ad; }
 
 .quote-part {
-  background-color: #294057;
+  background-color: #80a6ad;
   text-align: center;
   color: white;
   padding: 40px;
@@ -185,7 +215,7 @@
     line-height: 1.3em;
     font-family: "Roboto", sans-serif; }
   .about-work__button {
-    border: 3px solid #294057;
+    border: 3px solid #80a6ad;
     background-color: white;
     padding: 10px 20px;
     text-transform: uppercase;
@@ -200,7 +230,7 @@
       border-color: #58b193; }
 
 .social-links {
-  background-color: #294057;
+  background-color: #80a6ad;
   text-align: center;
   padding: 20px 0; }
   .social-links__item {
@@ -217,7 +247,7 @@
         color: white; }
   .social-links__link {
     text-decoration: none;
-    color: #DAA520;
+    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -247,7 +277,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: #294057;
+    color: #80a6ad;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
     .contact__input::placeholder {
@@ -264,12 +294,12 @@
     font-family: "Roboto", sans-serif;
     transition: 1s; }
     .contact__button:hover {
-      background-color: #294057;
+      background-color: #58b193;
       color: white;
       border-color: #58b193; }
 
 .footer {
-  background-color: #294057;
+  background-color: #80a6ad;
   padding: 20px; }
   .footer__text {
     text-align: center;

@@ -1,15 +1,15 @@
 .nav {
-  //&:after {
-  //  //@include z-index(base);
-  //  background-color: white;
-  //  content: '';
-  //  position: absolute;
-  //  left: 0;
-  //  top: 0;
-  //  width: 100%;
-  //  height: 100%;
-  //  z-index: 2;
-  //}
+  position: relative;
+  &:after {
+    @include z-index(base);
+    background-color: white;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 
   &__wrapper {
     @extend %container;
@@ -17,7 +17,7 @@
   }
 
   &__logo {
-    //@include z-index(header);
+    @include z-index(header);
     float: left;
     margin: $common-padding*1.5 0 $common-padding 0;
     text-transform: uppercase;
@@ -31,9 +31,9 @@
   }
 
   &__button {
-    //@include z-index(header);
+    @include z-index(header);
     float: right;
-    margin: $common-padding 0;
+    margin: $common-padding;
     padding: $common-padding/2;
     background-color: $secondary-color;
     border-radius: $border-radius;
@@ -49,8 +49,26 @@
     }
   }
 
+  &__basket {
+    @include z-index(header);
+    float: right;
+    position: relative;
+    background: url("../images/images.png");
+    background-size: cover;
+    width: 70px;
+    height: 70px;
+    filter: hue-rotate(272deg);
+    cursor: pointer;
+  }
+
+  &__basket-amount {
+    position: relative;
+    left: 46%;
+    top: 50%;
+    color: white;
+  }
+
   &__menu {
-    //@include z-index(menu);
     list-style-type: none;
     position: absolute;
     width: 100%;
@@ -70,7 +88,7 @@
     &--active {
       background-color: $secondary-color;
 
-      a {
+      .nav__menu-link {
         color: white;
       }
     }
@@ -88,6 +106,10 @@
 
     &:hover {
       color: $third-color;
+    }
+
+    &--active:hover {
+      color: white;
     }
   }
 }
