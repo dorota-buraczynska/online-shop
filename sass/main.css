@@ -357,6 +357,7 @@
     max-width: 450px;
     margin: 0 auto;
     background-color: #fffcf7;
+    padding: 0 20px;
     display: none; }
     .filter__wrapper--visible {
       display: block; }
@@ -380,8 +381,15 @@
 
 .colors {
   text-align: center;
-  margin-top: 10px;
-  position: relative; }
+  position: relative;
+  margin-bottom: 10px; }
+  .colors__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid #DAA520;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
   .colors__input {
     display: inline-block;
     width: 30px;
@@ -398,7 +406,6 @@
       transform: translate(-5%, -5%);
       border: 3px solid #DAA520; }
     .colors__input:after {
-      top: 15%;
       position: absolute;
       content: '';
       width: 20px;
@@ -420,8 +427,15 @@
 
 .price-range {
   text-align: center;
-  padding-top: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 10px;
+  padding-top: 20px; }
+  .price-range__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid #DAA520;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
   .price-range__input {
     width: 60px;
     padding: 5px;
@@ -439,8 +453,15 @@
 .fabrics {
   text-align: center;
   margin-top: 20px; }
+  .fabrics__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid #DAA520;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
   .fabrics__input {
-    width: 100px;
+    width: 30%;
     height: 40px;
     cursor: pointer;
     text-align: center; }
@@ -451,7 +472,8 @@
       height: 40px;
       background-color: #fffcf7; }
     .fabrics__input:checked:after {
-      color: #DAA520; }
+      color: #DAA520;
+      font-size: 23px; }
     .fabrics__input:after {
       position: relative;
       width: 100px;
@@ -470,9 +492,15 @@
 .sizes {
   text-align: center;
   position: relative; }
+  .sizes__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid #DAA520;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
   .sizes__input {
     width: 40px;
-    height: 40px;
     cursor: pointer; }
     .sizes__input:before {
       position: absolute;
@@ -481,7 +509,8 @@
       height: 40px;
       background-color: #fffcf7; }
     .sizes__input:checked:after {
-      color: #DAA520; }
+      color: #DAA520;
+      font-size: 25px; }
     .sizes__input:after {
       position: relative;
       width: 40px;

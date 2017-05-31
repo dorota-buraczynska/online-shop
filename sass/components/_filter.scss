@@ -29,6 +29,7 @@
     max-width: 450px;
     margin: 0 auto;
     background-color: $menu-bg-color;
+    padding: 0 $common-padding;
     display: none;
 
     &--visible {

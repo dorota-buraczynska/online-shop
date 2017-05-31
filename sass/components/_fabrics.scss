@@ -2,8 +2,20 @@
   text-align: center;
   margin-top: $common-padding;
 
+
+  &__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: $common-padding;
+    font: {
+      size: 20px;
+      family: $main-font;
+    }
+  }
+
   &__input {
-    width: 100px;
+    width: 30%;
     height: 40px;
     cursor: pointer;
     text-align: center;
@@ -19,6 +31,7 @@
     &:checked {
       &:after {
         color: $main-color;
+        font-size: 23px;
       }
     }
 

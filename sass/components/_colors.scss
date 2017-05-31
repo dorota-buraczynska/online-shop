@@ -1,7 +1,18 @@
 .colors {
   text-align: center;
-  margin-top: $common-padding/2;
   position: relative;
+  margin-bottom: $common-padding/2;
+
+  &__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: $common-padding;
+    font: {
+      size: 20px;
+      family: $main-font;
+    }
+  }
 
   &__input {
     display: inline-block;
@@ -28,7 +39,6 @@
     }
 
     &:after {
-      top: 15%;
       position: absolute;
       content: '';
       width: 20px;

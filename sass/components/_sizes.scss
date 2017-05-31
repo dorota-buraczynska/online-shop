@@ -2,9 +2,19 @@
   text-align: center;
   position: relative;
 
+  &__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: $common-padding;
+    font: {
+      size: 20px;
+      family: $main-font;
+    }
+  }
+
   &__input {
     width: 40px;
-    height: 40px;
     cursor: pointer;
 
     &:before {
@@ -18,6 +28,7 @@
     &:checked {
       &:after {
         color: $main-color;
+        font-size: 25px;
       }
     }
 

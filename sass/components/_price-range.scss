@@ -1,7 +1,18 @@
 .price-range {
   text-align: center;
+  margin-bottom: $common-padding/2;
   padding-top: $common-padding;
-  margin-bottom: $common-padding;
+
+  &__title {
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid $main-color;
+    margin-bottom: $common-padding;
+    font: {
+      size: 20px;
+      family: $main-font;
+    }
+  }
 
   &__input {
     width: 60px;
