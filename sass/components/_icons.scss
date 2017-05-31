@@ -1,0 +1,22 @@
+.icons {
+  text-align: center;
+  padding-bottom: $common-padding*2;
+  background-color: $menu-bg-color;
+
+  &__wrapper {
+    width: 100%;
+    font-size: 0;
+  }
+
+  &__item {
+    width: 40px;
+    margin: $common-padding 0;
+  }
+
+  &__text {
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+  }
+}

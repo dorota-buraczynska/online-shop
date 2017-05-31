@@ -106,8 +106,11 @@
   background-size: cover;
   width: 100%;
   height: 450px;
-  background-position: 50%;
-  background-image: url("../images/home-page-bg.jpg"); }
+  background-position: 50%; }
+  .background__photo--home {
+    background-image: url("../images/home-page-bg.jpg"); }
+  .background__photo--contact {
+    background-image: url("../images/contact.jpg"); }
 
 .slider {
   text-align: center;
@@ -300,11 +303,32 @@
 
 .footer {
   background-color: #80a6ad;
-  padding: 20px; }
+  padding: 20px;
+  border-top: 1px solid #DAA520; }
   .footer__text {
     text-align: center;
     color: white;
     font-family: "Roboto", sans-serif;
     font-size: 14px; }
+
+.map {
+  padding: 20px; }
+  .map #map {
+    max-width: 100%;
+    height: 250px; }
+
+.icons {
+  text-align: center;
+  padding-bottom: 40px;
+  background-color: #fffcf7; }
+  .icons__wrapper {
+    width: 100%;
+    font-size: 0; }
+  .icons__item {
+    width: 40px;
+    margin: 20px 0; }
+  .icons__text {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif; }
 
 /*# sourceMappingURL=main.css.map */

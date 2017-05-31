@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="nav">
+    <div class="nav__wrapper">
+        <div class="nav__logo">my-shop</div>
+        <div class="nav__basket"><span class="nav__basket-amount">0</span> </div>
+        <button class="nav__button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    <ul class="nav__menu">
+        <li class="nav__menu-item nav__menu-item--active"><a href="" class="nav__menu-link">home</a></li>
+        <li class="nav__menu-item"><a href="" class="nav__menu-link">shop</a></li>
+        <li class="nav__menu-item"><a href="" class="nav__menu-link">blog</a></li>
+        <li class="nav__menu-item"><a href="" class="nav__menu-link">contact</a></li>
+    </ul>
+</nav>
+
+<section class="background">
+    <div class="background__photo background__photo--contact"></div>
+</section>
+
+<section class="contact">
+    <div class="contact__title">do you have any questions?</div>
+    <form class="contact__form">
+        <input class="contact__input" type="text" placeholder="Your e-mail">
+        <textarea class="contact__input" placeholder="Your question"></textarea>
+        <button class="contact__button" type="submit">send</button>
+    </form>
+</section>
+
+<section class="map">
+    <div id="map"></div>
+</section>
+
+<section class="icons">
+    <div class="icons__wrapper">
+        <img class="icons__item" src="http://uploads.webflow.com/57ea3312eaa002fa3bee3f81/57ffa40c6422e951589ec5b9_phone-call%20(4).png" alt="phone">
+        <p class="icons__text">+1 458 256 9878</p>
+    </div>
+    <div class="icons__wrapper">
+        <img class="icons__item" src="http://uploads.webflow.com/57ea3312eaa002fa3bee3f81/57ffa44c777cf73d2546791d_placeholder%20(1).png" alt="marker">
+        <p class="icons__text">Wrocław, Miernicza</p>
+    </div>
+    <div class="icons__wrapper">
+        <img class="icons__item" src="http://uploads.webflow.com/57ea3312eaa002fa3bee3f81/57ffa45a2df9a4bb41f9edc0_envelope%20(1).png" alt="envelope">
+        <p class="icons__text">dorota.buraczynska@gmail.com</p>
+    </div>
+</section>
+
+<section class="social-links">
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://plus.google.com/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></div>
+</section>
+
+<footer class="footer">
+    <p class="footer__text">&copy; 2017 Online-shop by Dorota Buraczyńska</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script/script.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZzyUpnaDI3xoPGCILVgEeKH6kyP2hac4&callback=initMap"></script>
+</body>
+</html>

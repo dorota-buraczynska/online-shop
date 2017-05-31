@@ -1,6 +1,7 @@
 .footer {
   background-color: $third-color;
   padding: $common-padding;
+  border-top: 1px solid $main-color;
 
   &__text {
     text-align: center;
