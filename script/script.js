@@ -78,8 +78,81 @@ function initMap() {
     });
 }
 
-//filter
+//shop by
 $('.filter__title').on('click', function () {
     var visibleClass = 'filter__wrapper--visible';
-   $('.filter__wrapper').fadeToggle(visibleClass);
+    var buttonActiveClass = 'filter__title--active';
+    $('.filter__wrapper').fadeToggle(visibleClass);
+    $(this).toggleClass(buttonActiveClass);
+});
+
+//filter
+var makeProductsArray = function (product) {
+    var productColor = $(product).data('color');
+    var productSize = $(product).data('size');
+    var productFabric = $(product).data('fabric');
+
+    return [productColor, productSize, productFabric];
+};
+
+var makeFilterArray = function () {
+    var selected = [];
+    $('.filter input:checked').each(function () {
+        selected.push($(this).attr('name'));
+    });
+
+    return selected;
+};
+
+var filterByPrices = function () {
+    $('.products__item').hide();
+
+    var max = parseInt($('.filter__price-range input[name=max]').val());
+    var min = parseInt($('.filter__price-range input[name=min]').val());
+
+    $('.products__item').each(function () {
+        var price = parseInt($(this).find('.products__price').text());
+
+        if (price >= min &&
+            price <= max) {
+            $(this).show();
+        }
+    })
+};
+
+var filterProducts = function () {
+    var filterArray = makeFilterArray();
+    var productArray;
+
+    if (filterArray.length === 0) {
+        return;
+    }
+
+    $('.products__item:visible').each(function (i, e) {
+        var newArray = [];
+        productArray = makeProductsArray(this);
+
+        for (var i = 0; i < productArray.length; i++) {
+            for (var j = 0; j < filterArray.length; j++) {
+                if (productArray[i] === filterArray[j]) {
+                    newArray.push(productArray[i]);
+                }
+            }
+        }
+
+        if (newArray.length > 0) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
+
+    if ($('.products__item:visible').length === 0) {
+        $('.products__not-found').show();
+    }
+};
+
+$('.filter__button').on('click', function () {
+   filterByPrices();
+   filterProducts();
 });

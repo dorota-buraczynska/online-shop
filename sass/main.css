@@ -353,6 +353,10 @@
       background-color: #58b193;
       color: white;
       border-color: #58b193; }
+    .filter__title--active {
+      background-color: #58b193;
+      color: white;
+      border-color: #58b193; }
   .filter__wrapper {
     max-width: 450px;
     margin: 0 auto;
@@ -529,5 +533,68 @@
       content: 'M'; }
     .sizes__input[name='l']:after {
       content: 'L'; }
+
+.products {
+  padding: 0 20px; }
+  .products__item {
+    max-width: 450px;
+    text-align: center;
+    font-size: 0; }
+  .products__photo {
+    width: 100%;
+    border: 1px solid #DAA520;
+    border-bottom: none; }
+  .products__title {
+    text-transform: capitalize;
+    color: #58b193;
+    border: 1px solid #DAA520;
+    padding: 10px 0;
+    border-top: none;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
+  .products__size-label {
+    text-transform: capitalize;
+    color: #58b193;
+    border: 1px solid #DAA520;
+    padding: 10px 0;
+    border-top: none;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
+  .products__size {
+    text-transform: uppercase; }
+  .products__price-label {
+    text-transform: uppercase;
+    border: 1px solid #DAA520;
+    border-top: none;
+    padding: 10px 0;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif; }
+  .products__button {
+    border: none;
+    background-color: #DAA520;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .products__button:hover {
+      background-color: #58b193;
+      color: white;
+      border-color: #58b193; }
+  .products__not-found {
+    display: none;
+    text-align: center;
+    text-transform: capitalize;
+    color: #58b193;
+    border: 1px solid #DAA520;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif; }
 
 /*# sourceMappingURL=main.css.map */

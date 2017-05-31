@@ -23,6 +23,12 @@
       color: white;
       border-color: $secondary-color;
     }
+
+    &--active {
+      background-color: $secondary-color;
+      color: white;
+      border-color: $secondary-color;
+    }
   }
 
   &__wrapper {
