@@ -159,12 +159,11 @@ var filterProducts = function () {
 $('.filter__button').on('click', function () {
     filterByPrices();
     filterProducts();
-    scrollToProducts('.filter__wrapper');
+    scrollToElement('.filter__wrapper');
 });
 
 $('.filter__reset-button').on('click', function () {
-    $('input[type=checkbox]').each(function()
-    {
+    $('input[type=checkbox]').each(function () {
         this.checked = false;
     });
     $('.filter__price-range input[name=max]').val(100);
@@ -172,11 +171,35 @@ $('.filter__reset-button').on('click', function () {
     $('.products__not-found').hide();
 });
 
-var scrollToProducts = function (element) {
+var scrollToElement = function (element) {
     var $targertElement = $(element);
     var position = $targertElement.offset().top;
     var filterHeight = $('.filter__wrapper').height();
 
     $('html, body').animate({scrollTop: position + filterHeight}, 1500);
 };
+
+// show only three products
+$('.products__wrapper .products__item').slice(0, 3).show();
+
+var showThreeProducts = function () {
+    var items = $('.products__wrapper .products__item:hidden');
+    var nextItems = items.slice(0, 3);
+
+    if (nextItems.length < 3) {
+        $('.products__button-next').hide();
+        $('.products__button-top').show();
+    }
+
+    nextItems.show();
+};
+
+$('.products__button-next').on('click', function () {
+    showThreeProducts();
+});
+
+//back to top
+$('.products__button-top').on('click', function () {
+   $('html, body').animate({scrollTop: 0}, 1500);
+});
 
