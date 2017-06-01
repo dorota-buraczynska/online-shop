@@ -106,6 +106,7 @@ var makeFilterArray = function () {
 
 var filterByPrices = function () {
     $('.products__item').hide();
+    $('.products__not-found').hide();
 
     var max = parseInt($('.filter__price-range input[name=max]').val());
     var min = parseInt($('.filter__price-range input[name=min]').val());
@@ -116,6 +117,9 @@ var filterByPrices = function () {
         if (price >= min &&
             price <= max) {
             $(this).show();
+        }
+        if ($('.products__item:visible').length === 0) {
+            $('.products__not-found').show();
         }
     })
 };
@@ -153,6 +157,26 @@ var filterProducts = function () {
 };
 
 $('.filter__button').on('click', function () {
-   filterByPrices();
-   filterProducts();
+    filterByPrices();
+    filterProducts();
+    scrollToProducts('.filter__wrapper');
 });
+
+$('.filter__reset-button').on('click', function () {
+    $('input[type=checkbox]').each(function()
+    {
+        this.checked = false;
+    });
+    $('.filter__price-range input[name=max]').val(100);
+    $('.products__item').show();
+    $('.products__not-found').hide();
+});
+
+var scrollToProducts = function (element) {
+    var $targertElement = $(element);
+    var position = $targertElement.offset().top;
+    var filterHeight = $('.filter__wrapper').height();
+
+    $('html, body').animate({scrollTop: position + filterHeight}, 1500);
+};
+
