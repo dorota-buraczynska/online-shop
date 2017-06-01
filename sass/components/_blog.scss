@@ -1,0 +1,83 @@
+.blog {
+  text-align: center;
+  margin-top: $common-padding * 2;
+  margin-bottom: $common-padding*3;
+
+  &__title {
+    font: {
+      family: $main-font;
+      size: 30px;
+      weight: bold;
+    }
+    color: $third-color;
+    text-transform: uppercase;
+    margin-bottom: $common-padding *2;
+  }
+
+  &__entry {
+    max-width: 450px;
+    margin: 0 auto $common-padding*2 auto;
+  }
+
+  &__entry-photo {
+    width: 100%;
+  }
+
+  &__entry-title {
+    font: {
+      family: $main-font;
+      size: 20px;
+      weight: bold;
+    }
+    color: $main-color;
+    text-transform: capitalize;
+    margin: $common-padding 0;
+  }
+
+  &__entry-text {
+    margin: $common-padding 0;
+
+    &:after {
+      content: ' [...]';
+    }
+  }
+
+  &__button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 18px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      border-color: $secondary-color;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  @if $i % 2 != 0 {
+    .blog__entry:nth-child(#{$i}) .blog__entry-title {
+      color: $secondary-color;
+    }
+
+    .blog__entry:nth-child(#{$i}) .blog__button {
+      background-color: $secondary-color;
+      color: white;
+
+      &:hover {
+        background-color: $main-color;
+        color: black;
+      }
+    }
+  }
+}

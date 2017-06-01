@@ -113,6 +113,9 @@
     background-image: url("../images/contact.jpg"); }
   .background__photo--shop {
     background-image: url("../images/shop.jpg"); }
+  .background__photo--blog {
+    background-image: url("../images/blog.jpeg");
+    background-position: 0; }
 
 .slider {
   text-align: center;
@@ -642,5 +645,78 @@
     font-family: "Roboto", sans-serif; }
     .products__not-found:first-letter {
       text-transform: uppercase; }
+
+.blog {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 60px; }
+  .blog__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #80a6ad;
+    text-transform: uppercase;
+    margin-bottom: 40px; }
+  .blog__entry {
+    max-width: 450px;
+    margin: 0 auto 40px auto; }
+  .blog__entry-photo {
+    width: 100%; }
+  .blog__entry-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #DAA520;
+    text-transform: capitalize;
+    margin: 20px 0; }
+  .blog__entry-text {
+    margin: 20px 0; }
+    .blog__entry-text:after {
+      content: ' [...]'; }
+  .blog__button {
+    border: none;
+    background-color: #DAA520;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .blog__button:hover {
+      background-color: #58b193;
+      color: white;
+      border-color: #58b193; }
+
+.blog__entry:nth-child(1) .blog__entry-title {
+  color: #58b193; }
+
+.blog__entry:nth-child(1) .blog__button {
+  background-color: #58b193;
+  color: white; }
+  .blog__entry:nth-child(1) .blog__button:hover {
+    background-color: #DAA520;
+    color: black; }
+
+.blog__entry:nth-child(3) .blog__entry-title {
+  color: #58b193; }
+
+.blog__entry:nth-child(3) .blog__button {
+  background-color: #58b193;
+  color: white; }
+  .blog__entry:nth-child(3) .blog__button:hover {
+    background-color: #DAA520;
+    color: black; }
+
+.blog__entry:nth-child(5) .blog__entry-title {
+  color: #58b193; }
+
+.blog__entry:nth-child(5) .blog__button {
+  background-color: #58b193;
+  color: white; }
+  .blog__entry:nth-child(5) .blog__button:hover {
+    background-color: #DAA520;
+    color: black; }
 
 /*# sourceMappingURL=main.css.map */
