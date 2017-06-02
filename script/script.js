@@ -221,11 +221,21 @@ $('.products__preview').on('click', function () {
     var productFabric = $(this).closest('.products__item').data('fabric');
     var productSize = $(this).closest('.products__item').data('size');
     var productPrice = $(this).closest('.products__item').data('price');
+    var productTitle = $(this).siblings('.products__title').text();
+    var productDescription = $(this).siblings('.products__description').text();
+
+    console.log(productTitle);
     $('.preview').show();
     $('.preview__photo').attr('src', photoSrc);
     $('.preview__product-fabric span').text(productFabric);
     $('.preview__product-size span').text(productSize);
     $('.preview__product-price span').text(productPrice + '$');
+    $('.preview__product-title').text(productTitle);
+    $('.preview__product-description-text').text(productDescription);
+});
+
+$('.preview__close-button, .preview__shopping-button').on('click', function () {
+   $('.preview').hide();
 });
 
 

@@ -6,7 +6,7 @@
   width: 100%;
   height: 100%;
   background-color: $modal-box-bg-color;
-  overflow: hidden;
+  overflow: auto;
   text-align: center;
 
   &__product-wrapper {
@@ -40,11 +40,18 @@
     margin-top: $common-padding;
   }
 
+  &__product-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-color;
+    font-size: 22px;
+  }
+
   &__product-description {
     text-transform: capitalize;
     margin: $common-padding/2 0;
     color: $secondary-color;
-    font-size: 22px;
+    font-size: 18px;
   }
 
   &__product-description-text {
