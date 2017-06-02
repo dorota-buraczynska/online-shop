@@ -215,5 +215,18 @@ $('.modal-box__shopping-button, .modal-box__close-button').on('click', function 
    $('.modal-box').hide();
 });
 
+//preview
+$('.products__preview').on('click', function () {
+    var photoSrc = $(this).siblings('.products__photo').attr('src');
+    var productFabric = $(this).closest('.products__item').data('fabric');
+    var productSize = $(this).closest('.products__item').data('size');
+    var productPrice = $(this).closest('.products__item').data('price');
+    $('.preview').show();
+    $('.preview__photo').attr('src', photoSrc);
+    $('.preview__product-fabric span').text(productFabric);
+    $('.preview__product-size span').text(productSize);
+    $('.preview__product-price span').text(productPrice + '$');
+});
+
 
 
