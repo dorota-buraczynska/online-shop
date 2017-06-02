@@ -833,9 +833,30 @@
     top: 10px;
     cursor: pointer;
     font-size: 20px; }
+  .preview__next-button {
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    transform: translateY(-50%);
+    cursor: pointer; }
+    .preview__next-button i {
+      color: #DAA520;
+      font-size: 20px; }
+  .preview__prev-button {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    cursor: pointer; }
+    .preview__prev-button i {
+      color: #DAA520;
+      font-size: 20px; }
   .preview__photo {
-    max-width: 100%;
-    margin-top: 20px; }
+    max-width: 450px;
+    margin-top: 20px;
+    position: relative; }
+  .preview__photo-item {
+    width: 100%; }
   .preview__product-title {
     text-align: center;
     text-transform: uppercase;
