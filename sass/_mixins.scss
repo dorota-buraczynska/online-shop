@@ -1,4 +1,4 @@
 @mixin z-index($layer) {
-  $layers: (base, header);
+  $layers: (base, header, preview);
   z-index: index($layers, $layer);
 }

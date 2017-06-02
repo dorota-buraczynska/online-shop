@@ -216,75 +216,48 @@ $('.modal-box__shopping-button, .modal-box__close-button').on('click', function 
 });
 
 //preview
-$('.products__preview').on('click', function () {
-    var photoSrc = $(this).siblings('.products__photo').attr('src');
-    var productFabric = $(this).closest('.products__item').data('fabric');
-    var productSize = $(this).closest('.products__item').data('size');
-    var productPrice = $(this).closest('.products__item').data('price');
-    var productTitle = $(this).siblings('.products__title').text();
-    var productDescription = $(this).siblings('.products__description').text();
-    var photoNumber = $(this).closest('.products__item').index();
+var showPreview = function (productIndex) {
+    var photoSrc = $('.products__item').eq(productIndex).find('.products__photo').attr('src');
+    var productFabric = $('.products__item').eq(productIndex).data('fabric');
+    var productSize = $('.products__item').eq(productIndex).data('size');
+    var productPrice = $('.products__item').eq(productIndex).data('price');
+    var productTitle = $('.products__item').eq(productIndex).find('.products__title').text();
+    var productDescription = $('.products__item').eq(productIndex).find('.products__description').text();
+    var photoNumber = $('.products__item').eq(productIndex).index();
 
     $('.preview').show();
     $('.preview__photo-item').attr('src', photoSrc);
     $('.preview__product-fabric span').text(productFabric);
     $('.preview__product-size span').text(productSize);
-    $('.preview__product-price span').text(productPrice + '$');
+    $('.preview__product-price span').text('$' + productPrice);
     $('.preview__product-title').text(productTitle);
     $('.preview__product-description-text').text(productDescription);
     $('.preview__content').data('product-number', photoNumber);
+
+};
+
+$('.products__preview').on('click', function () {
+    var productIndex = $(this).closest('.products__item').index();
+    showPreview(productIndex);
+});
+
+$('.preview__next-button').on('click', function () {
+    var productIndex = $(this).closest('.preview__content').data('product-number') + 1;
+    if (productIndex === $('.products__item').length) {
+        showPreview(0);
+    } else {
+        showPreview(productIndex);
+    }
+});
+
+$('.preview__prev-button').on('click', function () {
+    var productIndex = $(this).closest('.preview__content').data('product-number') - 1;
+    showPreview(productIndex);
 });
 
 $('.preview__close-button, .preview__shopping-button').on('click', function () {
     $('.preview').hide();
 });
 
-var showNextPreview = function (element) {
-    var numberOfNextProduct = $(element).closest('.preview__content').data('product-number');
-    var nextPhotoSrc = $('.products__item').eq(numberOfNextProduct + 1).find('.products__photo').attr('src');
-    var nextProductFabric = $('.products__item').eq(numberOfNextProduct + 1).data('fabric');
-    var nextProductSize = $('.products__item').eq(numberOfNextProduct + 1).data('size');
-    var nextProductPrice = $('.products__item').eq(numberOfNextProduct + 1).data('price');
-    var nextProductTitle = $('.products__item').eq(numberOfNextProduct + 1).find('.products__title').text();
-    var nextProductDescription = $('.products__item').eq(numberOfNextProduct + 1).find('.products__description').text();
-    var photoNumber = $('.products__item').eq(numberOfNextProduct + 1).index();
-
-    $('.preview').show();
-    $('.preview__photo-item').attr('src', nextPhotoSrc);
-    $('.preview__product-fabric span').text(nextProductFabric);
-    $('.preview__product-size span').text(nextProductSize);
-    $('.preview__product-price span').text(nextProductPrice + '$');
-    $('.preview__product-title').text(nextProductTitle);
-    $('.preview__product-description-text').text(nextProductDescription);
-    $('.preview__content').data('product-number', photoNumber);
-};
-
-var showPrevPreview = function (element) {
-    var numberOfNextProduct = $(element).closest('.preview__content').data('product-number');
-    var nextPhotoSrc = $('.products__item').eq(numberOfNextProduct - 1).find('.products__photo').attr('src');
-    var nextProductFabric = $('.products__item').eq(numberOfNextProduct - 1).data('fabric');
-    var nextProductSize = $('.products__item').eq(numberOfNextProduct - 1).data('size');
-    var nextProductPrice = $('.products__item').eq(numberOfNextProduct - 1).data('price');
-    var nextProductTitle = $('.products__item').eq(numberOfNextProduct - 1).find('.products__title').text();
-    var nextProductDescription = $('.products__item').eq(numberOfNextProduct - 1).find('.products__description').text();
-    var photoNumber = $('.products__item').eq(numberOfNextProduct - 1).index();
-
-    $('.preview').show();
-    $('.preview__photo-item').attr('src', nextPhotoSrc);
-    $('.preview__product-fabric span').text(nextProductFabric);
-    $('.preview__product-size span').text(nextProductSize);
-    $('.preview__product-price span').text(nextProductPrice + '$');
-    $('.preview__product-title').text(nextProductTitle);
-    $('.preview__product-description-text').text(nextProductDescription);
-    $('.preview__content').data('product-number', photoNumber);
-};
-
-$('.preview__next-button').on('click', function () {
-    showNextPreview(this);
-});
-
-$('.preview__prev-button').on('click', function () {
-   showPrevPreview(this);
-});
 
 
