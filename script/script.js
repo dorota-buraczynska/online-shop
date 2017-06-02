@@ -203,3 +203,17 @@ $('.products__button-top').on('click', function () {
    $('html, body').animate({scrollTop: 0}, 1500);
 });
 
+//add products to small basket, modal-box
+var counter = 0;
+$('.products__button').on('click', function () {
+    counter++;
+    $('.nav__basket-amount').text(counter);
+    $('.modal-box').show();
+});
+
+$('.modal-box__shopping-button, .modal-box__close-button').on('click', function () {
+   $('.modal-box').hide();
+});
+
+
+
