@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your card</title>
+    <title>Your cart</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="sass/main.css" rel="stylesheet" type="text/css">
@@ -12,7 +12,9 @@
 <nav class="nav">
     <div class="nav__wrapper">
         <div class="nav__logo">my-shop</div>
-        <div class="nav__basket"><span class="nav__basket-amount">0</span></div>
+        <a href="cart.html">
+            <div class="nav__basket"><span class="nav__basket-amount">0</span></div>
+        </a>
         <button class="nav__button"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
     <ul class="nav__menu">
@@ -37,7 +39,12 @@
         </div>
         <div class="shopping-list__product-wrapper">
             <div class="shopping-list__product-photo"><img class="shopping-list__product-photo-item" src=""></div>
-            <div class="shopping-list__product-amount"></div>
+            <div class="shopping-list__product-amount"><span></span>
+                <div class="shopping-list__buttons-wrapper">
+                    <div class="shopping-list__plus-button">&#43;</div>
+                    <div class="shopping-list__minus-button">&#45;</div>
+                </div>
+            </div>
             <div class="shopping-list__product-price"></div>
         </div>
         <div class="shopping-list__product-total-price">Total price: <span></span></div>

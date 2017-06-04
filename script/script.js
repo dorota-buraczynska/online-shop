@@ -204,11 +204,12 @@ $('.products__button-top').on('click', function () {
 });
 
 //add products to small basket, modal-box
-var counter = 0;
 $('.products__button').on('click', function () {
-    counter++;
-    $('.nav__basket-amount').text(counter);
+    var productIndex = $(this).closest('.products__item').index();
+    console.log(cartArray.length + 1);
     $('.modal-box').show();
+    addProductToCart(productIndex);
+    $('.nav__basket-amount').text(cartArray.length);
 });
 
 $('.modal-box__shopping-button, .modal-box__close-button').on('click', function () {
@@ -216,6 +217,12 @@ $('.modal-box__shopping-button, .modal-box__close-button').on('click', function 
 });
 
 //preview
+var fixPreviewPosition = function () {
+    var contentHeight = $('.preview__content').height();
+    var windowHeight = $(window).height();
+    $('.preview__content').toggleClass('preview__content--large', contentHeight > windowHeight);
+};
+
 var showPreview = function (productIndex) {
     var photoSrc = $('.products__item').eq(productIndex).find('.products__photo').attr('src');
     var productFabric = $('.products__item').eq(productIndex).data('fabric');
@@ -227,13 +234,16 @@ var showPreview = function (productIndex) {
 
     $('.preview').show();
     $('.preview__photo-item').attr('src', photoSrc);
+
     $('.preview__product-fabric span').text(productFabric);
     $('.preview__product-size span').text(productSize);
     $('.preview__product-price span').text('$' + productPrice);
     $('.preview__product-title').text(productTitle);
     $('.preview__product-description-text').text(productDescription);
     $('.preview__content').data('product-number', photoNumber);
+    $('.preview__content').data('price', productPrice);
 
+    fixPreviewPosition();
 };
 
 $('.products__preview').on('click', function () {
@@ -259,5 +269,55 @@ $('.preview__close-button, .preview__shopping-button').on('click', function () {
     $('.preview').hide();
 });
 
+$(window).on('resize', function () {
+    fixPreviewPosition();
+});
+
+//cart
+var cartArray = [];
+var priceArray = [];
+
+var addProductToCart = function (productIndex) {
+    var product = {
+        path: $('.products__item').eq(productIndex).find('.products__photo').attr('src'),
+        price: $('.products__item').eq(productIndex).data('price'),
+        size: $('.products__item').eq(productIndex).data('size'),
+        index: $('.products__item').eq(productIndex).index()
+    };
+    cartArray.push(product);
+    priceArray.push(product.price);
+};
+
+
+$('.nav__basket').on('click', function () {
+    $('.shopping-list__wrapper .shopping-list__product-wrapper').remove();
+
+    var buttonsWrapper = ('<div class="shopping-list__buttons-wrapper"><div class="shopping-list__plus-button">&#43;</div><div class="shopping-list__minus-button">&#45;</div></div>');
+    var totalSum = 0;
+
+    for (var i = 0; i < cartArray.length; i++) {
+        var productPhoto = ('<img class="shopping-list__product-photo" src="' + cartArray[i].path + '">');
+        var productAmount = ('<div class="shopping-list__product-amount">1 ' + buttonsWrapper + '</div>');
+        var productPrice = ('<div class="shopping-list__product-price">$' + cartArray[i].price + '</div>');
+        var productSize = ('<div class="shopping-list__product-size">'+ cartArray[i].size + '</div>');
+
+        $('.shopping-list__wrapper')
+            .prepend(' <div class="shopping-list__product-wrapper">'+ productPhoto + productSize + productAmount + productPrice +'</div>');
+    }
+
+    for (var i = 0; i < priceArray.length; i++) {
+        totalSum += priceArray[i];
+        $('.shopping-list__product-total-price span').text('$' + totalSum);
+    }
+});
+
+$('.preview__basket-button').on('click', function () {
+    var productIndex = $(this).closest('.preview__content').data('product-number');
+    addProductToCart(productIndex);
+    $('.nav__basket-amount').text(cartArray.length);
+    $('.preview').hide();
+    $('.modal-box').show();
+    console.log(cartArray);
+});
 
 

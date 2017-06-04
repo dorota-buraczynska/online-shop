@@ -116,7 +116,7 @@
   .background__photo--blog {
     background-image: url("../images/blog.jpeg");
     background-position: 0; }
-  .background__photo--card {
+  .background__photo--cart {
     background-image: url("../images/card.jpeg"); }
 
 .slider {
@@ -828,9 +828,13 @@
     background-color: white;
     border: 2px solid #DAA520;
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     font-family: "Roboto", sans-serif; }
+    .preview__content--large {
+      top: 0;
+      transform: translate(-50%, 0); }
   .preview__close-button {
     position: absolute;
     right: 10px;
@@ -964,18 +968,42 @@
     font-family: "Roboto", sans-serif; }
   .shopping-list__headings {
     border-bottom: 1px solid #DAA520;
-    padding-bottom: 20px; }
-  .shopping-list__product {
+    padding-bottom: 20px;
+    font-size: 0; }
+  .shopping-list__product-wrapper {
+    margin-top: 20px; }
+  .shopping-list__product-photo {
     display: inline-block;
-    width: 33.333%;
-    font-size: 20px; }
-  .shopping-list__amount {
+    width: 25%;
+    margin-top: 20px;
+    vertical-align: middle; }
+  .shopping-list__product-amount, .shopping-list__product-price, .shopping-list__product-size {
     display: inline-block;
-    width: 33.333%;
-    font-size: 20px; }
-  .shopping-list__price {
+    font-size: 22px;
+    vertical-align: middle;
+    width: 25%;
+    text-transform: uppercase; }
+  .shopping-list__product-heading, .shopping-list__amount-heading, .shopping-list__price-heading, .shopping-list__size-heading {
     display: inline-block;
-    width: 33.333%;
+    width: 25%;
     font-size: 20px; }
+  .shopping-list__product-total-price {
+    font-size: 25px;
+    margin-top: 40px;
+    margin-right: 80px;
+    text-align: right;
+    color: #DAA520; }
+  .shopping-list__product-amount {
+    font-size: 20px; }
+    .shopping-list__product-amount span {
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 10px;
+      margin-right: 20px; }
+  .shopping-list__buttons-wrapper {
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    padding-left: 20px; }
 
 /*# sourceMappingURL=main.css.map */
