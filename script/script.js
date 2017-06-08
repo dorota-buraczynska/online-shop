@@ -304,11 +304,11 @@ var filteredProducts = function (products) {
 
 var loadProducts = function () {
     $.ajax({
-        url: url + '/products',
+        url: 'db/products.json',
         method: 'GET',
         dataType: 'json'
     }).done(function (response) {
-        products = response;
+        products = response.products;
         renderProducts(products);
     }).fail(function (error) {
         console.log(error);
@@ -318,6 +318,7 @@ var loadProducts = function () {
 loadProducts();
 
 var filterByBlingPrices = function (products, min, max) {
+    console.log(products);
     return products.filter(function (value) {
         return value.price >= min && value.price <= max;
     });
