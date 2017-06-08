@@ -1,3 +1,5 @@
+var products;
+
 //nav
 $('.nav__button').on('click', function (event) {
     var buttonActiveClass = 'nav__button--active';
@@ -86,89 +88,12 @@ $('.filter__title').on('click', function () {
     $(this).toggleClass(buttonActiveClass);
 });
 
-//filter
-var makeProductsArray = function (product) {
-    var productColor = $(product).data('color');
-    var productSize = $(product).data('size');
-    var productFabric = $(product).data('fabric');
-
-    return [productColor, productSize, productFabric];
-};
-
-var makeFilterArray = function () {
-    var selected = [];
-    $('.filter input:checked').each(function () {
-        selected.push($(this).attr('name'));
-    });
-
-    return selected;
-};
-
-var filterByPrices = function () {
-    $('.products__item').hide();
-    $('.products__not-found').hide();
-
-    var max = parseInt($('.filter__price-range input[name=max]').val());
-    var min = parseInt($('.filter__price-range input[name=min]').val());
-
-    $('.products__item').each(function () {
-        var price = parseInt($(this).find('.products__price').text());
-
-        if (price >= min &&
-            price <= max) {
-            $(this).show();
-        }
-        if ($('.products__item:visible').length === 0) {
-            $('.products__not-found').show();
-        }
-    })
-};
-
-var filterProducts = function () {
-    var filterArray = makeFilterArray();
-    var productArray;
-
-    if (filterArray.length === 0) {
-        return;
-    }
-
-    $('.products__item:visible').each(function (i, e) {
-        var newArray = [];
-        productArray = makeProductsArray(this);
-
-        for (var i = 0; i < productArray.length; i++) {
-            for (var j = 0; j < filterArray.length; j++) {
-                if (productArray[i] === filterArray[j]) {
-                    newArray.push(productArray[i]);
-                }
-            }
-        }
-
-        if (newArray.length > 0) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-    });
-
-    if ($('.products__item:visible').length === 0) {
-        $('.products__not-found').show();
-    }
-};
-$('.filter__button').on('click', function () {
-    filterByPrices();
-    filterProducts();
-    scrollToElement('.filter__wrapper');
-});
-
-
 $('.filter__reset-button').on('click', function () {
     $('input[type=checkbox]').each(function () {
         this.checked = false;
     });
     $('.filter__price-range input[name=max]').val(100);
-    $('.products__item').show();
-    $('.products__not-found').hide();
+    renderProducts(products);
 });
 
 var scrollToElement = function (element) {
@@ -179,32 +104,13 @@ var scrollToElement = function (element) {
     $('html, body').animate({scrollTop: position + filterHeight}, 1500);
 };
 
-// show only three products
-$('.products__wrapper .products__item').slice(0, 3).show();
-
-var showThreeProducts = function () {
-    var items = $('.products__wrapper .products__item:hidden');
-    var nextItems = items.slice(0, 3);
-
-    if (nextItems.length < 3) {
-        $('.products__button-next').hide();
-        $('.products__button-top').show();
-    }
-
-    nextItems.show();
-};
-
-$('.products__button-next').on('click', function () {
-    showThreeProducts();
-});
-
 //back to top
 $('.products__button-top').on('click', function () {
     $('html, body').animate({scrollTop: 0}, 1500);
 });
 
 //add products to small basket, modal-box
-$('.products__button').on('click', function () {
+$('.products__wrapper').on('click', '.products__button', function () {
     var productIndex = $(this).closest('.products__item').index();
     $('.modal-box').show();
     addProductToCart(productIndex);
@@ -245,9 +151,10 @@ var showPreview = function (productIndex) {
     fixPreviewPosition();
 };
 
-$('.products__preview').on('click', function () {
+$('.products__wrapper').on('click', '.products__preview', function () {
     var productIndex = $(this).closest('.products__item').index();
     showPreview(productIndex);
+    console.log('ok');
 });
 
 $('.preview__next-button').on('click', function () {
@@ -335,4 +242,156 @@ $('.preview__basket-button').on('click', function () {
 
 });
 
+//create products
+var url = 'http://localhost:3000';
+var productsWrapper = $('.products__wrapper');
 
+var renderProducts = function (products) {
+    for (var i = 0; i < products.length; i++) {
+        var productItem = $('<div>', {
+            'class': 'products__item',
+            'data-color': products[i].color,
+            'data-size': products[i].size,
+            'data-fabric': products[i].fabric,
+            'data-price': products[i].price
+        });
+        var productImage = $('<img>', {
+            'class': 'products__photo',
+            'src': products[i].src,
+            'alt': products[i].alt
+        });
+        var productTitle = $('<div>', {'class': 'products__title'}).text(products[i].title);
+        var productInfo = $('<div>', {'class': 'products__info'});
+        var productSizeLabel = $('<div>', {'class': 'products__size-label'}).text('size: ');
+        var productSize = $('<span>', {'class': 'products__size'}).text(products[i].size);
+        var productPriceLabel = $('<div>', {'class': 'products__price-label'}).text('price: ');
+        var productPrice = $('<span>', {'class': 'products__price'}).text(products[i].price + '$');
+        var productDescription = $('<div>', {'class': 'products__description'}).text(products[i].description);
+        var productButton = $('<button class="products__button">add to cart</button>');
+        var productPreviev = $('<div class="products__preview"><i class="fa fa-search" aria-hidden="true"></i></div>');
+
+        productsWrapper.append(productItem);
+        productItem
+            .append(productImage)
+            .append(productTitle)
+            .append(productInfo)
+            .append(productDescription)
+            .append(productButton)
+            .append(productPreviev);
+        productInfo
+            .append(productSizeLabel)
+            .append(productPriceLabel);
+        productSizeLabel.append(productSize);
+        productPriceLabel.append(productPrice);
+    }
+};
+
+var filteredProducts = function (products) {
+    $('.products__wrapper').html('');
+    var max = parseInt($('.filter__price-range input[name=max]').val());
+    var min = parseInt($('.filter__price-range input[name=min]').val());
+
+    var colorArray = makeColorArray();
+    var sizeArray = makeSizeArray();
+    var fabricsArray = makeFabricsArray();
+    var filtered = products;
+    filtered = filterByBlingPrices(filtered, min, max);
+    filtered = filterByColors(filtered, colorArray);
+    filtered = filterBySizes(filtered, sizeArray);
+    filtered = filterByFabrics(filtered, fabricsArray);
+    renderProducts(filtered);
+};
+
+var loadProducts = function () {
+    $.ajax({
+        url: url + '/products',
+        method: 'GET',
+        dataType: 'json'
+    }).done(function (response) {
+        products = response;
+        renderProducts(products);
+    }).fail(function (error) {
+        console.log(error);
+    })
+};
+
+loadProducts();
+
+var filterByBlingPrices = function (products, min, max) {
+    return products.filter(function (value) {
+        return value.price >= min && value.price <= max;
+    });
+};
+
+var filterByColors = function (products, colorArray) {
+    if (colorArray.length === 0) {
+        return products;
+    }
+    return products.filter(function (value) {
+        for (var i = 0; i < colorArray.length; i++) {
+            if (value.color === colorArray[i]) {
+                return true;
+            }
+        }
+    });
+};
+
+var filterBySizes = function (products, sizeArray) {
+    if (sizeArray.length > 0) {
+        return products.filter(function (value) {
+            for (var i = 0; i < sizeArray.length; i++) {
+                if (value.size === sizeArray[i]) {
+                    return true;
+                }
+            }
+        });
+    } else {
+        return products;
+    }
+};
+
+var filterByFabrics = function (products, fabricArray) {
+    if (fabricArray.length > 0) {
+        return products.filter(function (value) {
+            for (var i = 0; i < fabricArray.length; i++) {
+                if (value.fabric === fabricArray[i]) {
+                    return true;
+                }
+            }
+        });
+    } else {
+        return products;
+    }
+};
+//filter arrays
+var makeColorArray = function () {
+    var selectedColors = [];
+    $('.colors input:checked').each(function () {
+        selectedColors.push($(this).attr('name'));
+    });
+
+    return selectedColors;
+};
+
+var makeSizeArray = function () {
+    var selectedSizes = [];
+    $('.sizes input:checked').each(function () {
+        selectedSizes.push($(this).attr('name'));
+    });
+
+    return selectedSizes;
+};
+
+var makeFabricsArray = function () {
+    var selectedFabrics = [];
+    $('.fabrics input:checked').each(function () {
+        selectedFabrics.push($(this).attr('name'));
+    });
+
+    return selectedFabrics;
+};
+
+$('.filter__button').on('click', function () {
+    filteredProducts(products);
+    scrollToElement('.filter__wrapper');
+});

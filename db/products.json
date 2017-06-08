@@ -1,0 +1,114 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "src": "images/red-dress.jpeg",
+      "alt": "Red dress",
+      "title": "Red dress for every occasion",
+      "color": "red",
+      "size": "s",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin."
+    },
+    {
+      "id": 2,
+      "src": "images/white-dress.jpeg",
+      "alt": "White dress",
+      "title": "White casula dress",
+      "color": "white",
+      "size": "m",
+      "fabric": "cotton",
+      "price": "100",
+      "description": "opis"
+    },
+    {
+      "id": 3,
+      "src": "images/blue-shirt.jpeg",
+      "alt": "Blue shirt",
+      "title": "Always fashionable plaid shirt",
+      "color": "blue",
+      "size": "xs",
+      "fabric": "cotton",
+      "price": "150",
+      "description": "opis"
+    },
+    {
+      "id": 4,
+      "src": "images/black-skirt.jpeg",
+      "alt": "Black skirt",
+      "title": "Short black skirt",
+      "color": "black",
+      "size": "l",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "opis"
+    },
+    {
+      "id": 5,
+      "src": "images/jeans.jpeg",
+      "alt": "Blue jeand",
+      "title": "Who doesn't like good jeans",
+      "color": "blue",
+      "size": "s",
+      "fabric": "denim",
+      "price": "200",
+      "description": "opis"
+    },
+    {
+      "id": 6,
+      "src": "images/red-dress.jpeg",
+      "alt": "Red dress",
+      "title": "Red dress for every occasion",
+      "color": "red",
+      "size": "s",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin."
+    },
+    {
+      "id": 7,
+      "src": "images/white-dress.jpeg",
+      "alt": "White dress",
+      "title": "White casula dress",
+      "color": "white",
+      "size": "m",
+      "fabric": "cotton",
+      "price": "100",
+      "description": "opis"
+    },
+    {
+      "id": 8,
+      "src": "images/blue-shirt.jpeg",
+      "alt": "Blue shirt",
+      "title": "Always fashionable plaid shirt",
+      "color": "blue",
+      "size": "xs",
+      "fabric": "cotton",
+      "price": "150",
+      "description": "opis"
+    },
+    {
+      "id": 9,
+      "src": "images/black-skirt.jpeg",
+      "alt": "Black skirt",
+      "title": "Short black skirt",
+      "color": "black",
+      "size": "l",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "opis"
+    },
+    {
+      "id": 10,
+      "src": "images/jeans.jpeg",
+      "alt": "Blue jeand",
+      "title": "Who doesn't like good jeans",
+      "color": "blue",
+      "size": "s",
+      "fabric": "denim",
+      "price": "200",
+      "description": "opis"
+    }
+  ]
+}

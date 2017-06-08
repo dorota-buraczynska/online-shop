@@ -366,8 +366,7 @@
     max-width: 450px;
     margin: 0 auto;
     background-color: #fffcf7;
-    padding: 0 20px;
-    display: none; }
+    padding: 0 20px; }
     .filter__wrapper--visible {
       display: block; }
   .filter__button {
@@ -563,7 +562,6 @@
     text-align: center;
     font-size: 0;
     margin: 0 auto;
-    display: none;
     position: relative; }
   .products__photo {
     width: 100%;
