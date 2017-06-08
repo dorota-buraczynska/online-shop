@@ -954,7 +954,7 @@
 .shopping-list {
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   padding: 20px; }
   .shopping-list__title {
     font-family: "Roboto", sans-serif;
@@ -971,7 +971,8 @@
     padding-bottom: 20px;
     font-size: 0; }
   .shopping-list__product-wrapper {
-    margin-top: 20px; }
+    margin-top: 20px;
+    position: relative; }
   .shopping-list__product-photo {
     display: inline-block;
     width: 25%;
@@ -990,8 +991,6 @@
   .shopping-list__product-total-price {
     font-size: 25px;
     margin-top: 40px;
-    margin-right: 80px;
-    text-align: right;
     color: #DAA520; }
   .shopping-list__product-amount {
     font-size: 20px; }
@@ -1005,5 +1004,48 @@
     cursor: pointer;
     vertical-align: middle;
     padding-left: 20px; }
+  .shopping-list__delete-button {
+    border: none;
+    outline: none;
+    background-color: #80a6ad;
+    text-transform: uppercase;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    cursor: pointer; }
+  .shopping-list__shopping-button {
+    border: none;
+    background-color: #58b193;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 40px auto 20px auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .shopping-list__shopping-button:hover {
+      background-color: #80a6ad;
+      color: white; }
+  .shopping-list__buy-button {
+    border: none;
+    background-color: #DAA520;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 20px auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .shopping-list__buy-button:hover {
+      background-color: #80a6ad;
+      color: white; }
 
 /*# sourceMappingURL=main.css.map */

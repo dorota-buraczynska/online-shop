@@ -1,7 +1,7 @@
 .shopping-list {
   text-align: center;
   margin-top: $common-padding * 2;
-  margin-bottom: $common-padding*3;
+  margin-bottom: $common-padding*2;
   padding: $common-padding;
 
   &__title {
@@ -30,6 +30,7 @@
 
   &__product-wrapper {
     margin-top: $common-padding;
+    position: relative;
   }
 
   &__product-photo {
@@ -61,8 +62,6 @@
   &__product-total-price {
     font-size: 25px;
     margin-top: $common-padding*2;
-    margin-right: $common-padding*4;
-    text-align: right;
     color: $main-color;
   }
 
@@ -85,6 +84,61 @@
     padding-left: $common-padding;
   }
 
+  &__delete-button {
+    border: none;
+    outline: none;
+    background-color: $third-color;
+    text-transform: uppercase;
+    color: white;
+    padding: $common-padding/4 $common-padding/2;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    cursor: pointer;
+  }
 
+  &__shopping-button {
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin: $common-padding*2 auto $common-padding auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+      color: white;
+    }
+  }
+
+  &__buy-button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin: $common-padding auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+      color: white;
+    }
+  }
 
 }
