@@ -243,7 +243,6 @@ $('.preview__basket-button').on('click', function () {
 });
 
 //create products
-var url = 'http://localhost:3000';
 var productsWrapper = $('.products__wrapper');
 
 var renderProducts = function (products) {
@@ -284,6 +283,10 @@ var renderProducts = function (products) {
         productSizeLabel.append(productSize);
         productPriceLabel.append(productPrice);
     }
+
+    var products = $('.products__wrapper .products__item');
+    products.hide();
+    products.slice(0, 3).show();
 };
 
 var filteredProducts = function (products) {
@@ -302,6 +305,23 @@ var filteredProducts = function (products) {
     renderProducts(filtered);
 };
 
+//show next products
+var showThreeProducts = function () {
+    var items = $('.products__wrapper .products__item:hidden');
+    var nextItems = items.slice(0, 3);
+
+    if (nextItems.length < 3) {
+        $('.products__button-next').hide();
+        $('.products__button-top').show();
+    }
+
+    nextItems.show();
+};
+
+$('.products__button-next').on('click', function () {
+    showThreeProducts();
+});
+
 var loadProducts = function () {
     $.ajax({
         url: 'db/products.json',
@@ -317,6 +337,8 @@ var loadProducts = function () {
 
 loadProducts();
 
+
+//filter products
 var filterByBlingPrices = function (products, min, max) {
     console.log(products);
     return products.filter(function (value) {
@@ -338,32 +360,32 @@ var filterByColors = function (products, colorArray) {
 };
 
 var filterBySizes = function (products, sizeArray) {
-    if (sizeArray.length > 0) {
-        return products.filter(function (value) {
-            for (var i = 0; i < sizeArray.length; i++) {
-                if (value.size === sizeArray[i]) {
-                    return true;
-                }
-            }
-        });
-    } else {
+    if (sizeArray.length === 0) {
         return products;
     }
+    return products.filter(function (value) {
+        for (var i = 0; i < sizeArray.length; i++) {
+            if (value.size === sizeArray[i]) {
+                return true;
+            }
+        }
+    });
 };
 
 var filterByFabrics = function (products, fabricArray) {
-    if (fabricArray.length > 0) {
-        return products.filter(function (value) {
-            for (var i = 0; i < fabricArray.length; i++) {
-                if (value.fabric === fabricArray[i]) {
-                    return true;
-                }
-            }
-        });
-    } else {
+    if (fabricArray.length === 0) {
         return products;
     }
+    return products.filter(function (value) {
+        for (var i = 0; i < fabricArray.length; i++) {
+            if (value.fabric === fabricArray[i]) {
+                return true;
+            }
+        }
+    });
 };
+
+
 //filter arrays
 var makeColorArray = function () {
     var selectedColors = [];
@@ -396,3 +418,5 @@ $('.filter__button').on('click', function () {
     filteredProducts(products);
     scrollToElement('.filter__wrapper');
 });
+
+

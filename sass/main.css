@@ -366,7 +366,8 @@
     max-width: 450px;
     margin: 0 auto;
     background-color: #fffcf7;
-    padding: 0 20px; }
+    padding: 0 20px;
+    display: none; }
     .filter__wrapper--visible {
       display: block; }
   .filter__button {
