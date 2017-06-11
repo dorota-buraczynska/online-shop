@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "id": 0,
+      "title": "The bicycle is an excellent means of transport",
+      "img_src": "images/cycle.jpg",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 1,
+      "title": "Sewing history",
+      "img_src": "images/history.jpeg",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 2,
+      "title": "how to start sewing?",
+      "img_src": "images/sewing.jpeg",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 3,
+      "title": "how to spend your free time?",
+      "img_src": "images/mountains.jpeg",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 4,
+      "title": "Always is a good time for climbing",
+      "img_src": "images/climbing.jpeg",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    }
+  ]
+}
