@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data form</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="sass/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<nav class="nav">
+    <div class="nav__wrapper">
+        <div class="nav__logo"><a class="nav__logo-link" href="index.html">my-shop</a></div>
+        <a href="cart.html" class="nav__basket">
+            <span class="nav__basket-amount">0</span>
+        </a>
+        <button class="nav__button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    </div>
+    <ul class="nav__menu">
+        <li class="nav__menu-item nav__menu-item--active"><a href="index.html" class="nav__menu-link">home</a></li>
+        <li class="nav__menu-item"><a href="shop.html" class="nav__menu-link">shop</a></li>
+        <li class="nav__menu-item"><a href="blog.html" class="nav__menu-link">blog</a></li>
+        <li class="nav__menu-item"><a href="contact.html" class="nav__menu-link">contact</a></li>
+    </ul>
+</nav>
+
+<section class="background">
+    <div class="background__photo background__photo--form"></div>
+</section>
+
+<section class="back-to-top">
+    <div class="back-to-top__button"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+</section>
+
+<section class="address-data">
+    <div class="address-data__title">enter address data</div>
+    <form class="address-data__form form" id="address-data">
+        <label class="form__label">
+            <p class="form__label-text">title: *</p>
+            <input class="form__input" name="titles" list="titles" id="'title" placeholder="Please Select">
+            <datalist class="form__datalist" id="titles">
+                <option class="form__option" value="Mr"></option>
+                <option class="form__option" value="Miss"></option>
+                <option class="form__option" value="Mrs"></option>
+            </datalist>
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">first name: *</p>
+            <input class="form__input" type="text" name="first-name">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">last name: *</p>
+            <input class="form__input" type="text" name="last-name">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">street: *</p>
+            <input class="form__input" type="text" name="street">
+        </label>
+        <label class="form__label form__label--smaller">
+            <p class="form__label-text">home number: *</p>
+            <input class="form__input" type="text" name="home-number">
+        </label>
+        <label class="form__label form__label--smaller">
+            <p class="form__label-text">flat number: *</p>
+            <input class="form__input" type="text" name="flat-number">
+        </label>
+        <label class="form__label form__label--smaller">
+            <p class="form__label-text">postal code: *</p>
+            <input class="form__input" type="text" name="postal-code">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">city: *</p>
+            <input class="form__input" type="text" name="city">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">country: *</p>
+            <input class="form__input" type="text" name="country">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">phone number: *</p>
+            <input class="form__input" type="text" name="phone">
+        </label>
+        <label class="form__label">
+            <p class="form__label-text">email address: *</p>
+            <input class="form__input" type="text" name="email">
+        </label>
+    </form>
+
+    <p class="address-data__information">*required data</p>
+    <button class="address-data__go-back-button"><a class="address-data__go-back-button-link" href="cart.html">go back</a></button>
+    <button class="address-data__buy-button" type="submit" form="address-data">proceed to billing</button>
+</section>
+
+<section class="cart shopping-list">
+    <div class="shopping-list__title">your cart</div>
+    <div class="shopping-list__headings">
+        <div class="shopping-list__product-heading">Product</div>
+        <div class="shopping-list__size-heading">Size</div>
+        <div class="shopping-list__amount-heading">Amount</div>
+        <div class="shopping-list__price-heading">Price</div>
+    </div>
+    <div class="shopping-list__wrapper">
+        <div class="shopping-list__delivery">cost of delivery (inPost): <span class="shopping-list__delivery-price">$30</span></div>
+        <div class="shopping-list__product-total-price">Total price: <span></span></div>
+    </div>
+
+</section>
+
+<section class="social-links">
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+    <div class="social-links__item"><a class="social-links__link" target="_blank" href="https://plus.google.com/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></div>
+</section>
+
+<footer class="footer">
+    <p class="footer__text">&copy; 2017 Online-shop by Dorota Buraczyńska</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script/script.js"></script>
+</body>
+</html>

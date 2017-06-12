@@ -8,10 +8,9 @@ $('.nav__button').on('click', function (event) {
 });
 
 $('.nav__menu-item').on('click', function (event) {
-    // event.preventDefault();
     var listItemActiveClass = 'nav__menu-item--active';
+    // $(this).addClass(listItemActiveClass);
     $(this).siblings().removeClass(listItemActiveClass);
-    $(this).addClass(listItemActiveClass);
 });
 
 //slider
@@ -481,7 +480,6 @@ var loadEntries = function () {
         dataType: 'json'
     }).done(function (response) {
         renderEntries(response.entries);
-        console.log(response.entries);
     }).fail(function (error) {
         console.log(error);
     })
@@ -517,3 +515,10 @@ function readCookie(name) {
 function eraseCookie(name) {
     createCookie(name, "", -1);
 }
+
+//proceed to billing
+$('.address-data__buy-button').on('click', function (event) {
+    event.preventDefault();
+   $('.cart').show();
+   $('.address-data').hide();
+});

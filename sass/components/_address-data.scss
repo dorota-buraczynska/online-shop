@@ -1,0 +1,80 @@
+.address-data {
+  margin-top: $common-padding*2;
+  margin-bottom: $common-padding*2;
+  padding: 0 $common-padding*2;
+  text-align: center;
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: $common-padding;
+    color: $main-color;
+    font: {
+      family: $main-font;
+      size: 30px;
+      weight: bold;
+    }
+  }
+
+  &__information {
+    text-align: left;
+    text-transform: capitalize;
+    font: {
+      family: $main-font;
+      size: 15px;
+    }
+  }
+
+  &__go-back-button {
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin: $common-padding*2 auto $common-padding/2 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+
+      .address-data__go-back-button-link {
+        color: white;
+      }
+    }
+  }
+
+  &__go-back-button-link {
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+  }
+
+  &__buy-button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin: $common-padding/2 auto 0 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+      color: white;
+    }
+  }
+}
