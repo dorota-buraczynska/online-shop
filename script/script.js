@@ -139,47 +139,48 @@ var fixPreviewPosition = function () {
     $('.preview__content').toggleClass('preview__content--large', contentHeight > windowHeight);
 };
 
-var showPreview = function (productIndex) {
-    var photoSrc = $('.products__item').eq(productIndex).find('.products__photo').attr('src');
-    var productFabric = $('.products__item').eq(productIndex).data('fabric');
-    var productSize = $('.products__item').eq(productIndex).data('size');
-    var productPrice = $('.products__item').eq(productIndex).data('price');
-    var productTitle = $('.products__item').eq(productIndex).find('.products__title').text();
-    var productDescription = $('.products__item').eq(productIndex).find('.products__description').text();
-    var photoNumber = $('.products__item').eq(productIndex).index();
+var showPreview = function (productId) {
+    var photoSrc = products[productId].src;
+    var productFabric = products[productId].fabric;
+    var productSize = products[productId].size;
+    var productPrice = products[productId].price;
+    var productTitle = products[productId].title;
+    var productDescription = products[productId].description;
 
     $('.preview').show();
     $('.preview__photo-item').attr('src', photoSrc);
-
     $('.preview__product-fabric span').text(productFabric);
     $('.preview__product-size span').text(productSize);
     $('.preview__product-price span').text('$' + productPrice);
     $('.preview__product-title').text(productTitle);
     $('.preview__product-description-text').text(productDescription);
-    $('.preview__content').data('product-number', photoNumber);
+    $('.preview__content').data('id', products[productId].id);
     $('.preview__content').data('price', productPrice);
 
     fixPreviewPosition();
 };
 
 $('.products__wrapper').on('click', '.products__preview', function () {
-    var productIndex = $(this).closest('.products__item').index();
-    showPreview(productIndex);
-    console.log('ok');
+    var productId = $(this).closest('.products__item').index();
+    showPreview(productId);
 });
 
 $('.preview__next-button').on('click', function () {
-    var productIndex = $(this).closest('.preview__content').data('product-number') + 1;
-    if (productIndex === $('.products__item').length) {
+    var productId = $(this).closest('.preview__content').data('id') + 1;
+    if (productId === products.length) {
         showPreview(0);
     } else {
-        showPreview(productIndex);
+        showPreview(productId);
     }
 });
 
 $('.preview__prev-button').on('click', function () {
-    var productIndex = $(this).closest('.preview__content').data('product-number') - 1;
-    showPreview(productIndex);
+    var productId = $(this).closest('.preview__content').data('id') - 1;
+    if (productId === -1) {
+        showPreview(products.length - 1);
+    } else {
+        showPreview(productId);
+    }
 });
 
 $('.preview__close-button, .preview__shopping-button').on('click', function () {
@@ -195,12 +196,12 @@ var cartArray = readCookie('cart') || [];
 var priceArray = [];
 var totalSum = 0;
 
-var addProductToCart = function (productIndex) {
+var addProductToCart = function (productId) {
     var product = {
-        path: $('.products__item').eq(productIndex).find('.products__photo').attr('src'),
-        price: $('.products__item').eq(productIndex).data('price'),
-        size: $('.products__item').eq(productIndex).data('size'),
-        index: $('.products__item').eq(productIndex).data('id')
+        path: products[productId].src,
+        price: products[productId].price,
+        size: products[productId].size,
+        index: products[productId].id
     };
     cartArray.push(product);
     priceArray.push(product.price);
@@ -225,12 +226,7 @@ var renderCart = function () {
 };
 
 var deleteProductFromBasket = function (element) {
-    var price = $(element).closest('.shopping-list__product-wrapper').find('.shopping-list__product-price').text();
-    var number = parseInt(price.slice(1, 4));
-    totalSum -= number;
-    $('.shopping-list__product-total-price span').text('$' + totalSum);
-    $(this).closest('.shopping-list__product-wrapper').remove();
-    console.log(price);
+
 };
 
 // $('.nav__basket').on('click', function (event) {
@@ -252,7 +248,8 @@ $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', functi
 });
 
 $('.preview__basket-button').on('click', function () {
-    var productIndex = $(this).closest('.preview__content').data('product-number');
+    console.log(products);
+    var productIndex = $(this).closest('.preview__content').data('id');
     addProductToCart(productIndex);
     $('.nav__basket-amount').text(cartArray.length);
     $('.preview').hide();
@@ -355,7 +352,6 @@ var loadProducts = function () {
 };
 
 loadProducts();
-
 
 //filter products
 var filterByBlingPrices = function (products, min, max) {
@@ -520,7 +516,7 @@ var validateForm = function () {
 
     var emailRe = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var postalCodeRe = /[0-9]{2}\-[0-9]{3}/;
-    var phoneNrRe = /^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$/;
+    var phoneNrRe = /[0-9]$/;
 
     var $email = $('.form input[type=email]');
     var $postalCode = $('.form input[name=postal-code]');
@@ -534,34 +530,40 @@ var validateForm = function () {
         if ($(this).val() == '') {
             isValid = false;
             $(this).addClass('form__input--error');
+        } else {
+            $(this).removeClass('form__input--error');
         }
     });
     $email.each(function () {
         if (!isEmail) {
             $(this).addClass('form__input--error');
+        } else {
+            $(this).removeClass('form__input--error');
         }
     });
     $postalCode.each(function () {
         if (!isPostalCode) {
             $(this).addClass('form__input--error');
+        } else {
+            $(this).removeClass('form__input--error');
         }
     });
     $phoneNumber.each(function () {
-        if (!isPhoneNr) {
+        if (!isPhoneNr || $phoneNumber.val().length < 9) {
             $(this).addClass('form__input--error');
+        } else {
+            $(this).removeClass('form__input--error');
         }
     });
     if (isValid && isEmail && isPostalCode && isPhoneNr) {
-        // $('.cart').show();
-        // $('.address-data').hide();
-        console.log('ok');
+        $('.cart').show();
+        $('.address-data').hide();
     }
 };
 
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
     event.preventDefault();
-    $('.cart').show();
     validateForm();
     completeShippingAddress();
 
@@ -587,3 +589,4 @@ var completeShippingAddress = function () {
 
   $('.shipping-address').show();
 };
+

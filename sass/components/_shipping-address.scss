@@ -3,6 +3,7 @@
   margin-top: $common-padding*2;
   margin-bottom: $common-padding*2;
   padding: 0 $common-padding;
+  text-align: center;
 
   &__title {
     font: {
@@ -13,14 +14,68 @@
     color: $third-color;
     text-transform: capitalize;
     margin-bottom: $common-padding;
+    text-align: left;
   }
 
   &__address {
     text-transform: capitalize;
+    text-align: left;
     color: $main-color;
     font: {
       family: $main-font;
       size: 20px;
+    }
+  }
+
+  &__go-back-button {
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    margin: $common-padding*2 auto $common-padding/2 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+
+      .shipping-address__go-back-button-link {
+        color: white;
+      }
+    }
+  }
+
+  &__go-back-button-link {
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+  }
+
+  &__buy-button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2 $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 205px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+      color: white;
     }
   }
 }
