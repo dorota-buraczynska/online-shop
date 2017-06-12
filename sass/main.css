@@ -34,11 +34,13 @@
     float: left;
     margin: 30px 0 20px 0;
     text-transform: uppercase;
-    color: #DAA520;
     position: relative;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 25px; }
+  .nav__logo-link {
+    text-decoration: none;
+    color: #DAA520; }
   .nav__button {
     z-index: 2;
     float: right;

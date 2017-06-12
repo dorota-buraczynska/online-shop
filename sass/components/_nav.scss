@@ -21,13 +21,17 @@
     float: left;
     margin: $common-padding*1.5 0 $common-padding 0;
     text-transform: uppercase;
-    color: $main-color;
     position: relative;
     font: {
       family: $main-font;
       weight: bold;
       size: 25px;
     }
+  }
+
+  &__logo-link {
+    text-decoration: none;
+    color: $main-color;
   }
 
   &__button {
