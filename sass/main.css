@@ -1183,8 +1183,28 @@
     font-size: 20px; }
     .form__input::placeholder {
       color: #536678; }
+    .form__input--error {
+      border-color: red; }
 
 .cart {
   display: none; }
+
+.shipping-address {
+  display: none;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 0 20px; }
+  .shipping-address__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #80a6ad;
+    text-transform: capitalize;
+    margin-bottom: 20px; }
+  .shipping-address__address {
+    text-transform: capitalize;
+    color: #DAA520;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -67,7 +67,7 @@
         </label>
         <label class="form__label form__label--smaller">
             <p class="form__label-text">postal code: *</p>
-            <input class="form__input" type="text" name="postal-code">
+            <input class="form__input" type="text" name="postal-code" placeholder="00-000">
         </label>
         <label class="form__label">
             <p class="form__label-text">city: *</p>
@@ -83,7 +83,7 @@
         </label>
         <label class="form__label">
             <p class="form__label-text">email address: *</p>
-            <input class="form__input" type="text" name="email">
+            <input class="form__input" type="email" name="email">
         </label>
     </form>
 
@@ -104,7 +104,17 @@
         <div class="shopping-list__delivery">cost of delivery (inPost): <span class="shopping-list__delivery-price">$30</span></div>
         <div class="shopping-list__product-total-price">Total price: <span></span></div>
     </div>
+</section>
 
+<section class="shipping-address">
+    <div class="shipping-address__title">shipping address:</div>
+    <div class="shipping-address__address">
+        <div class="shipping-address__name"></div>
+        <div class="shipping-address__street"></div>
+        <div class="shipping-address__postal-code"></div>
+        <div class="shipping-address__city"></div>
+        <div class="shipping-address__country"></div>
+    </div>
 </section>
 
 <section class="social-links">

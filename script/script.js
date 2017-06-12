@@ -110,15 +110,14 @@ $('.back-to-top__button').on('click', function () {
 });
 
 $(window).on('scroll', function () {
-   var menuHeight = $('.nav').height();
-   var documentPosition = $(window).scrollTop();
-   if (documentPosition > menuHeight) {
-       $('.back-to-top__button').show();
-   } else {
-       $('.back-to-top__button').hide();
-   }
+    var menuHeight = $('.nav').height();
+    var documentPosition = $(window).scrollTop();
+    if (documentPosition > menuHeight) {
+        $('.back-to-top__button').show();
+    } else {
+        $('.back-to-top__button').hide();
+    }
 });
-
 
 
 //add products to small basket, modal-box
@@ -516,9 +515,75 @@ function eraseCookie(name) {
     createCookie(name, "", -1);
 }
 
+var validateForm = function () {
+    var isValid = true;
+
+    var emailRe = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var postalCodeRe = /[0-9]{2}\-[0-9]{3}/;
+    var phoneNrRe = /^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$/;
+
+    var $email = $('.form input[type=email]');
+    var $postalCode = $('.form input[name=postal-code]');
+    var $phoneNumber = $('.form input[name=phone-number]');
+
+    var isEmail = emailRe.test($email.val());
+    var isPostalCode = postalCodeRe.test($postalCode.val());
+    var isPhoneNr = phoneNrRe.test($phoneNumber.val());
+
+    $('.form input').each(function () {
+        if ($(this).val() == '') {
+            isValid = false;
+            $(this).addClass('form__input--error');
+        }
+    });
+    $email.each(function () {
+        if (!isEmail) {
+            $(this).addClass('form__input--error');
+        }
+    });
+    $postalCode.each(function () {
+        if (!isPostalCode) {
+            $(this).addClass('form__input--error');
+        }
+    });
+    $phoneNumber.each(function () {
+        if (!isPhoneNr) {
+            $(this).addClass('form__input--error');
+        }
+    });
+    if (isValid && isEmail && isPostalCode && isPhoneNr) {
+        // $('.cart').show();
+        // $('.address-data').hide();
+        console.log('ok');
+    }
+};
+
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
     event.preventDefault();
-   $('.cart').show();
-   $('.address-data').hide();
+    $('.cart').show();
+    validateForm();
+    completeShippingAddress();
+
 });
+
+//shipping address
+var completeShippingAddress = function () {
+  var title = $('.form input[name=titles]').val();
+  var firstName = $('.form input[name=first-name]').val();
+  var lastName = $('.form input[name=last-name]').val();
+  var street = $('.form input[name=street]').val();
+  var homeNr = $('.form input[name=home-number]').val();
+  var flatNr = $('.form input[name=flat-number]').val();
+  var postalCode = $('.form input[name=postal-code]').val();
+  var city = $('.form input[name=city]').val();
+  var country = $('.form input[name=country]').val();
+
+  $('.shipping-address__name').text(title + ' ' + firstName + ' ' + lastName);
+  $('.shipping-address__street').text(street + ' ' + homeNr + ' ' + flatNr);
+  $('.shipping-address__postal-code').text(postalCode);
+  $('.shipping-address__city').text(city);
+  $('.shipping-address__country').text(country);
+
+  $('.shipping-address').show();
+};

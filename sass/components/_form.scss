@@ -37,5 +37,9 @@
     &::placeholder {
       color: $input-color;
     }
+
+    &--error {
+      border-color: red;
+    }
   }
 }
