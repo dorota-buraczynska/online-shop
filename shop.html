@@ -12,7 +12,9 @@
 <nav class="nav">
     <div class="nav__wrapper">
         <div class="nav__logo">my-shop</div>
-            <div class="nav__basket"><span class="nav__basket-amount">0</span></div>
+        <a href="cart.html" class="nav__basket">
+            <span class="nav__basket-amount">0</span>
+        </a>
         <button class="nav__button"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
     <ul class="nav__menu">
@@ -25,6 +27,10 @@
 
 <section class="background">
     <div class="background__photo background__photo--shop"></div>
+</section>
+
+<section class="back-to-top">
+    <div class="back-to-top__button"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
 </section>
 
 <section class="filter">
@@ -74,7 +80,7 @@
         <div class="modal-box__close-button">&#10006</div>
         <p class="modal-box__text">this product was successfully added to your cart</p>
         <button class="modal-box__shopping-button">continue shopping</button>
-        <button class="modal-box__basket-button">check out your cart</button>
+        <button class="modal-box__basket-button"><a class="modal-box__basket-button-link" href="cart.html">check out your cart</a></button>
     </div>
 </section>
 
@@ -96,27 +102,6 @@
         </div>
         <button class="preview__basket-button">add to cart</button>
         <button class="preview__shopping-button">continue shopping</button>
-    </div>
-</section>
-
-<section class="background">
-    <div class="background__photo background__photo--cart"></div>
-</section>
-
-<section class="shopping-list">
-    <div class="shopping-list__title">what did you buy?</div>
-    <div class="shopping-list__headings">
-        <div class="shopping-list__product-heading">Product</div>
-        <div class="shopping-list__size-heading">Size</div>
-        <div class="shopping-list__amount-heading">Amount</div>
-        <div class="shopping-list__price-heading">Price</div>
-    </div>
-    <div class="shopping-list__wrapper">
-        <div class="shopping-list__product-total-price">Total price: <span></span></div>
-    </div>
-    <div class="shopping-list__buttons">
-        <div class="shopping-list__shopping-button">continue shopping</div>
-        <div class="shopping-list__buy-button">buy</div>
     </div>
 </section>
 

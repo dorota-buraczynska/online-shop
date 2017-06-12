@@ -25,18 +25,20 @@
   &__headings {
     border-bottom: 1px solid $main-color;
     padding-bottom: $common-padding;
-    font-size: 0;
+    font: {
+      family: $main-font;
+      size: 0;
+    }
   }
 
   &__product-wrapper {
-    margin-top: $common-padding;
+    margin-top: $common-padding*2;
     position: relative;
   }
 
   &__product-photo {
     display: inline-block;
-    width: 25%;
-    margin-top: $common-padding;
+    width: 37%;
     vertical-align: middle;
   }
 
@@ -44,19 +46,23 @@
   &__product-price,
   &__product-size {
     display: inline-block;
-    font-size: 22px;
+    font-size: 18px;
     vertical-align: middle;
-    width:25%;
+    width: 21%;
     text-transform: uppercase;
   }
 
   &__product-heading,
   &__amount-heading,
   &__price-heading,
-  &__size-heading{
+  &__size-heading {
     display: inline-block;
-    width: 25%;
-    font-size: 20px;
+    width: 21%;
+    font-size: 17px;
+  }
+
+  &__product-heading {
+    width: 37%;
   }
 
   &__product-total-price {
@@ -66,7 +72,7 @@
   }
 
   &__product-amount {
-   font-size: 20px;
+    font-size: 20px;
 
     span {
       display: inline-block;
@@ -80,8 +86,8 @@
   &__buttons-wrapper {
     display: inline-block;
     cursor: pointer;
-   vertical-align: middle;
-    padding-left: $common-padding;
+    vertical-align: middle;
+    padding-left: $common-padding/4;
   }
 
   &__delete-button {
@@ -90,11 +96,12 @@
     background-color: $third-color;
     text-transform: uppercase;
     color: white;
-    padding: $common-padding/4 $common-padding/2;
+    padding: $common-padding/5 $common-padding/4;
     position: absolute;
     left: 0;
     bottom: 0;
     cursor: pointer;
+    font-size: 12px;
   }
 
   &__shopping-button {

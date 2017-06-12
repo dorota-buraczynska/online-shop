@@ -14,6 +14,14 @@
     margin-bottom: $common-padding *2;
   }
 
+  &__wrapper {
+    text-align: left;
+    padding: 0 $common-padding;
+    font: {
+      family: $main-font;
+    }
+  }
+
   &__entry {
     max-width: 450px;
     margin: 0 auto $common-padding*2 auto;
@@ -25,17 +33,26 @@
 
   &__entry-title {
     font: {
-      family: $main-font;
       size: 20px;
+      weight: bold;
+    }
+    color: $secondary-color;
+    text-transform: capitalize;
+    margin: $common-padding 0 $common-padding/2 0;
+  }
+
+  &__entry-date {
+    font: {
+      size: 15px;
       weight: bold;
     }
     color: $main-color;
     text-transform: capitalize;
-    margin: $common-padding 0;
   }
 
   &__entry-text {
-    margin: $common-padding 0;
+    margin: $common-padding/2 0 $common-padding 0;
+    font-size: 15px;
 
     &:after {
       content: ' [...]';
@@ -44,7 +61,7 @@
 
   &__button {
     border: none;
-    background-color: $main-color;
+    background-color: $secondary-color;
     border-radius: $border-radius;
     padding: $common-padding/2 $common-padding;
     text-transform: uppercase;
@@ -57,25 +74,29 @@
     transition: 1s;
 
     &:hover {
-      background-color: $secondary-color;
+      background-color: $main-color;
       color: white;
-      border-color: $secondary-color;
+      border-color: $main-color;
     }
   }
 }
 
-@for $i from 1 through 5 {
+@for $i from 0 through 4 {
   @if $i % 2 != 0 {
-    .blog__entry:nth-child(#{$i}) .blog__entry-title {
+    .blog__entry:nth-child(#{$i}) .blog__entry-date {
       color: $secondary-color;
     }
 
+    .blog__entry:nth-child(#{$i}) .blog__entry-title {
+      color: $main-color;
+    }
+
     .blog__entry:nth-child(#{$i}) .blog__button {
-      background-color: $secondary-color;
+      background-color: $main-color;
       color: white;
 
       &:hover {
-        background-color: $main-color;
+        background-color: $secondary-color;
         color: black;
       }
     }
