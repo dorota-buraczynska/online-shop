@@ -192,20 +192,8 @@
     &:hover {
       background-color: $main-color;
       border-color: $secondary-color;
-
-      .preview__basket-button-link {
-        color: white;
-      }
-    }
-  }
-
-  &__basket-button-link {
-    text-decoration: none;
-    color: black;
-    transition: 1s;
-
-    &:hover {
       color: white;
     }
+
   }
 }
