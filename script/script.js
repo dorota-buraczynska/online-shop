@@ -286,6 +286,7 @@ var renderProducts = function (products) {
     var productsOnPage = $('.products__wrapper .products__item');
     productsOnPage.hide();
     productsOnPage.slice(0, 3).show();
+    $('.products__button-next').show();
 };
 
 var filteredProducts = function (products) {
@@ -305,20 +306,24 @@ var filteredProducts = function (products) {
 };
 
 //show next products
-var showNextProducts = function () {
-    var items = $('.products__wrapper .products__item:hidden');
+var showNextProducts = function (element) {
+    var items = $(element);
     var nextItems = items.slice(0, 3);
 
     if (nextItems.length < 3) {
         $('.products__button-next').hide();
-        $('.products__button-top').show();
+        $('.blog__button-next').hide();
     }
 
     nextItems.show();
 };
 
 $('.products__button-next').on('click', function () {
-    showNextProducts();
+    showNextProducts('.products__wrapper .products__item:hidden');
+});
+
+$('.blog__button-next').on('click', function () {
+    showNextProducts('.blog__wrapper .blog__entry:hidden');
 });
 
 var loadProducts = function () {
@@ -449,6 +454,11 @@ var renderEntries = function (entries) {
             .append(entryDate)
             .append(entryText);
     }
+
+    var entriesOnPage = $('.blog__wrapper .blog__entry');
+    entriesOnPage.hide();
+    entriesOnPage.slice(0, 3).show();
+    $('.products__button-next').show();
 };
 
 var loadEntries = function () {

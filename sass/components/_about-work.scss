@@ -40,6 +40,7 @@
     text-transform: uppercase;
     margin-top: $common-padding;
     cursor: pointer;
+    outline: none;
     font: {
       size: 18px;
       family: $main-font;
@@ -48,8 +49,18 @@
 
     &:hover {
       background-color: $secondary-color;
-      color: white;
       border-color: $secondary-color;
+
+      .about-work__button-link {
+        color: white;
+      }
     }
+  }
+
+  &__button-link {
+    text-decoration: none;
+    color: black;
+    padding: $common-padding/2 0;
+    transition: 1s;
   }
 }

@@ -4,13 +4,13 @@
 }
 
 @mixin remove-shadow {
-  &:active,
-  &:focus,
-  &.active,
-  &:focus:active {
-    background-image: none;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
+  //&:active,
+  //&:focus,
+  //&.active,
+  //&:focus:active {
+  //  background-image: none;
+  //  outline: 0;
+  //  -webkit-box-shadow: none;
+  //  box-shadow: none;
+  //}
 }

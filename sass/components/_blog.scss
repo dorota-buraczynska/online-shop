@@ -1,7 +1,7 @@
 .blog {
   text-align: center;
   margin-top: $common-padding * 2;
-  margin-bottom: $common-padding*3;
+  margin-bottom: $common-padding*2;
 
   &__title {
     font: {
@@ -36,7 +36,7 @@
       size: 20px;
       weight: bold;
     }
-    color: $secondary-color;
+    color: $main-color;
     text-transform: capitalize;
     margin: $common-padding 0 $common-padding/2 0;
   }
@@ -46,7 +46,7 @@
       size: 15px;
       weight: bold;
     }
-    color: $main-color;
+    color: $secondary-color;
     text-transform: capitalize;
   }
 
@@ -62,7 +62,7 @@
   &__button {
     @include remove-shadow;
     border: none;
-    background-color: $secondary-color;
+    background-color: $main-color;
     border-radius: $border-radius;
     padding: $common-padding/2 $common-padding;
     text-transform: uppercase;
@@ -75,31 +75,27 @@
     transition: 1s;
 
     &:hover {
-      background-color: $main-color;
+      background-color: $secondary-color;
       color: white;
-      border-color: $main-color;
+      border-color: $secondary-color;
     }
   }
-}
 
-@for $i from 0 through 4 {
-  @if $i % 2 != 0 {
-    .blog__entry:nth-child(#{$i}) .blog__entry-date {
-      color: $secondary-color;
+  &__button-next {
+    @include remove-shadow;
+    text-align: center;
+    text-transform: uppercase;
+    color: $secondary-color;
+    padding: $common-padding/2 0;
+    cursor: pointer;
+    font: {
+      size: 18px;
+      family: $main-font;
     }
+  }
 
-    .blog__entry:nth-child(#{$i}) .blog__entry-title {
-      color: $main-color;
-    }
-
-    .blog__entry:nth-child(#{$i}) .blog__button {
-      background-color: $main-color;
-      color: white;
-
-      &:hover {
-        background-color: $secondary-color;
-        color: black;
-      }
-    }
+  &__button-next-sign {
+    color: $main-color;
+    font-size: 20px;
   }
 }
