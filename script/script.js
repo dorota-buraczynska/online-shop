@@ -7,12 +7,6 @@ $('.nav__button').on('click', function (event) {
     $('.nav__menu').toggleClass('visible');
 });
 
-$('.nav__menu-item').on('click', function (event) {
-    var listItemActiveClass = 'nav__menu-item--active';
-    // $(this).addClass(listItemActiveClass);
-    $(this).siblings().removeClass(listItemActiveClass);
-});
-
 //slider
 var changeActiveDot = function (index) {
     $('.slider__dot')
@@ -122,9 +116,9 @@ $(window).on('scroll', function () {
 
 //add products to small basket, modal-box
 $('.products__wrapper').on('click', '.products__button', function () {
-    var productIndex = $(this).closest('.products__item').index();
+    var productId = $(this).closest('.products__item').index();
     $('.modal-box').show();
-    addProductToCart(productIndex);
+    addProductToCart(productId);
     $('.nav__basket-amount').text(cartArray.length);
 });
 
@@ -194,14 +188,13 @@ $(window).on('resize', function () {
 //cart
 var cartArray = readCookie('cart') || [];
 var priceArray = [];
-var totalSum = 0;
 
 var addProductToCart = function (productId) {
     var product = {
         path: products[productId].src,
         price: products[productId].price,
         size: products[productId].size,
-        index: products[productId].id
+        id: products[productId].id
     };
     cartArray.push(product);
     priceArray.push(product.price);
@@ -220,37 +213,27 @@ var renderCart = function () {
         var productSize = ('<div class="shopping-list__product-size">' + cartArray[i].size + '</div>');
 
         $('.shopping-list__wrapper')
-            .prepend(' <div class="shopping-list__product-wrapper">' + productPhoto + productSize + productAmount + productPrice + deleteButton + '</div>');
+            .prepend(' <div class="shopping-list__product-wrapper" data-id='+ cartArray[i].id +'>' + productPhoto + productSize + productAmount + productPrice + deleteButton + '</div>');
 
     }
 };
 
-var deleteProductFromBasket = function (element) {
+var deleteProductFromBasket = function (productId, element) {
 
 };
-
-// $('.nav__basket').on('click', function (event) {
-//     $('.shopping-list__wrapper .shopping-list__product-wrapper').remove();
-//     renderCart();
-//
-//     for (var i = 0; i < priceArray.length; i++) {
-//         totalSum += priceArray[i];
-//         $('.shopping-list__product-total-price span').text('$' + totalSum);
-//     }
-// });
 
 if ($('.shopping-list').length !== 0) {
     renderCart();
 }
 
 $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', function () {
-    deleteProductFromBasket(this);
+    var productIndex = $(this).closest('.shopping-list__product-wrapper').index();
+
 });
 
 $('.preview__basket-button').on('click', function () {
-    console.log(products);
-    var productIndex = $(this).closest('.preview__content').data('id');
-    addProductToCart(productIndex);
+    var productId = $(this).closest('.preview__content').data('id');
+    addProductToCart(productId);
     $('.nav__basket-amount').text(cartArray.length);
     $('.preview').hide();
     $('.modal-box').show();
@@ -283,7 +266,7 @@ var renderProducts = function (products) {
         var productPrice = $('<span>', {'class': 'products__price'}).text(products[i].price + '$');
         var productDescription = $('<div>', {'class': 'products__description'}).text(products[i].description);
         var productButton = $('<button class="products__button">add to cart</button>');
-        var productPreviev = $('<div class="products__preview"><i class="fa fa-search" aria-hidden="true"></i></div>');
+        var productPreview = $('<div class="products__preview"><i class="fa fa-search" aria-hidden="true"></i></div>');
 
         productsWrapper.append(productItem);
         productItem
@@ -292,7 +275,7 @@ var renderProducts = function (products) {
             .append(productInfo)
             .append(productDescription)
             .append(productButton)
-            .append(productPreviev);
+            .append(productPreview);
         productInfo
             .append(productSizeLabel)
             .append(productPriceLabel);
@@ -571,22 +554,22 @@ $('.address-data__buy-button').on('click', function (event) {
 
 //shipping address
 var completeShippingAddress = function () {
-  var title = $('.form input[name=titles]').val();
-  var firstName = $('.form input[name=first-name]').val();
-  var lastName = $('.form input[name=last-name]').val();
-  var street = $('.form input[name=street]').val();
-  var homeNr = $('.form input[name=home-number]').val();
-  var flatNr = $('.form input[name=flat-number]').val();
-  var postalCode = $('.form input[name=postal-code]').val();
-  var city = $('.form input[name=city]').val();
-  var country = $('.form input[name=country]').val();
+    var title = $('.form input[name=titles]').val();
+    var firstName = $('.form input[name=first-name]').val();
+    var lastName = $('.form input[name=last-name]').val();
+    var street = $('.form input[name=street]').val();
+    var homeNr = $('.form input[name=home-number]').val();
+    var flatNr = $('.form input[name=flat-number]').val();
+    var postalCode = $('.form input[name=postal-code]').val();
+    var city = $('.form input[name=city]').val();
+    var country = $('.form input[name=country]').val();
 
-  $('.shipping-address__name').text(title + ' ' + firstName + ' ' + lastName);
-  $('.shipping-address__street').text(street + ' ' + homeNr + ' ' + flatNr);
-  $('.shipping-address__postal-code').text(postalCode);
-  $('.shipping-address__city').text(city);
-  $('.shipping-address__country').text(country);
+    $('.shipping-address__name').text(title + ' ' + firstName + ' ' + lastName);
+    $('.shipping-address__street').text(street + ' ' + homeNr + ' ' + flatNr);
+    $('.shipping-address__postal-code').text(postalCode);
+    $('.shipping-address__city').text(city);
+    $('.shipping-address__country').text(country);
 
-  $('.shipping-address').show();
+    $('.shipping-address').show();
 };
 

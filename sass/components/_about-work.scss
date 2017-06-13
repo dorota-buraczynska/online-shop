@@ -33,6 +33,7 @@
   }
 
   &__button {
+    @include remove-shadow;
     border: 3px solid $third-color;
     background-color: white;
     padding: $common-padding/2 $common-padding;

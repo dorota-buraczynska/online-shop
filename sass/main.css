@@ -239,6 +239,11 @@
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
+    .about-work__button:active, .about-work__button:focus, .about-work__button.active, .about-work__button:focus:active {
+      background-image: none;
+      outline: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
     .about-work__button:hover {
       background-color: #58b193;
       color: white;
@@ -1092,6 +1097,11 @@
   right: 20px;
   cursor: pointer;
   transition: 1s; }
+  .back-to-top__button:active, .back-to-top__button:focus, .back-to-top__button.active, .back-to-top__button:focus:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
   .back-to-top__button:hover {
     background-color: #58b193; }
   .back-to-top__button i {
