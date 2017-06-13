@@ -61,6 +61,7 @@
   }
 
   &__button {
+    @include remove-shadow;
     border: none;
     background-color: $main-color;
     border-radius: $border-radius;
@@ -84,6 +85,7 @@
   }
 
   &__button-next {
+    @include remove-shadow;
     text-align: center;
     text-transform: uppercase;
     color: $secondary-color;
@@ -96,25 +98,6 @@
   }
 
   &__button-next-sign {
-    color: $main-color;
-    font-size: 20px;
-  }
-
-
-  &__button-top {
-    display: none;
-    text-align: center;
-    text-transform: uppercase;
-    color: $secondary-color;
-    padding: $common-padding/2 0;
-    cursor: pointer;
-    font: {
-      size: 18px;
-      family: $main-font;
-    }
-  }
-
-  &__button-top-sign {
     color: $main-color;
     font-size: 20px;
   }
@@ -137,6 +120,7 @@
   }
 
   &__preview {
+    @include remove-shadow;
     position: absolute;
     top: 0;
     right: 0;

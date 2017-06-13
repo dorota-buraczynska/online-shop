@@ -26,6 +26,7 @@
   }
 
   &__go-back-button {
+    @include  remove-shadow;
     border: none;
     background-color: $secondary-color;
     border-radius: $border-radius;
@@ -57,6 +58,7 @@
   }
 
   &__buy-button {
+    @include remove-shadow;
     border: none;
     background-color: $main-color;
     border-radius: $border-radius;

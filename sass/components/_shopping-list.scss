@@ -99,6 +99,7 @@
   }
 
   &__delete-button {
+    @include remove-shadow;
     border: none;
     outline: none;
     background-color: $third-color;
@@ -113,6 +114,7 @@
   }
 
   &__shopping-button {
+    @include remove-shadow;
     display: inline-block;
     border: none;
     background-color: $secondary-color;
@@ -145,6 +147,7 @@
   }
 
   &__buy-button {
+    @include remove-shadow;
     display: inline-block;
     border: none;
     background-color: $main-color;

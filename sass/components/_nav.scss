@@ -36,6 +36,7 @@
 
   &__button {
     @include z-index(header);
+    @include remove-shadow;
     float: right;
     margin: $common-padding;
     padding: $common-padding/2;
@@ -55,6 +56,7 @@
 
   &__basket {
     @include z-index(header);
+    @include remove-shadow;
     float: right;
     position: relative;
     background: url("../images/images.png");
@@ -86,6 +88,7 @@
   }
 
   &__menu-item {
+    @include remove-shadow;
     padding: $common-padding;
     cursor: pointer;
     transition: 1s;

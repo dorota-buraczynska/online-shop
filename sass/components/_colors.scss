@@ -31,8 +31,6 @@
 
     &:checked {
       &:after {
-        //width: 30px;
-        //height: 30px;
         transform: translate(-5%, -5%);
         border: 3px solid $main-color;
       }
