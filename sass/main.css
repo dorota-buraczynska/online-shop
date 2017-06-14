@@ -978,6 +978,14 @@
     padding-bottom: 20px;
     font-family: "Roboto", sans-serif;
     font-size: 0; }
+  .shopping-list__empty-basket {
+    display: none;
+    color: #80a6ad;
+    text-transform: capitalize;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: bold; }
   .shopping-list__product-wrapper {
     margin-top: 40px;
     position: relative; }

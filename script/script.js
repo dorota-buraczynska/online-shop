@@ -181,6 +181,7 @@ $('.preview__close-button, .preview__shopping-button').on('click', function () {
 
 $(window).on('resize', function () {
     fixPreviewPosition();
+    fixModalBoxPosition();
 });
 
 //cart
@@ -247,22 +248,34 @@ $('.shopping-list__product-total-price span').text(totalSum());
 $('.nav__basket-amount').text(cartArray.length);
 
 
-var deleteProductFromBasket = function (productId, element) {
+var deleteProductFromBasket = function (productId) {
     for (var i = 0; i < cartArray.length; i++) {
 
-        // if (cartArray[i].id === productId) {
-        //     var index = cartArray.indexOf(cartArray[i]);
-        //     cartArray.remove(index);
-        //     renderCart();
-        //     createCookie('cart', cartArray, 365);
-        // }
-    }
-    // cartArray.remove(1);
+        if (cartArray[i].id === productId) {
+            var index = cartArray.indexOf(cartArray[i]);
+            console.log(index);
+            cartArray.remove(index);
+        }
 
+    }
+    $('.shopping-list__product-wrapper').empty();
+    renderCart();
+    console.log(cartArray);
+    createCookie('cart', cartArray, 365);
+    $('.shopping-list__product-total-price span').text(totalSum());
+    $('.nav__basket-amount').text(cartArray.length);
+
+    if (cartArray.length === 0) {
+        $('.shopping-list__empty-basket').show();
+    }
 };
 
 if ($('.shopping-list').length !== 0) {
     renderCart();
+}
+
+if (cartArray.length === 0) {
+    $('.shopping-list__empty-basket').show();
 }
 
 $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', function () {
@@ -608,6 +621,7 @@ var fixModalBoxPosition = function () {
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
     validateForm();
+    $('.shopping-list__product-total-price span').text(totalSum());
     scrollToElement('.shopping-list');
 });
 
@@ -617,7 +631,6 @@ $('.shipping-address__buy-button').on('click', function (event) {
     $('.modal-box--form').show();
     var formData = getFormData('#address-data');
     console.log(formData);
-
 });
 
 $('.shipping-address__edit-button').on('click', function () {

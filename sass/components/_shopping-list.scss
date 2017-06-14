@@ -33,6 +33,18 @@
     }
   }
 
+  &__empty-basket {
+    display: none;
+    color: $third-color;
+    text-transform: capitalize;
+    margin-top: $common-padding;
+    font: {
+      family: $main-font;
+      size: 20px;
+      weight: bold;
+    }
+  }
+
   &__product-wrapper {
     margin-top: $common-padding*2;
     position: relative;
