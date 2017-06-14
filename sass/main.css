@@ -185,7 +185,7 @@
         color: white; }
   .slider__button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     transition: 1s;
     padding: 10px 0; }
 
@@ -255,7 +255,7 @@
         color: white; }
   .about-work__button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 0;
     transition: 1s; }
 
@@ -758,7 +758,6 @@
   .modal-box__close-button {
     position: absolute;
     right: 8%;
-    top: 8%;
     cursor: pointer; }
   .modal-box__text {
     text-transform: capitalize;
@@ -803,7 +802,7 @@
         color: white; }
   .modal-box__basket-button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 20px;
     transition: 1s; }
 
@@ -1050,7 +1049,7 @@
         color: white; }
   .shopping-list__shopping-button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 20px;
     transition: 1s; }
   .shopping-list__buy-button {
@@ -1071,7 +1070,7 @@
         color: white; }
   .shopping-list__buy-button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 80px;
     transition: 1s; }
 
@@ -1134,7 +1133,7 @@
         color: white; }
   .address-data__go-back-button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 60px;
     transition: 1s; }
   .address-data__buy-button {
@@ -1169,7 +1168,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: #564949;
+    color: black;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
   .form__label-text {
@@ -1188,7 +1187,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: #564949;
+    color: black;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
     .form__input::placeholder {
@@ -1216,7 +1215,7 @@
     text-transform: capitalize;
     line-height: 1.3em;
     text-align: left;
-    color: #564949;
+    color: black;
     background-color: #fffcf7;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
@@ -1256,7 +1255,7 @@
         color: white; }
   .shipping-address__go-back-button-link {
     text-decoration: none;
-    color: #564949;
+    color: black;
     padding: 10px 40px;
     transition: 1s; }
   .shipping-address__buy-button {
@@ -1274,5 +1273,85 @@
     .shipping-address__buy-button:hover {
       background-color: #80a6ad;
       color: white; }
+
+.purchase-details {
+  margin-top: 40px; }
+  .purchase-details__main-text {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #DAA520;
+    text-align: center;
+    font-size: 19px;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold; }
+  .purchase-details__text {
+    text-align: left;
+    padding-top: 10px;
+    font-size: 17px;
+    font-family: "Roboto", sans-serif; }
+  .purchase-details__contact-button {
+    border: none;
+    background-color: #58b193;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 13px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .purchase-details__contact-button:hover .purchase-details__contact-button-link {
+      color: black; }
+  .purchase-details__contact-button-link {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: 1s; }
+  .purchase-details__home-button {
+    border: none;
+    background-color: #80a6ad;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .purchase-details__home-button:hover {
+      background-color: #DAA520;
+      border-color: #58b193; }
+      .purchase-details__home-button:hover .modal-box__home-button-link {
+        color: white; }
+  .purchase-details__home-button-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px 60px;
+    transition: 1s; }
+  .purchase-details__go-back-button {
+    border: none;
+    background-color: #58b193;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 40px auto 10px auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 224px;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .purchase-details__go-back-button:hover {
+      background-color: #80a6ad; }
+      .purchase-details__go-back-button:hover .modal-box__go-back-button-link {
+        color: white; }
+  .purchase-details__go-back-button-link {
+    text-decoration: none;
+    color: black;
+    padding: 10px 40px;
+    transition: 1s; }
 
 /*# sourceMappingURL=main.css.map */

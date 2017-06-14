@@ -597,15 +597,19 @@ var validateForm = function () {
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
     validateForm();
+    scrollToElement('.shopping-list');
 });
 
 $('.shipping-address__buy-button').on('click', function (event) {
     event.preventDefault();
+    $('.modal-box--form').show();
 });
 
 $('.shipping-address__edit-button').on('click', function () {
     $('.address-data').show();
     $('.address-data__go-back-button').hide();
+    $('.shipping-address').hide();
+    $('.cart').hide();
     scrollToElement('.address-data');
 });
 

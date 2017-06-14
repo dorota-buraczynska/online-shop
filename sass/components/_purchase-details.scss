@@ -1,0 +1,121 @@
+.purchase-details {
+  margin-top: $common-padding*2;
+
+  &__main-text {
+    margin-top: $common-padding;
+    margin-bottom: $common-padding/2;
+    text-transform: uppercase;
+    color: $main-color;
+    text-align: center;
+    font: {
+      size: 19px;
+      family: $main-font;
+      weight: bold;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    padding-top: $common-padding/2;
+    font: {
+      size: 17px;
+      family: $main-font;
+    }
+  }
+
+  &__contact-button {
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/4;
+    margin-top: $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 13px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      .purchase-details__contact-button-link {
+        color: $text-color;
+      }
+
+    }
+  }
+
+  &__contact-button-link {
+    text-decoration: none;
+    color: white;
+    padding: $common-padding/4 $common-padding/2;
+    transition: 1s;
+  }
+
+  &__home-button {
+    @include remove-shadow;
+    border: none;
+    background-color: $third-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2;
+    margin-bottom: $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $main-color;
+      border-color: $secondary-color;
+
+      .modal-box__home-button-link {
+        color: white;
+      }
+    }
+  }
+
+  &__home-button-link {
+    text-decoration: none;
+    color: $text-color;
+    padding: $common-padding/2 $common-padding*3;
+    transition: 1s;
+  }
+
+  &__go-back-button {
+    @include remove-shadow;
+    border: none;
+    background-color: $secondary-color;
+    border-radius: $border-radius;
+    padding: $common-padding/2;
+    margin: $common-padding*2 auto $common-padding/2 auto;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    width: 224px;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $third-color;
+
+      .modal-box__go-back-button-link {
+        color: white;
+      }
+    }
+  }
+
+  &__go-back-button-link {
+    text-decoration: none;
+    color: $text-color;
+    padding: $common-padding/2 $common-padding*2;
+    transition: 1s;
+  }
+}
