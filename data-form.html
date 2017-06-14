@@ -38,12 +38,12 @@
     <form class="address-data__form form" id="address-data">
         <label class="form__label">
             <p class="form__label-text">title: *</p>
-            <input class="form__input" name="titles" list="titles" id="'title" placeholder="Please Select">
-            <datalist class="form__datalist" id="titles">
-                <option class="form__option" value="Mr"></option>
-                <option class="form__option" value="Miss"></option>
-                <option class="form__option" value="Mrs"></option>
-            </datalist>
+            <select class="form__select" form="address-data">
+                <option class="form__option form__option--label" value="">Please Select</option>
+                <option class="form__option" value="Mr">Mr</option>
+                <option class="form__option" value="Miss">Miss</option>
+                <option class="form__option" value="Mrs">Mrs</option>
+            </select>
         </label>
         <label class="form__label">
             <p class="form__label-text">first name: *</p>
@@ -58,11 +58,11 @@
             <input class="form__input" type="text" name="street">
         </label>
         <label class="form__label form__label--smaller">
-            <p class="form__label-text">home number: *</p>
+            <p class="form__label-text"><span>home</span><span>number: *</span></p>
             <input class="form__input" type="text" name="home-number">
         </label>
         <label class="form__label form__label--smaller">
-            <p class="form__label-text">flat number: *</p>
+            <p class="form__label-text"><span>flat</span><span>number: *</span></p>
             <input class="form__input" type="text" name="flat-number">
         </label>
         <label class="form__label form__label--smaller">
@@ -114,6 +114,9 @@
         <div class="shipping-address__postal-code"></div>
         <div class="shipping-address__city"></div>
         <div class="shipping-address__country"></div>
+        <div class="shipping-address__phone"></div>
+        <div class="shipping-address__email"></div>
+        <button class="shipping-address__edit-button">edit</button>
     </div>
     <button class="shipping-address__go-back-button"><a class="shipping-address__go-back-button-link" href="cart.html">go back</a></button>
     <button class="shipping-address__buy-button">buy</button>

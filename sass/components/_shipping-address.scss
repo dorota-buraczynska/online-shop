@@ -19,11 +19,39 @@
 
   &__address {
     text-transform: capitalize;
+    line-height: $line-height;
     text-align: left;
-    color: $main-color;
+    color: black;
+    background-color: $menu-bg-color;
     font: {
       family: $main-font;
       size: 20px;
+    }
+  }
+
+  &__email {
+    text-transform: lowercase;
+  }
+
+  &__edit-button {
+    border: none;
+    background-color: $main-color;
+    border-radius: $border-radius;
+    margin-top: $common-padding/2;
+    padding: $common-padding/4 $common-padding;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font: {
+      size: 15px;
+      family: $main-font;
+    }
+    transition: 1s;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: white;
+      border-color: $secondary-color;
     }
   }
 

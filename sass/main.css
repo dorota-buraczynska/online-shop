@@ -1105,6 +1105,7 @@
   .address-data__information {
     text-align: left;
     text-transform: capitalize;
+    margin-bottom: 20px;
     font-family: "Roboto", sans-serif;
     font-size: 15px; }
   .address-data__go-back-button {
@@ -1112,7 +1113,7 @@
     background-color: #58b193;
     border-radius: 5px;
     padding: 10px 20px;
-    margin: 40px auto 10px auto;
+    margin: 20px auto 10px auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
@@ -1151,6 +1152,18 @@
     .form__label--smaller {
       display: inline-block;
       width: 40%; }
+  .form__select {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #DAA520;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px; }
   .form__label-text {
     margin-top: 10px;
     margin-bottom: 5px;
@@ -1158,6 +1171,8 @@
     color: #80a6ad;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
+    .form__label-text span {
+      display: block; }
   .form__input {
     width: 100%;
     margin-bottom: 10px;
@@ -1165,7 +1180,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: #80a6ad;
+    color: black;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
     .form__input::placeholder {
@@ -1192,10 +1207,30 @@
     text-align: left; }
   .shipping-address__address {
     text-transform: capitalize;
+    line-height: 1.3em;
     text-align: left;
-    color: #DAA520;
+    color: black;
+    background-color: #fffcf7;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
+  .shipping-address__email {
+    text-transform: lowercase; }
+  .shipping-address__edit-button {
+    border: none;
+    background-color: #DAA520;
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    transition: 1s; }
+    .shipping-address__edit-button:hover {
+      background-color: #58b193;
+      color: white;
+      border-color: #58b193; }
   .shipping-address__go-back-button {
     border: none;
     background-color: #58b193;

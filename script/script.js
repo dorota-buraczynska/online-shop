@@ -93,7 +93,6 @@ var scrollToElement = function (element) {
     var $targetElement = $(element);
     var position = $targetElement.offset().top;
     var filterHeight = $('.filter__wrapper').height();
-
     $('html, body').animate({scrollTop: position + filterHeight}, 1500);
 };
 
@@ -187,20 +186,35 @@ $(window).on('resize', function () {
 
 //cart
 var cartArray = readCookie('cart') || [];
-var priceArray = [];
 
 var addProductToCart = function (productId) {
     var product = {
         path: products[productId].src,
         price: products[productId].price,
         size: products[productId].size,
-        id: products[productId].id
+        id: products[productId].id,
+        amount: '1'
     };
+    // for (var i = 0; i < cartArray.length; i++) {
+    //     if (cartArray[i].id === productId) {
+    //         var productAmount = parseInt(cartArray[i].amount);
+    //         var index = cartArray.indexOf(cartArray[i]);
+    //         productAmount ++;
+    //         console.log(productAmount);
+    //     }
+    // }
     cartArray.push(product);
-    priceArray.push(product.price);
-
     createCookie('cart', cartArray, 365);
+
 };
+
+// Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function (from, to) {
+    var rest = this.slice((to || from) + 1 || this.length);
+    this.length = from < 0 ? this.length + from : from;
+    return this.push.apply(this, rest);
+};
+
 
 var renderCart = function () {
     var buttonsWrapper = ('<div class="shopping-list__buttons-wrapper"><div class="shopping-list__plus-button">&#43;</div><div class="shopping-list__minus-button">&#45;</div></div>');
@@ -213,12 +227,38 @@ var renderCart = function () {
         var productSize = ('<div class="shopping-list__product-size">' + cartArray[i].size + '</div>');
 
         $('.shopping-list__wrapper')
-            .prepend(' <div class="shopping-list__product-wrapper" data-id='+ cartArray[i].id +'>' + productPhoto + productSize + productAmount + productPrice + deleteButton + '</div>');
+            .prepend(' <div class="shopping-list__product-wrapper" data-id=' + cartArray[i].id + '>' + productPhoto + productSize + productAmount + productPrice + deleteButton + '</div>');
 
     }
 };
 
+var totalSum = function () {
+    var deliveryPrice = parseInt($('.shopping-list__delivery-price').text());
+    var totalSum = 0;
+    for (var i = 0; i < cartArray.length; i++) {
+        totalSum += parseInt(cartArray[i].price);
+    }
+    if (cartArray.length === 0) {
+        deliveryPrice = 0;
+    }
+    return '$' + (totalSum + deliveryPrice);
+};
+
+$('.shopping-list__product-total-price span').text(totalSum());
+$('.nav__basket-amount').text(cartArray.length);
+
+
 var deleteProductFromBasket = function (productId, element) {
+    for (var i = 0; i < cartArray.length; i++) {
+
+        // if (cartArray[i].id === productId) {
+        //     var index = cartArray.indexOf(cartArray[i]);
+        //     cartArray.remove(index);
+        //     renderCart();
+        //     createCookie('cart', cartArray, 365);
+        // }
+    }
+    // cartArray.remove(1);
 
 };
 
@@ -227,8 +267,8 @@ if ($('.shopping-list').length !== 0) {
 }
 
 $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', function () {
-    var productIndex = $(this).closest('.shopping-list__product-wrapper').index();
-
+    var productId = $(this.closest('.shopping-list__product-wrapper')).data('id');
+    deleteProductFromBasket(productId);
 });
 
 $('.preview__basket-button').on('click', function () {
@@ -237,7 +277,6 @@ $('.preview__basket-button').on('click', function () {
     $('.nav__basket-amount').text(cartArray.length);
     $('.preview').hide();
     $('.modal-box').show();
-
 });
 
 //create products
@@ -551,6 +590,8 @@ var validateForm = function () {
     if (isValid && isEmail && isPostalCode && isPhoneNr) {
         $('.cart').show();
         $('.address-data').hide();
+        // $('.address-data :input').attr('disabled', 'disabled');
+        completeShippingAddress();
     }
 };
 
@@ -558,13 +599,17 @@ var validateForm = function () {
 $('.address-data__buy-button').on('click', function (event) {
     event.preventDefault();
     validateForm();
-    completeShippingAddress();
+});
 
+$('.shipping-address__edit-button').on('click', function () {
+    // $('.address-data :input').removeAttr('disabled');
+    $('.address-data').show();
+    $('.address-data__go-back-button').hide();
 });
 
 //shipping address
 var completeShippingAddress = function () {
-    var title = $('.form input[name=titles]').val();
+    var title = $('.form select').val();
     var firstName = $('.form input[name=first-name]').val();
     var lastName = $('.form input[name=last-name]').val();
     var street = $('.form input[name=street]').val();
@@ -573,12 +618,16 @@ var completeShippingAddress = function () {
     var postalCode = $('.form input[name=postal-code]').val();
     var city = $('.form input[name=city]').val();
     var country = $('.form input[name=country]').val();
+    var phone = $('.form input[name=phone-number]').val();
+    var email = $('.form input[name=email]').val();
 
     $('.shipping-address__name').text(title + ' ' + firstName + ' ' + lastName);
     $('.shipping-address__street').text(street + ' ' + homeNr + ' ' + flatNr);
     $('.shipping-address__postal-code').text(postalCode);
     $('.shipping-address__city').text(city);
     $('.shipping-address__country').text(country);
+    $('.shipping-address__phone').text(phone);
+    $('.shipping-address__email').text(email);
 
     $('.shipping-address').show();
 };

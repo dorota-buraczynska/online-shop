@@ -19,6 +19,7 @@
   &__information {
     text-align: left;
     text-transform: capitalize;
+    margin-bottom: $common-padding;
     font: {
       family: $main-font;
       size: 15px;
@@ -31,7 +32,7 @@
     background-color: $secondary-color;
     border-radius: $border-radius;
     padding: $common-padding/2 $common-padding;
-    margin: $common-padding*2 auto $common-padding/2 auto;
+    margin: $common-padding auto $common-padding/2 auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
