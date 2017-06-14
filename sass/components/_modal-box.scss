@@ -49,7 +49,7 @@
     margin: $common-padding 0 $common-padding/2 0;
     cursor: pointer;
     outline: none;
-    width: 220px;
+    width: 224px;
     font: {
       size: 15px;
       family: $main-font;
@@ -68,12 +68,11 @@
     border: none;
     background-color: $third-color;
     border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
+    padding: $common-padding/2;
     margin-bottom: $common-padding;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 220px;
     font: {
       size: 15px;
       family: $main-font;
@@ -92,7 +91,8 @@
 
   &__basket-button-link {
     text-decoration: none;
-    color: black;
+    color: $text-color;
+    padding: $common-padding/2 $common-padding;
     transition: 1s;
   }
 }

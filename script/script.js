@@ -301,7 +301,7 @@ var renderProducts = function (products) {
         var productSizeLabel = $('<div>', {'class': 'products__size-label'}).text('size: ');
         var productSize = $('<span>', {'class': 'products__size'}).text(products[i].size);
         var productPriceLabel = $('<div>', {'class': 'products__price-label'}).text('price: ');
-        var productPrice = $('<span>', {'class': 'products__price'}).text(products[i].price + '$');
+        var productPrice = $('<span>', {'class': 'products__price'}).text('$' + products[i].price);
         var productDescription = $('<div>', {'class': 'products__description'}).text(products[i].description);
         var productButton = $('<button class="products__button">add to cart</button>');
         var productPreview = $('<div class="products__preview"><i class="fa fa-search" aria-hidden="true"></i></div>');
@@ -596,8 +596,11 @@ var validateForm = function () {
 
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
-    event.preventDefault();
     validateForm();
+});
+
+$('.shipping-address__buy-button').on('click', function (event) {
+    event.preventDefault();
 });
 
 $('.shipping-address__edit-button').on('click', function () {

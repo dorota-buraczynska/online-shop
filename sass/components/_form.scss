@@ -19,7 +19,7 @@
     border: 1px solid $main-color;
     border-radius: $border-radius;
     outline: none;
-    color: black;
+    color: $text-color;
     font: {
       family: $main-font;
       size: 20px;
@@ -48,7 +48,7 @@
     border: 1px solid $main-color;
     border-radius: $border-radius;
     outline: none;
-    color: black;
+    color: $text-color;
     font: {
       family: $main-font;
       size: 20px;

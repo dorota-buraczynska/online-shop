@@ -87,7 +87,7 @@
 
   &__button-link {
     text-decoration: none;
-    color: black;
+    color: $text-color;
     transition: 1s;
     padding: $common-padding/2 0;
   }

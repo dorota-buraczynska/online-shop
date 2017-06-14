@@ -1,6 +1,6 @@
 .address-data {
   margin-top: $common-padding*2;
-  margin-bottom: $common-padding*2;
+  margin-bottom: $common-padding;
   padding: 0 $common-padding*2;
   text-align: center;
 
@@ -31,12 +31,11 @@
     border: none;
     background-color: $secondary-color;
     border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
+    padding: $common-padding/2;
     margin: $common-padding auto $common-padding/2 auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
     font: {
       size: 15px;
       family: $main-font;
@@ -54,7 +53,8 @@
 
   &__go-back-button-link {
     text-decoration: none;
-    color: black;
+    color: $text-color;
+    padding: $common-padding/2 $common-padding*3;
     transition: 1s;
   }
 
@@ -67,7 +67,7 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
+    width: 202px;
     font: {
       size: 15px;
       family: $main-font;

@@ -86,19 +86,20 @@
     padding: 20px;
     cursor: pointer;
     transition: 1s; }
+    .nav__menu-item:hover .nav__menu-link {
+      color: #80a6ad; }
     .nav__menu-item--active {
       background-color: #58b193; }
+      .nav__menu-item--active:hover .nav__menu-link,
       .nav__menu-item--active .nav__menu-link {
         color: white; }
   .nav__menu-link {
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 100px;
     text-transform: capitalize;
     color: #DAA520;
     font-family: "Roboto", sans-serif;
     font-weight: 600; }
-    .nav__menu-link:hover {
-      color: #80a6ad; }
     .nav__menu-link--active:hover {
       color: white; }
 
@@ -184,7 +185,7 @@
         color: white; }
   .slider__button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
     transition: 1s;
     padding: 10px 0; }
 
@@ -254,7 +255,7 @@
         color: white; }
   .about-work__button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
     padding: 10px 0;
     transition: 1s; }
 
@@ -775,7 +776,7 @@
     margin: 20px 0 10px 0;
     cursor: pointer;
     outline: none;
-    width: 220px;
+    width: 224px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -787,12 +788,11 @@
     border: none;
     background-color: #80a6ad;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     margin-bottom: 20px;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 220px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -803,7 +803,8 @@
         color: white; }
   .modal-box__basket-button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
+    padding: 10px 20px;
     transition: 1s; }
 
 .preview {
@@ -953,7 +954,7 @@
 .shopping-list {
   text-align: center;
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 20px; }
   .shopping-list__title {
     font-family: "Roboto", sans-serif;
@@ -963,6 +964,8 @@
     text-transform: uppercase;
     margin-bottom: 40px; }
   .shopping-list__wrapper {
+    border-bottom: 1px solid #DAA520;
+    padding-bottom: 20px;
     font-size: 0;
     font-family: "Roboto", sans-serif; }
   .shopping-list__headings {
@@ -990,13 +993,18 @@
   .shopping-list__product-heading {
     width: 37%; }
   .shopping-list__delivery {
-    font-size: 20px;
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    font-size: 18px;
     margin-top: 20px;
     color: #58b193;
-    text-align: left;
     text-transform: capitalize; }
   .shopping-list__product-total-price {
-    font-size: 25px;
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    font-size: 18px;
     margin-top: 40px;
     color: #DAA520; }
   .shopping-list__product-amount {
@@ -1028,12 +1036,11 @@
     border: none;
     background-color: #58b193;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     margin: 40px auto 10px auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -1043,18 +1050,18 @@
         color: white; }
   .shopping-list__shopping-button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
+    padding: 10px 20px;
     transition: 1s; }
   .shopping-list__buy-button {
     display: inline-block;
     border: none;
     background-color: #DAA520;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -1064,7 +1071,8 @@
         color: white; }
   .shopping-list__buy-button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
+    padding: 10px 80px;
     transition: 1s; }
 
 .back-to-top__button {
@@ -1091,7 +1099,7 @@
 
 .address-data {
   margin-top: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 0 40px;
   text-align: center; }
   .address-data__title {
@@ -1112,12 +1120,11 @@
     border: none;
     background-color: #58b193;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     margin: 20px auto 10px auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -1127,7 +1134,8 @@
         color: white; }
   .address-data__go-back-button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
+    padding: 10px 60px;
     transition: 1s; }
   .address-data__buy-button {
     border: none;
@@ -1137,7 +1145,7 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
+    width: 202px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -1161,7 +1169,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: black;
+    color: #564949;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
   .form__label-text {
@@ -1180,7 +1188,7 @@
     border: 1px solid #DAA520;
     border-radius: 5px;
     outline: none;
-    color: black;
+    color: #564949;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
     .form__input::placeholder {
@@ -1193,7 +1201,6 @@
 
 .shipping-address {
   display: none;
-  margin-top: 40px;
   margin-bottom: 40px;
   padding: 0 20px;
   text-align: center; }
@@ -1209,7 +1216,7 @@
     text-transform: capitalize;
     line-height: 1.3em;
     text-align: left;
-    color: black;
+    color: #564949;
     background-color: #fffcf7;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
@@ -1235,12 +1242,11 @@
     border: none;
     background-color: #58b193;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     margin: 40px auto 10px auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
@@ -1250,7 +1256,8 @@
         color: white; }
   .shipping-address__go-back-button-link {
     text-decoration: none;
-    color: black;
+    color: #564949;
+    padding: 10px 40px;
     transition: 1s; }
   .shipping-address__buy-button {
     border: none;
@@ -1260,7 +1267,7 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
+    width: 204px;
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
