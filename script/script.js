@@ -92,8 +92,7 @@ $('.filter__reset-button').on('click', function () {
 var scrollToElement = function (element) {
     var $targetElement = $(element);
     var position = $targetElement.offset().top;
-    var filterHeight = $('.filter__wrapper').height();
-    $('html, body').animate({scrollTop: position + filterHeight}, 1500);
+    $('html, body').animate({scrollTop: position}, 1500);
 };
 
 //back to top
@@ -458,7 +457,7 @@ var makeFabricsArray = function () {
 
 $('.filter__button').on('click', function () {
     filteredProducts(products);
-    scrollToElement('.filter__wrapper');
+    scrollToElement('.products__wrapper');
 });
 
 
@@ -583,6 +582,7 @@ var validateForm = function () {
     $phoneNumber.each(function () {
         if (!isPhoneNr || $phoneNumber.val().length < 9) {
             $(this).addClass('form__input--error');
+            isValid = false;
         } else {
             $(this).removeClass('form__input--error');
         }
@@ -590,7 +590,6 @@ var validateForm = function () {
     if (isValid && isEmail && isPostalCode && isPhoneNr) {
         $('.cart').show();
         $('.address-data').hide();
-        // $('.address-data :input').attr('disabled', 'disabled');
         completeShippingAddress();
     }
 };
@@ -602,9 +601,9 @@ $('.address-data__buy-button').on('click', function (event) {
 });
 
 $('.shipping-address__edit-button').on('click', function () {
-    // $('.address-data :input').removeAttr('disabled');
     $('.address-data').show();
     $('.address-data__go-back-button').hide();
+    scrollToElement('.address-data');
 });
 
 //shipping address
