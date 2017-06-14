@@ -324,7 +324,11 @@ var renderProducts = function (products) {
     var productsOnPage = $('.products__wrapper .products__item');
     productsOnPage.hide();
     productsOnPage.slice(0, 3).show();
-    $('.products__button-next').show();
+    if (productsOnPage.length > 3) {
+        $('.products__button-next').show();
+    } else {
+        $('.products__button-next').hide();
+    }
 };
 
 var filteredProducts = function (products) {
@@ -594,6 +598,13 @@ var validateForm = function () {
     }
 };
 
+
+var fixModalBoxPosition = function () {
+    var contentHeight = $('.modal-box__content').height();
+    var windowHeight = $(window).height();
+    $('.modal-box__content').toggleClass('modal-box__content--large', contentHeight > windowHeight);
+};
+
 //proceed to billing
 $('.address-data__buy-button').on('click', function (event) {
     validateForm();
@@ -602,7 +613,11 @@ $('.address-data__buy-button').on('click', function (event) {
 
 $('.shipping-address__buy-button').on('click', function (event) {
     event.preventDefault();
+    fixModalBoxPosition();
     $('.modal-box--form').show();
+    var formData = getFormData('#address-data');
+    console.log(formData);
+
 });
 
 $('.shipping-address__edit-button').on('click', function () {
@@ -612,6 +627,18 @@ $('.shipping-address__edit-button').on('click', function () {
     $('.cart').hide();
     scrollToElement('.address-data');
 });
+
+//read in a form's data and convert it to a key:value object
+function getFormData(form) {
+    var out = {};
+    var data = $(form).serializeArray();
+    //transform into simple data/value object
+    for (var i = 0; i < data.length; i++) {
+        var record = data[i];
+        out[record.name] = record.value;
+    }
+    return out;
+}
 
 //shipping address
 var completeShippingAddress = function () {

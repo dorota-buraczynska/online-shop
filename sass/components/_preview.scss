@@ -1,5 +1,5 @@
 .preview {
-  @include z-index(preview);
+  @include z-index(modal-box);
   display: none;
   position: fixed;
   top: 0;
@@ -17,6 +17,7 @@
   }
 
   &__content {
+    @include z-index(modal-box);
     padding: $common-padding;
     width: 320px;
     background-color: white;
