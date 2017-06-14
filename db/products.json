@@ -61,9 +61,9 @@
       "alt": "Red dress",
       "title": "Red dress for every occasion",
       "color": "red",
-      "size": "s",
+      "size": "m",
       "fabric": "jersey",
-      "price": "80",
+      "price": "60",
       "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin."
     },
     {
@@ -72,9 +72,9 @@
       "alt": "White dress",
       "title": "White casula dress",
       "color": "white",
-      "size": "m",
-      "fabric": "cotton",
-      "price": "100",
+      "size": "l",
+      "fabric": "jersey",
+      "price": "125",
       "description": "opis"
     },
     {
@@ -83,9 +83,9 @@
       "alt": "Blue shirt",
       "title": "Always fashionable plaid shirt",
       "color": "blue",
-      "size": "xs",
+      "size": "m",
       "fabric": "cotton",
-      "price": "150",
+      "price": "120",
       "description": "opis"
     },
     {
@@ -94,9 +94,9 @@
       "alt": "Black skirt",
       "title": "Short black skirt",
       "color": "black",
-      "size": "l",
-      "fabric": "jersey",
-      "price": "80",
+      "size": "xs",
+      "fabric": "cotton",
+      "price": "45",
       "description": "opis"
     },
     {
@@ -105,9 +105,9 @@
       "alt": "Blue jeand",
       "title": "Who doesn't like good jeans",
       "color": "blue",
-      "size": "s",
+      "size": "m",
       "fabric": "denim",
-      "price": "200",
+      "price": "220",
       "description": "opis"
     }
   ]

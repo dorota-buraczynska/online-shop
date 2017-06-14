@@ -193,18 +193,29 @@ var addProductToCart = function (productId) {
         price: products[productId].price,
         size: products[productId].size,
         id: products[productId].id,
-        amount: '1'
+        amount: 1
     };
-    // for (var i = 0; i < cartArray.length; i++) {
-    //     if (cartArray[i].id === productId) {
-    //         var productAmount = parseInt(cartArray[i].amount);
-    //         var index = cartArray.indexOf(cartArray[i]);
-    //         productAmount ++;
-    //         console.log(productAmount);
-    //     }
-    // }
-    cartArray.push(product);
-    createCookie('cart', cartArray, 365);
+
+    if (cartArray.length === 0) {
+        cartArray.push(product);
+        createCookie('cart', cartArray, 365);
+    }
+    for (var i = 0; i < cartArray.length; i++) {
+        var newArray = [];
+        if (cartArray[i].id === productId) {
+            newArray.push(cartArray[i]);
+        }
+console.log(newArray);
+        if (newArray.length === 0) {
+            console.log(newArray);
+
+            cartArray.push(product);
+            createCookie('cart', cartArray, 365);
+        }
+
+    }
+    // cartArray.push(product);
+    // createCookie('cart', cartArray, 365);
 
 };
 
@@ -222,7 +233,7 @@ var renderCart = function () {
 
     for (var i = 0; i < cartArray.length; i++) {
         var productPhoto = ('<img class="shopping-list__product-photo" src="' + cartArray[i].path + '">');
-        var productAmount = ('<div class="shopping-list__product-amount">1 ' + buttonsWrapper + '</div>');
+        var productAmount = ('<div class="shopping-list__product-amount">' + cartArray[i].amount + buttonsWrapper + '</div>');
         var productPrice = ('<div class="shopping-list__product-price">$' + cartArray[i].price + ' </div>');
         var productSize = ('<div class="shopping-list__product-size">' + cartArray[i].size + '</div>');
 
@@ -677,4 +688,3 @@ var completeShippingAddress = function () {
 
     $('.shipping-address').show();
 };
-
