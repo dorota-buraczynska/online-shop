@@ -2,3 +2,16 @@
   $layers: (base, header, top-button, modal-box);
   z-index: index($layers, $layer);
 }
+
+
+@mixin medium-screen {
+  @media (min-width: #{$small-screen}) and (max-width: #{$medium-screen - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media (min-width: #{$medium-screen}) {
+    @content;
+  }
+}

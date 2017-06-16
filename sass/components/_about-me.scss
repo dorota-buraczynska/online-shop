@@ -1,6 +1,14 @@
 .about-me {
   &__photo {
     width: 100%;
+    background-image: url("../images/aboutme.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+
+    @include medium-screen {
+      height: 450px;
+    }
   }
 
   &__info {

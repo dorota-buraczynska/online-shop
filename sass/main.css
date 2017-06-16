@@ -30,6 +30,9 @@
     top: 0;
     width: 100%;
     height: 100%; }
+  @media (min-width: 920px) {
+    .nav__wrapper {
+      font-size: 0; } }
   .nav__logo {
     z-index: 2;
     float: left;
@@ -39,6 +42,11 @@
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 25px; }
+    @media (min-width: 920px) {
+      .nav__logo {
+        display: inline-block;
+        float: none;
+        width: 27%; } }
   .nav__logo-link {
     text-decoration: none;
     color: #DAA520; }
@@ -57,6 +65,9 @@
     position: relative; }
     .nav__button--active {
       background-color: #80a6ad; }
+    @media (min-width: 920px) {
+      .nav__button {
+        display: none; } }
   .nav__basket {
     z-index: 2;
     float: right;
@@ -68,11 +79,16 @@
     filter: hue-rotate(272deg);
     cursor: pointer;
     text-decoration: none; }
+    @media (min-width: 920px) {
+      .nav__basket {
+        display: inline-block;
+        width: 7%; } }
   .nav__basket-amount {
     position: relative;
     left: 46%;
     top: 50%;
-    color: white; }
+    color: white;
+    font-size: 18px; }
   .nav__menu {
     list-style-type: none;
     position: absolute;
@@ -83,6 +99,15 @@
     background-color: #fffcf7;
     transform: translateY(-100%);
     transition: transform 1s; }
+    @media (min-width: 920px) {
+      .nav__menu {
+        z-index: 2;
+        display: inline-block;
+        position: relative;
+        transform: none;
+        width: 66%;
+        background-color: transparent;
+        top: -4px; } }
   .nav__menu-item {
     padding: 20px;
     cursor: pointer;
@@ -94,15 +119,24 @@
       .nav__menu-item--active:hover .nav__menu-link,
       .nav__menu-item--active .nav__menu-link {
         color: white; }
+    @media (min-width: 920px) {
+      .nav__menu-item {
+        text-align: center;
+        display: inline-block;
+        padding: 10px 0; } }
   .nav__menu-link {
     text-decoration: none;
     padding: 20px 100px;
     text-transform: capitalize;
     color: #DAA520;
     font-family: "Roboto", sans-serif;
+    font-size: 16px;
     font-weight: 600; }
     .nav__menu-link--active:hover {
       color: white; }
+    @media (min-width: 920px) {
+      .nav__menu-link {
+        padding: 10px 40px; } }
 
 .visible {
   transform: translateY(80px); }
@@ -111,7 +145,10 @@
   background-size: cover;
   width: 100%;
   height: 450px;
-  background-position: 50%; }
+  background-position: center; }
+  @media (min-width: 600px) and (max-width: 919px) {
+    .background__photo {
+      height: 550px; } }
   .background__photo--home {
     background-image: url("../images/home-page-bg.jpg"); }
   .background__photo--contact {
@@ -204,7 +241,14 @@
       font-weight: bold; }
 
 .about-me__photo {
-  width: 100%; }
+  width: 100%;
+  background-image: url("../images/aboutme.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 350px; }
+  @media (min-width: 600px) and (max-width: 919px) {
+    .about-me__photo {
+      height: 450px; } }
 .about-me__info {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -225,7 +269,13 @@
   text-align: center;
   margin-bottom: 40px; }
   .about-work__photo {
-    width: 100%; }
+    width: 100%;
+    background-image: url("../images/thread-1383261_1920.jpg");
+    background-size: cover;
+    height: 350px; }
+    @media (min-width: 600px) and (max-width: 919px) {
+      .about-work__photo {
+        height: 450px; } }
   .about-work__info {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -346,6 +396,9 @@
 .map #map {
   max-width: 100%;
   height: 250px; }
+  @media (min-width: 600px) and (max-width: 919px) {
+    .map #map {
+      height: 350px; } }
 
 .icons {
   text-align: center;

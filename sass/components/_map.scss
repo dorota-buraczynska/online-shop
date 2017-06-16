@@ -2,5 +2,9 @@
   #map {
     max-width: 100%;
     height: 250px;
+
+    @include medium-screen {
+      height: 350px;
+    }
   }
 }

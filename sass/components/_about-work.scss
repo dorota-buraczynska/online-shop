@@ -4,6 +4,13 @@
 
   &__photo {
     width: 100%;
+    background-image: url("../images/thread-1383261_1920.jpg");
+    background-size: cover;
+    height: 350px;
+
+    @include medium-screen {
+      height: 450px;
+    }
   }
 
   &__info {
