@@ -4,7 +4,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
-.nav__wrapper, .contact {
+.nav__wrapper, .contact, .container {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -141,31 +141,33 @@
 .visible {
   transform: translateY(80px); }
 
-.background__photo {
-  background-size: cover;
-  width: 100%;
-  height: 450px;
-  background-position: center; }
-  @media (min-width: 600px) and (max-width: 919px) {
-    .background__photo {
-      height: 550px; } }
-  @media (min-width: 920px) {
-    .background__photo {
-      height: 700px;
-      background-attachment: fixed; } }
-  .background__photo--home {
-    background-image: url("../images/home-page-bg.jpg"); }
-  .background__photo--contact {
-    background-image: url("../images/contact.jpg"); }
-  .background__photo--shop {
-    background-image: url("../images/shop.jpg"); }
-  .background__photo--blog {
-    background-image: url("../images/blog.jpeg");
-    background-position: 0; }
-  .background__photo--cart {
-    background-image: url("../images/card.jpeg"); }
-  .background__photo--form {
-    background-image: url("../images/clip.jpg"); }
+.background {
+  position: relative; }
+  .background__photo {
+    background-size: cover;
+    width: 100%;
+    height: 450px;
+    background-position: center; }
+    @media (min-width: 600px) and (max-width: 919px) {
+      .background__photo {
+        height: 550px; } }
+    @media (min-width: 920px) {
+      .background__photo {
+        height: 700px;
+        background-attachment: fixed; } }
+    .background__photo--home {
+      background-image: url("../images/home-page-bg.jpg"); }
+    .background__photo--contact {
+      background-image: url("../images/contact.jpg"); }
+    .background__photo--shop {
+      background-image: url("../images/shop.jpg"); }
+    .background__photo--blog {
+      background-image: url("../images/blog.jpeg");
+      background-position: 0; }
+    .background__photo--cart {
+      background-image: url("../images/card.jpeg"); }
+    .background__photo--form {
+      background-image: url("../images/clip.jpg"); }
 
 .slider {
   text-align: center;
@@ -238,7 +240,7 @@
   padding: 40px; }
   @media (min-width: 920px) {
     .quote-part {
-      padding: 80px 0; } }
+      padding: 80px; } }
   .quote-part__text {
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
@@ -479,7 +481,12 @@
   margin-top: 40px;
   margin-bottom: 40px;
   text-align: center; }
-  .filter__title {
+  @media (min-width: 920px) {
+    .filter {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top; } }
+  .filter__title-button {
     border: 3px solid #80a6ad;
     background-color: white;
     padding: 10px 20px;
@@ -491,14 +498,31 @@
     font-size: 30px;
     font-family: "Roboto", sans-serif;
     transition: 1s; }
-    .filter__title:hover {
+    .filter__title-button:hover {
       background-color: #58b193;
       color: white;
       border-color: #58b193; }
-    .filter__title--active {
+    .filter__title-button--active {
       background-color: #58b193;
       color: white;
       border-color: #58b193; }
+    @media (min-width: 920px) {
+      .filter__title-button {
+        display: none; } }
+  .filter__title {
+    display: none;
+    padding: 10px 20px;
+    text-transform: capitalize;
+    margin: 20px 0 10px 0;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    color: #80a6ad;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .filter__title {
+        display: block; } }
   .filter__wrapper {
     max-width: 450px;
     margin: 0 auto;
@@ -507,6 +531,9 @@
     display: none; }
     .filter__wrapper--visible {
       display: block; }
+    @media (min-width: 920px) {
+      .filter__wrapper {
+        display: block; } }
   .filter__button {
     border: none;
     background-color: #58b193;
@@ -553,6 +580,9 @@
     margin-bottom: 20px;
     font-size: 20px;
     font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .colors__title {
+        font-size: 18px; } }
   .colors__input {
     display: inline-block;
     width: 30px;
@@ -599,6 +629,9 @@
     margin-bottom: 20px;
     font-size: 20px;
     font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .price-range__title {
+        font-size: 18px; } }
   .price-range__input {
     width: 60px;
     padding: 5px;
@@ -623,6 +656,9 @@
     margin-bottom: 20px;
     font-size: 20px;
     font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .fabrics__title {
+        font-size: 18px; } }
   .fabrics__input {
     width: 30%;
     height: 40px;
@@ -645,6 +681,9 @@
       font-size: 20px;
       font-family: "Roboto", sans-serif;
       font-weight: bold; }
+      @media (min-width: 920px) {
+        .fabrics__input:after {
+          font-size: 18px; } }
     .fabrics__input[name='cotton']:after {
       content: 'COTTON'; }
     .fabrics__input[name='denim']:after {
@@ -662,6 +701,9 @@
     margin-bottom: 20px;
     font-size: 20px;
     font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .sizes__title {
+        font-size: 18px; } }
   .sizes__input {
     width: 40px;
     cursor: pointer; }
@@ -695,12 +737,29 @@
 
 .products {
   padding: 0 20px; }
+  @media (min-width: 920px) {
+    .products {
+      display: inline-block;
+      text-align: center;
+      width: 69%; } }
+  @media (min-width: 920px) {
+    .products__wrapper {
+      margin-top: 60px; } }
   .products__item {
     max-width: 450px;
     text-align: center;
     font-size: 0;
     margin: 0 auto;
     position: relative; }
+    @media (min-width: 920px) {
+      .products__item {
+        width: 47%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px; } }
+    @media (min-width: 920px) {
+      .products__item:nth-child(2n + 2) {
+        margin-right: 0; } }
   .products__photo {
     width: 100%;
     border: 1px solid #DAA520;

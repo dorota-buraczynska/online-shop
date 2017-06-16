@@ -1,9 +1,19 @@
+.container {
+  @extend %container;
+}
+
 .filter {
   margin-top: $common-padding*2;
   margin-bottom: $common-padding*2;
   text-align: center;
 
-  &__title {
+  @include large-screen {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+  }
+
+  &__title-button {
     border: 3px solid $third-color;
     background-color: white;
     padding: $common-padding/2 $common-padding;
@@ -29,6 +39,29 @@
       color: white;
       border-color: $secondary-color;
     }
+
+    @include large-screen{
+      display: none;
+    }
+  }
+
+  &__title {
+    display: none;
+    padding: $common-padding/2 $common-padding;
+    text-transform: capitalize;
+    margin: $common-padding 0 $common-padding/2 0;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+    color: $third-color;
+    font: {
+      size: 30px;
+      family: $main-font;
+    }
+
+    @include large-screen {
+      display: block;
+    }
   }
 
   &__wrapper {
@@ -39,6 +72,10 @@
     display: none;
 
     &--visible {
+      display: block;
+    }
+
+    @include large-screen {
       display: block;
     }
   }

@@ -11,6 +11,10 @@
       size: 20px;
       family: $main-font;
     }
+
+    @include large-screen {
+      font-size: 18px;
+    }
   }
 
   &__input {

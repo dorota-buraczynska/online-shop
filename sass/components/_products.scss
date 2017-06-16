@@ -1,5 +1,18 @@
 .products {
+  //@extend %container;
   padding: 0 $common-padding;
+
+  @include large-screen {
+    display: inline-block;
+    text-align: center;
+    width: 69%;
+  }
+
+  &__wrapper {
+    @include large-screen {
+      margin-top: $common-padding*3;
+    }
+  }
 
   &__item {
     max-width: 450px;
@@ -7,6 +20,19 @@
     font-size: 0;
     margin: 0 auto;
     position: relative;
+
+    @include large-screen {
+      width: 47%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: $common-padding;
+    }
+
+    &:nth-child(2n + 2) {
+      @include large-screen {
+        margin-right: 0;
+      }
+    }
 
   }
 

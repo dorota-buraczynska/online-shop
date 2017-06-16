@@ -74,7 +74,7 @@ function initMap() {
 }
 
 //shop by
-$('.filter__title').on('click', function () {
+$('.filter__title-button').on('click', function () {
     var visibleClass = 'filter__wrapper--visible';
     var buttonActiveClass = 'filter__title--active';
     $('.filter__wrapper').fadeToggle(visibleClass);
@@ -347,8 +347,8 @@ var renderProducts = function (products) {
 
     var productsOnPage = $('.products__wrapper .products__item');
     productsOnPage.hide();
-    productsOnPage.slice(0, 3).show();
-    if (productsOnPage.length > 3) {
+    productsOnPage.slice(0, 4).show();
+    if (productsOnPage.length > 4) {
         $('.products__button-next').show();
     } else {
         $('.products__button-next').hide();
@@ -374,9 +374,9 @@ var filteredProducts = function (products) {
 //show next products
 var showNextProducts = function (element) {
     var items = $(element);
-    var nextItems = items.slice(0, 3);
+    var nextItems = items.slice(0, 4);
 
-    if (nextItems.length < 3) {
+    if (nextItems.length < 4) {
         $('.products__button-next').hide();
         $('.blog__button-next').hide();
     }

@@ -5,9 +5,8 @@
   padding: $common-padding*2;
 
   @include large-screen {
-    padding: $common-padding*4 0;
+    padding: $common-padding*4;
   }
-
 
   &__text {
     text-transform: uppercase;
