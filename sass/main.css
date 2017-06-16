@@ -4,7 +4,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
-.nav__wrapper {
+.nav__wrapper, .contact {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -149,6 +149,10 @@
   @media (min-width: 600px) and (max-width: 919px) {
     .background__photo {
       height: 550px; } }
+  @media (min-width: 920px) {
+    .background__photo {
+      height: 700px;
+      background-attachment: fixed; } }
   .background__photo--home {
     background-image: url("../images/home-page-bg.jpg"); }
   .background__photo--contact {
@@ -232,6 +236,9 @@
   text-align: center;
   color: white;
   padding: 40px; }
+  @media (min-width: 920px) {
+    .quote-part {
+      padding: 80px 0; } }
   .quote-part__text {
     text-transform: uppercase;
     font-family: "Roboto", sans-serif;
@@ -240,6 +247,10 @@
       color: #DAA520;
       font-weight: bold; }
 
+@media (min-width: 920px) {
+  .about-me {
+    display: flex;
+    background-color: #fffcf7; } }
 .about-me__photo {
   width: 100%;
   background-image: url("../images/aboutme.jpeg");
@@ -249,10 +260,20 @@
   @media (min-width: 600px) and (max-width: 919px) {
     .about-me__photo {
       height: 450px; } }
+  @media (min-width: 920px) {
+    .about-me__photo {
+      width: 50%;
+      height: 550px; } }
 .about-me__info {
   margin-top: 40px;
   margin-bottom: 40px;
   padding: 0 20px; }
+  @media (min-width: 920px) {
+    .about-me__info {
+      width: 50%;
+      align-self: center;
+      padding-left: 80px;
+      padding-right: 80px; } }
 .about-me__title {
   text-align: center;
   text-transform: uppercase;
@@ -260,14 +281,27 @@
   color: #58b193;
   font-family: "Roboto", sans-serif;
   font-size: 30px; }
+  @media (min-width: 920px) {
+    .about-me__title {
+      text-align: left; } }
 .about-me__text {
   text-align: center;
   line-height: 1.3em;
   font-family: "Roboto", sans-serif; }
+  @media (min-width: 920px) {
+    .about-me__text {
+      text-align: left; } }
 
 .about-work {
   text-align: center;
   margin-bottom: 40px; }
+  @media (min-width: 920px) {
+    .about-work {
+      margin: 0;
+      background-color: #fffcf7; } }
+  @media (min-width: 920px) {
+    .about-work__wrapper {
+      display: flex; } }
   .about-work__photo {
     width: 100%;
     background-image: url("../images/thread-1383261_1920.jpg");
@@ -276,10 +310,21 @@
     @media (min-width: 600px) and (max-width: 919px) {
       .about-work__photo {
         height: 450px; } }
+    @media (min-width: 920px) {
+      .about-work__photo {
+        width: 50%;
+        height: 550px;
+        order: 1; } }
   .about-work__info {
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 0 20px; }
+    @media (min-width: 920px) {
+      .about-work__info {
+        width: 50%;
+        align-self: center;
+        padding-right: 80px;
+        padding-left: 80px; } }
   .about-work__title {
     text-align: center;
     text-transform: uppercase;
@@ -288,10 +333,16 @@
     font-family: "Roboto", sans-serif;
     font-size: 30px;
     font-weight: bold; }
+    @media (min-width: 920px) {
+      .about-work__title {
+        text-align: right; } }
   .about-work__text {
     text-align: center;
     line-height: 1.3em;
     font-family: "Roboto", sans-serif; }
+    @media (min-width: 920px) {
+      .about-work__text {
+        text-align: right; } }
   .about-work__button {
     border: 3px solid #80a6ad;
     background-color: white;
@@ -308,6 +359,9 @@
       border-color: #58b193; }
       .about-work__button:hover .about-work__button-link {
         color: white; }
+    @media (min-width: 920px) {
+      .about-work__button {
+        margin-top: 80px; } }
   .about-work__button-link {
     text-decoration: none;
     color: black;
@@ -318,6 +372,9 @@
   background-color: #80a6ad;
   text-align: center;
   padding: 20px 0; }
+  @media (min-width: 920px) {
+    .social-links {
+      padding: 40px 0; } }
   .social-links__item {
     display: inline-block;
     border-radius: 50%;
@@ -399,10 +456,14 @@
   @media (min-width: 600px) and (max-width: 919px) {
     .map #map {
       height: 350px; } }
+  @media (min-width: 920px) {
+    .map #map {
+      height: 500px; } }
 
 .icons {
   text-align: center;
   padding-bottom: 40px;
+  padding-top: 40px;
   background-color: #fffcf7; }
   .icons__wrapper {
     width: 100%;

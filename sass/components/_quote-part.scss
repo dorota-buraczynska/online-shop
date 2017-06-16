@@ -4,6 +4,11 @@
   color: white;
   padding: $common-padding*2;
 
+  @include large-screen {
+    padding: $common-padding*4 0;
+  }
+
+
   &__text {
     text-transform: uppercase;
     font: {

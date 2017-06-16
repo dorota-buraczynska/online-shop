@@ -9,6 +9,11 @@
       height: 550px;
     }
 
+    @include large-screen {
+      height: 700px;
+      background-attachment: fixed;
+    }
+
     &--home {
       background-image: url("../images/home-page-bg.jpg");
     }

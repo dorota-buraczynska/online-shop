@@ -6,5 +6,9 @@
     @include medium-screen {
       height: 350px;
     }
+
+    @include large-screen {
+      height: 500px;
+    }
   }
 }

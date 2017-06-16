@@ -1,4 +1,5 @@
 .contact {
+  @extend %container;
   margin-top: $common-padding*2;
   margin-bottom: $common-padding*2;
   padding: 0 $common-padding*2;

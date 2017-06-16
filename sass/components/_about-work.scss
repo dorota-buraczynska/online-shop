@@ -2,6 +2,17 @@
   text-align: center;
   margin-bottom: $common-padding*2;
 
+  @include large-screen {
+    margin: 0;
+    background-color: $menu-bg-color;
+  }
+
+  &__wrapper {
+    @include large-screen {
+      display: flex;
+    }
+  }
+
   &__photo {
     width: 100%;
     background-image: url("../images/thread-1383261_1920.jpg");
@@ -11,12 +22,25 @@
     @include medium-screen {
       height: 450px;
     }
+
+    @include large-screen {
+      width: 50%;
+      height: 550px;
+      order: 1;
+    }
   }
 
   &__info {
     margin-top: $common-padding*2;
     margin-bottom: $common-padding;
     padding: 0 $common-padding;
+
+    @include large-screen {
+      width: 50%;
+      align-self: center;
+      padding-right: $common-padding*4;
+      padding-left: $common-padding*4;
+    }
   }
 
   &__title {
@@ -29,6 +53,10 @@
       size: 30px;
       weight: bold;
     }
+
+    @include large-screen {
+      text-align: right;
+    }
   }
 
   &__text {
@@ -36,6 +64,10 @@
     line-height: $line-height;
     font: {
       family: $main-font;
+    }
+
+    @include large-screen {
+      text-align: right;
     }
   }
 
@@ -60,6 +92,10 @@
       .about-work__button-link {
         color: white;
       }
+    }
+
+    @include large-screen {
+      margin-top: $common-padding*4;
     }
   }
 

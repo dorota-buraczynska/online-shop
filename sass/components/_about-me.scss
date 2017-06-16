@@ -1,4 +1,9 @@
 .about-me {
+  @include large-screen {
+    display: flex;
+    background-color: $menu-bg-color;
+  }
+
   &__photo {
     width: 100%;
     background-image: url("../images/aboutme.jpeg");
@@ -9,12 +14,24 @@
     @include medium-screen {
       height: 450px;
     }
+
+    @include large-screen {
+      width: 50%;
+      height: 550px;
+    }
   }
 
   &__info {
     margin-top: $common-padding*2;
     margin-bottom: $common-padding*2;
     padding: 0 $common-padding;
+
+    @include large-screen {
+      width: 50%;
+      align-self: center;
+      padding-left: $common-padding*4;
+      padding-right: $common-padding*4;
+    }
   }
 
   &__title {
@@ -26,6 +43,10 @@
       family: $main-font;
       size: 30px;
     }
+
+    @include large-screen {
+      text-align: left;
+    }
   }
 
   &__text {
@@ -33,6 +54,10 @@
     line-height: $line-height;
     font: {
       family: $main-font;
+    }
+
+    @include large-screen {
+      text-align: left;
     }
   }
 }

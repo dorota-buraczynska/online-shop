@@ -3,6 +3,10 @@
   text-align: center;
   padding: $common-padding 0;
 
+  @include large-screen {
+    padding: $common-padding*2 0;
+  }
+
   &__item {
     display: inline-block;
     border-radius: 50%;
