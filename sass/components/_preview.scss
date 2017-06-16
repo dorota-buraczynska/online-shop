@@ -9,8 +9,6 @@
   background-color: $modal-box-bg-color;
   overflow: auto;
   text-align: center;
-  justify-content: center;
-  align-items: center;
 
   &__product-wrapper {
     text-align: left;
@@ -160,7 +158,7 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;
@@ -179,11 +177,11 @@
     background-color: $third-color;
     border-radius: $border-radius;
     padding: $common-padding/2 $common-padding;
-    margin: $common-padding/2 0;
+    margin: $common-padding/2 auto;
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 205px;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;

@@ -28,14 +28,16 @@
   }
 
   &__go-back-button {
-    border: none;
+    display: inline-block;
     background-color: $secondary-color;
     border-radius: $border-radius;
     padding: $common-padding/2;
     margin: $common-padding auto $common-padding/2 auto;
     text-transform: uppercase;
     cursor: pointer;
-    outline: none;
+    text-decoration: none;
+    color: $text-color;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;
@@ -44,18 +46,8 @@
 
     &:hover {
       background-color: $third-color;
-
-      .address-data__go-back-button-link {
-        color: white;
-      }
+      color: white;
     }
-  }
-
-  &__go-back-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding*3;
-    transition: 1s;
   }
 
   &__buy-button {
@@ -66,7 +58,7 @@
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    width: 202px;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;

@@ -72,13 +72,16 @@
   }
 
   &__button {
+    display: block;
     border: 3px solid $third-color;
     background-color: white;
-    padding: $common-padding/2 $common-padding;
+    padding: $common-padding/2;
     text-transform: uppercase;
-    margin-top: $common-padding;
-    cursor: pointer;
+    margin: $common-padding auto;
     outline: none;
+    text-decoration: none;
+    color: $text-color;
+    width: 250px;
     font: {
       size: 18px;
       family: $main-font;
@@ -88,21 +91,12 @@
     &:hover {
       background-color: $secondary-color;
       border-color: $secondary-color;
-
-      .about-work__button-link {
-        color: white;
-      }
+      color: white;
     }
 
     @include large-screen {
-      margin-top: $common-padding*4;
+      margin-top: $common-padding*2;
     }
   }
 
-  &__button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 0;
-    transition: 1s;
-  }
 }

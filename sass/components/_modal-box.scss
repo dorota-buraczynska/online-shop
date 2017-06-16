@@ -20,6 +20,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font: {
+      family: $main-font;
+    }
 
     &--large {
       top: 0;
@@ -45,15 +48,14 @@
   }
 
   &__shopping-button {
-    border: none;
+    display: block;
     background-color: $secondary-color;
     border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
+    padding: $common-padding/2;
     text-transform: uppercase;
-    margin: $common-padding 0 $common-padding/2 0;
-    cursor: pointer;
+    margin: $common-padding auto $common-padding/2 auto;
     outline: none;
-    width: 224px;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;
@@ -68,14 +70,16 @@
   }
 
   &__basket-button {
-    border: none;
+    display: block;
     background-color: $third-color;
     border-radius: $border-radius;
     padding: $common-padding/2;
-    margin-bottom: $common-padding;
+    margin: $common-padding/2 auto $common-padding auto;
     text-transform: uppercase;
-    cursor: pointer;
+    text-decoration: none;
     outline: none;
+    width: 250px;
+    color: $text-color;
     font: {
       size: 15px;
       family: $main-font;
@@ -85,17 +89,8 @@
     &:hover {
       background-color: $main-color;
       border-color: $secondary-color;
-
-      .modal-box__basket-button-link {
-        color: white;
-      }
+      color: white;
     }
   }
 
-  &__basket-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding;
-    transition: 1s;
-  }
 }

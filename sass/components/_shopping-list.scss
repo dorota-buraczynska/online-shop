@@ -142,14 +142,15 @@
 
   &__shopping-button {
     display: inline-block;
-    border: none;
     background-color: $secondary-color;
     border-radius: $border-radius;
     padding: $common-padding/2;
     margin: $common-padding*2 auto $common-padding/2 auto;
     text-transform: uppercase;
-    cursor: pointer;
     outline: none;
+    text-decoration: none;
+    color: $text-color;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;
@@ -158,29 +159,20 @@
 
     &:hover {
       background-color: $third-color;
-
-      .shopping-list__shopping-button-link {
-        color: white;
-      }
+      color: white;
     }
-  }
-
-  &__shopping-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding;
-    transition: 1s;
   }
 
   &__buy-button {
     display: inline-block;
-    border: none;
     background-color: $main-color;
     border-radius: $border-radius;
     padding: $common-padding/2;
     text-transform: uppercase;
-    cursor: pointer;
     outline: none;
+    text-decoration: none;
+    color: $text-color;
+    width: 250px;
     font: {
       size: 15px;
       family: $main-font;
@@ -189,18 +181,7 @@
 
     &:hover {
       background-color: $third-color;
-
-      .shopping-list__buy-button-link {
-        color: white;
-      }
+      color: white;
     }
   }
-
-  &__buy-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding*4;
-    transition: 1s;
-  }
-
 }

@@ -58,15 +58,17 @@
   }
 
   &__button {
+    display: block;
     position: relative;
     top: 0;
     border: 3px solid $secondary-color;
-    background-color: white;
-    padding: $common-padding/2 $common-padding;
+    padding: $common-padding/2;
     text-transform: uppercase;
-    margin-top: $common-padding;
-    cursor: pointer;
+    margin: $common-padding auto 0 auto;
     outline: none;
+    text-decoration: none;
+    color: $text-color;
+    width: 250px;
     font: {
       size: 18px;
       family: $main-font;
@@ -76,17 +78,8 @@
     &:hover {
       background-color: $third-color;
       border-color: $third-color;
-
-      .slider__button-link {
-        color: white;
-      }
+      color: white;
     }
   }
 
-  &__button-link {
-    text-decoration: none;
-    color: $text-color;
-    transition: 1s;
-    padding: $common-padding/2 0;
-  }
 }
