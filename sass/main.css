@@ -4,7 +4,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
-.nav__wrapper, .contact, .map, .container, .blog, .shopping-list, .address-data, .cart-wrapper {
+.nav__wrapper, .contact, .map, .blog, .shopping-list, .address-data, .cart-wrapper, .container {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -90,6 +90,7 @@
     color: white;
     font-size: 18px; }
   .nav__menu {
+    z-index: 1;
     list-style-type: none;
     position: absolute;
     width: 100%;
@@ -478,14 +479,18 @@
     font-family: "Roboto", sans-serif; }
 
 .filter {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  text-align: center; }
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
   @media (min-width: 920px) {
-    .filter {
-      display: inline-block;
-      width: 30%;
-      vertical-align: top; } }
+    .filter--fixed {
+      position: fixed;
+      top: 0;
+    }
+  }
   .filter__title-button {
     border: 3px solid #80a6ad;
     background-color: white;
@@ -508,13 +513,14 @@
       border-color: #58b193; }
     @media (min-width: 920px) {
       .filter__title-button {
-        display: none; } }
+        pointer-events: none;
+      }
+    }
   .filter__title {
     display: none;
     padding: 10px 20px;
     text-transform: capitalize;
     margin: 20px 0 10px 0;
-    cursor: pointer;
     width: 200px;
     text-align: left;
     color: #80a6ad;
@@ -736,12 +742,8 @@
       content: 'L'; }
 
 .products {
-  padding: 0 20px; }
-  @media (min-width: 920px) {
-    .products {
-      display: inline-block;
-      text-align: center;
-      width: 69%; } }
+  padding: 0 0 0 20px;
+}
   @media (min-width: 920px) {
     .products__wrapper {
       margin-top: 60px; } }
@@ -763,7 +765,11 @@
   .products__photo {
     width: 100%;
     border: 1px solid #DAA520;
-    border-bottom: none; }
+    border-bottom: none;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+  }
   .products__title {
     text-transform: capitalize;
     color: #58b193;
@@ -1308,7 +1314,9 @@
     color: white; }
   @media (min-width: 920px) {
     .back-to-top__button {
-      right: calc(50% - 500px); } }
+      right: calc(50% - 540px);
+    }
+  }
 
 .address-data {
   margin-top: 40px;
@@ -1582,5 +1590,21 @@
     color: black;
     padding: 10px 40px;
     transition: 1s; }
+
+@media (min-width: 920px) {
+  .container__sidebar {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+  }
+}
+
+@media (min-width: 920px) {
+  .container__main {
+    display: inline-block;
+    text-align: center;
+    width: 69%;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

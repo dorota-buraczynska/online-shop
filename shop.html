@@ -34,57 +34,58 @@
 </section>
 
 <div class="container">
-    <section class="filter">
-        <div class="filter__title-button">shop by</div>
-        <div class="filter__title">shop by</div>
-        <div class="filter__wrapper">
-            <form class="filter__price-range price-range">
-                <p class="price-range__title">price</p>
-                <input class="price-range__input" type="number" name="min" value="0">
-                <input class="price-range__input" type="number" name="max" value="100">
-            </form>
-            <form class="filter__colors colors">
-                <p class="colors__title">color</p>
-                <input class="colors__input" type="checkbox" name="red">
-                <input class="colors__input" type="checkbox" name="blue">
-                <input class="colors__input" type="checkbox" name="orange">
-                <input class="colors__input" type="checkbox" name="white">
-                <input class="colors__input" type="checkbox" name="black">
-                <input class="colors__input" type="checkbox" name="yellow">
-            </form>
-            <form class="filter__sizes sizes">
-                <p class="sizes__title">size</p>
-                <input class="sizes__input" type="checkbox" name="xs">
-                <input class="sizes__input" type="checkbox" name="s">
-                <input class="sizes__input" type="checkbox" name="m">
-                <input class="sizes__input" type="checkbox" name="l">
-            </form>
-            <form class="filter__fabrics fabrics">
-                <p class="fabrics__title">fabric</p>
-                <input class="fabrics__input" type="checkbox" name="cotton">
-                <input class="fabrics__input" type="checkbox" name="denim">
-                <input class="fabrics__input" type="checkbox" name="jersey">
-            </form>
-            <button class="filter__button">filter</button>
-            <button class="filter__reset-button">reset</button>
-        </div>
-    </section>
+    <div class="container__sidebar">
+        <section class="filter">
+            <div class="filter__title-button">shop by</div>
+            <div class="filter__wrapper">
+                <form class="filter__price-range price-range">
+                    <p class="price-range__title">price</p>
+                    <input class="price-range__input" type="number" name="min" value="0">
+                    <input class="price-range__input" type="number" name="max" value="100">
+                </form>
+                <form class="filter__colors colors">
+                    <p class="colors__title">color</p>
+                    <input class="colors__input" type="checkbox" name="red">
+                    <input class="colors__input" type="checkbox" name="blue">
+                    <input class="colors__input" type="checkbox" name="orange">
+                    <input class="colors__input" type="checkbox" name="white">
+                    <input class="colors__input" type="checkbox" name="black">
+                    <input class="colors__input" type="checkbox" name="yellow">
+                </form>
+                <form class="filter__sizes sizes">
+                    <p class="sizes__title">size</p>
+                    <input class="sizes__input" type="checkbox" name="xs">
+                    <input class="sizes__input" type="checkbox" name="s">
+                    <input class="sizes__input" type="checkbox" name="m">
+                    <input class="sizes__input" type="checkbox" name="l">
+                </form>
+                <form class="filter__fabrics fabrics">
+                    <p class="fabrics__title">fabric</p>
+                    <input class="fabrics__input" type="checkbox" name="cotton">
+                    <input class="fabrics__input" type="checkbox" name="denim">
+                    <input class="fabrics__input" type="checkbox" name="jersey">
+                </form>
+                <button class="filter__button" type="submit">filter</button>
+                <button class="filter__reset-button">reset</button>
+            </div>
+        </section>
+    </div>
 
-    <section class="products">
+    <section class="container__main products">
         <div class="products__wrapper"></div>
         <div class="products__button-next"><span class="products__button-next-sign">&lt;</span> next products <span class="products__button-next-sign">&gt;</span></div>
         <div class="products__not-found">i'm sorry but for now we don't have what you are looking for</div>
     </section>
 </div>
 
-    <section class="modal-box">
-        <div class="modal-box__content">
-            <div class="modal-box__close-button">&#10006</div>
-            <p class="modal-box__text">this product was successfully added to your cart</p>
-            <button class="modal-box__shopping-button">continue shopping</button>
-            <button class="modal-box__basket-button"><a class="modal-box__basket-button-link" href="cart.html">check out your cart</a></button>
-        </div>
-    </section>
+<section class="modal-box">
+    <div class="modal-box__content">
+        <div class="modal-box__close-button">&#10006</div>
+        <p class="modal-box__text">this product was successfully added to your cart</p>
+        <button class="modal-box__shopping-button">continue shopping</button>
+        <button class="modal-box__basket-button"><a class="modal-box__basket-button-link" href="cart.html">check out your cart</a></button>
+    </div>
+</section>
 
 
 <section class="preview">

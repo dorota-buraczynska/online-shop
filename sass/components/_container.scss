@@ -1,0 +1,19 @@
+.container {
+  @extend %container;
+
+  &__sidebar {
+    @include large-screen {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top;
+    }
+  }
+
+  &__main {
+    @include large-screen {
+      display: inline-block;
+      text-align: center;
+      width: 69%;
+    }
+  }
+}

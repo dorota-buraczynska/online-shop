@@ -95,6 +95,7 @@
   }
 
   &__menu {
+    @include z-index(base);
     list-style-type: none;
     position: absolute;
     width: 100%;
