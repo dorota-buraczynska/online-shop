@@ -2,15 +2,3 @@
   $layers: (base, header, top-button, modal-box);
   z-index: index($layers, $layer);
 }
-
-@mixin remove-shadow {
-  //&:active,
-  //&:focus,
-  //&.active,
-  //&:focus:active {
-  //  background-image: none;
-  //  outline: 0;
-  //  -webkit-box-shadow: none;
-  //  box-shadow: none;
-  //}
-}

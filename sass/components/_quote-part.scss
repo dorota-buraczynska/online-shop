@@ -3,9 +3,17 @@
   text-align: center;
   color: white;
   padding: $common-padding*2;
-  line-height: $line-height;
-  font: {
-    size: 20px;
-    family: $main-font;
+
+  &__text {
+    text-transform: uppercase;
+    font: {
+      family: $main-font;
+      size: 20px;
+    }
+
+    &--different-color {
+      color: $main-color;
+      font-weight: bold;
+    }
   }
 }

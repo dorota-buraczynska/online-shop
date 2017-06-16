@@ -4,7 +4,6 @@
   text-align: center;
 
   &__title {
-    @include remove-shadow;
     border: 3px solid $third-color;
     background-color: white;
     padding: $common-padding/2 $common-padding;
@@ -45,7 +44,6 @@
   }
 
   &__button {
-    @include remove-shadow;
     border: none;
     background-color: $secondary-color;
     border-radius: $border-radius;
@@ -69,7 +67,6 @@
   }
 
   &__reset-button {
-    @include remove-shadow;
     border: none;
     background-color: $main-color;
     border-radius: $border-radius;

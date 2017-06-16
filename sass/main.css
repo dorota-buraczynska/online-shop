@@ -124,7 +124,7 @@
   .background__photo--cart {
     background-image: url("../images/card.jpeg"); }
   .background__photo--form {
-    background-image: url("../images/form.jpeg"); }
+    background-image: url("../images/clip.jpg"); }
 
 .slider {
   text-align: center;
@@ -194,10 +194,14 @@
   background-color: #80a6ad;
   text-align: center;
   color: white;
-  padding: 40px;
-  line-height: 1.3em;
-  font-size: 20px;
-  font-family: "Roboto", sans-serif; }
+  padding: 40px; }
+  .quote-part__text {
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px; }
+    .quote-part__text--different-color {
+      color: #DAA520;
+      font-weight: bold; }
 
 .about-me__photo {
   width: 100%; }
@@ -1337,9 +1341,8 @@
     font-family: "Roboto", sans-serif;
     transition: 1s; }
     .purchase-details__home-button:hover {
-      background-color: #DAA520;
-      border-color: #58b193; }
-      .purchase-details__home-button:hover .modal-box__home-button-link {
+      background-color: #DAA520; }
+      .purchase-details__home-button:hover .purchase-details__home-button-link {
         color: white; }
   .purchase-details__home-button-link {
     text-decoration: none;
@@ -1360,8 +1363,8 @@
     font-family: "Roboto", sans-serif;
     transition: 1s; }
     .purchase-details__go-back-button:hover {
-      background-color: #80a6ad; }
-      .purchase-details__go-back-button:hover .modal-box__go-back-button-link {
+      background-color: #DAA520; }
+      .purchase-details__go-back-button:hover .purchase-details__go-back-button-link {
         color: white; }
   .purchase-details__go-back-button-link {
     text-decoration: none;

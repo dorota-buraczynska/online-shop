@@ -44,7 +44,6 @@
   }
 
   &__dot {
-    @include remove-shadow;
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -59,7 +58,6 @@
   }
 
   &__button {
-    @include remove-shadow;
     position: relative;
     top: 0;
     border: 3px solid $secondary-color;

@@ -35,7 +35,6 @@
   }
 
   &__button {
-    @include remove-shadow;
     border: none;
     background-color: $main-color;
     border-radius: $border-radius;

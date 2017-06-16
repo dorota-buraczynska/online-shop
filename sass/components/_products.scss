@@ -61,7 +61,6 @@
   }
 
   &__button {
-    @include remove-shadow;
     border: none;
     background-color: $main-color;
     border-radius: $border-radius;
@@ -85,7 +84,6 @@
   }
 
   &__button-next {
-    @include remove-shadow;
     text-align: center;
     text-transform: uppercase;
     color: $secondary-color;
@@ -120,7 +118,6 @@
   }
 
   &__preview {
-    @include remove-shadow;
     position: absolute;
     top: 0;
     right: 0;

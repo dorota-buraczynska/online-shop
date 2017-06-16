@@ -28,7 +28,6 @@
   }
 
   &__close-button {
-    @include remove-shadow;
     position: absolute;
     right: 8%;
     cursor: pointer;
@@ -46,7 +45,6 @@
   }
 
   &__shopping-button {
-    @include remove-shadow;
     border: none;
     background-color: $secondary-color;
     border-radius: $border-radius;
@@ -70,7 +68,6 @@
   }
 
   &__basket-button {
-    @include remove-shadow;
     border: none;
     background-color: $third-color;
     border-radius: $border-radius;
