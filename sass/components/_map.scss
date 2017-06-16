@@ -1,4 +1,5 @@
 .map {
+  @extend %container;
   #map {
     max-width: 100%;
     height: 250px;

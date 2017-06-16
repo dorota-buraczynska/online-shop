@@ -25,5 +25,9 @@
       font-size: 20px;
       color: white;
     }
+
+    @include large-screen {
+      right: 400px;
+    }
   }
 }

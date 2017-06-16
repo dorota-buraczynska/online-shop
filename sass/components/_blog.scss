@@ -1,4 +1,5 @@
 .blog {
+  @extend %container;
   text-align: center;
   margin-top: $common-padding * 2;
   margin-bottom: $common-padding*2;
@@ -25,10 +26,29 @@
   &__entry {
     max-width: 450px;
     margin: 0 auto $common-padding*2 auto;
+
+    @include large-screen {
+      max-width: 100%;
+    }
   }
 
   &__entry-photo {
     width: 100%;
+
+    @include large-screen {
+      display: inline-block;
+      width: 40%;
+      vertical-align: middle;
+      margin-right: $common-padding*2;
+    }
+  }
+
+  &__entry-wrapper {
+    @include large-screen {
+      display: inline-block;
+      width: 55%;
+      vertical-align: middle;
+    }
   }
 
   &__entry-title {

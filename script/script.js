@@ -205,7 +205,7 @@ var addProductToCart = function (productId) {
         if (cartArray[i].id === productId) {
             newArray.push(cartArray[i]);
         }
-console.log(newArray);
+        console.log(newArray);
         if (newArray.length === 0) {
             console.log(newArray);
 
@@ -513,12 +513,12 @@ var renderEntries = function (entries) {
         blogWrapper.append(entry);
         entry
             .append(entryPhoto)
-            .append(entriesWrapper)
-            .append(entryButton);
+            .append(entriesWrapper);
         entriesWrapper
             .append(entryTitle)
             .append(entryDate)
-            .append(entryText);
+            .append(entryText)
+            .append(entryButton);
     }
 
     var entriesOnPage = $('.blog__wrapper .blog__entry');
