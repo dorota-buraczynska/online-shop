@@ -4,7 +4,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
-.nav__wrapper, .contact, .map, .container, .blog {
+.nav__wrapper, .contact, .map, .container, .blog, .shopping-list, .address-data, .cart-wrapper {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
@@ -1153,6 +1153,11 @@
   margin-top: 40px;
   margin-bottom: 20px;
   padding: 20px; }
+  @media (min-width: 920px) {
+    .shopping-list--form {
+      display: inline-block;
+      max-width: 49%;
+      vertical-align: middle; } }
   .shopping-list__title {
     font-family: "Roboto", sans-serif;
     font-size: 30px;
@@ -1303,12 +1308,12 @@
     color: white; }
   @media (min-width: 920px) {
     .back-to-top__button {
-      right: 400px; } }
+      right: calc(50% - 500px); } }
 
 .address-data {
   margin-top: 40px;
   margin-bottom: 20px;
-  padding: 0 40px;
+  padding: 0 60px;
   text-align: center; }
   .address-data__title {
     text-align: center;
@@ -1404,14 +1409,25 @@
     .form__input--error {
       border-color: red; }
 
-.cart {
+.cart-wrapper {
   display: none; }
 
 .shipping-address {
-  display: none;
   margin-bottom: 40px;
-  padding: 0 20px;
-  text-align: center; }
+  padding: 40px;
+  text-align: center;
+  background-color: #fffcf7; }
+  @media (min-width: 920px) {
+    .shipping-address {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 45%;
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: right;
+      margin-left: 40px;
+      background-color: #fffcf7;
+      word-break: break-all; } }
   .shipping-address__title {
     font-family: "Roboto", sans-serif;
     font-size: 20px;
@@ -1420,14 +1436,19 @@
     text-transform: capitalize;
     margin-bottom: 20px;
     text-align: left; }
+    @media (min-width: 920px) {
+      .shipping-address__title {
+        text-align: right; } }
   .shipping-address__address {
     text-transform: capitalize;
     line-height: 1.3em;
     text-align: left;
     color: black;
-    background-color: #fffcf7;
     font-family: "Roboto", sans-serif;
     font-size: 20px; }
+    @media (min-width: 920px) {
+      .shipping-address__address {
+        text-align: right; } }
   .shipping-address__email {
     text-transform: lowercase; }
   .shipping-address__edit-button {

@@ -1,8 +1,17 @@
 .shopping-list {
+  @extend %container;
   text-align: center;
   margin-top: $common-padding * 2;
   margin-bottom: $common-padding;
   padding: $common-padding;
+
+  &--form {
+    @include large-screen {
+      display: inline-block;
+      max-width: 49%;
+      vertical-align: middle;
+    }
+  }
 
   &__title {
     font: {

@@ -1,7 +1,8 @@
 .address-data {
+  @extend %container;
   margin-top: $common-padding*2;
   margin-bottom: $common-padding;
-  padding: 0 $common-padding*2;
+  padding: 0 $common-padding*3;
   text-align: center;
 
   &__title {

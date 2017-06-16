@@ -27,7 +27,7 @@
     }
 
     @include large-screen {
-      right: 400px;
+      right: calc(50% - 500px);
     }
   }
 }

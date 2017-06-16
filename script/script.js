@@ -616,9 +616,9 @@ var validateForm = function () {
         }
     });
     if (isValid && isEmail && isPostalCode && isPhoneNr) {
-        $('.cart').show();
         $('.address-data').hide();
         completeShippingAddress();
+        $('.cart-wrapper').show();
     }
 };
 
@@ -647,8 +647,7 @@ $('.shipping-address__buy-button').on('click', function (event) {
 $('.shipping-address__edit-button').on('click', function () {
     $('.address-data').show();
     $('.address-data__go-back-button').hide();
-    $('.shipping-address').hide();
-    $('.cart').hide();
+    $('.cart-wrapper').hide();
     scrollToElement('.address-data');
 });
 
@@ -685,6 +684,4 @@ var completeShippingAddress = function () {
     $('.shipping-address__country').text(country);
     $('.shipping-address__phone').text(phone);
     $('.shipping-address__email').text(email);
-
-    $('.shipping-address').show();
 };
