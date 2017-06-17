@@ -46,7 +46,7 @@ var validateForm = function () {
     if (isValid && isEmail && isPostalCode && isPhoneNr) {
         $('.address-data').hide();
         completeShippingAddress();
-        $('.cart-wrapper').show();
+        $('.container--form').show();
     }
 };
 

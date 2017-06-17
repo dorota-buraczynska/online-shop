@@ -5,13 +5,13 @@
   margin-bottom: $common-padding;
   padding: $common-padding;
 
-  &--form {
-    @include large-screen {
-      display: inline-block;
-      max-width: 49%;
-      vertical-align: middle;
-    }
-  }
+  //&--form {
+  //  @include large-screen {
+  //    display: inline-block;
+  //    max-width: 49%;
+  //    vertical-align: middle;
+  //  }
+  //}
 
   &__title {
     font: {

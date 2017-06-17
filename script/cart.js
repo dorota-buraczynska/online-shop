@@ -115,9 +115,7 @@ var deleteProductFromBasket = function (productId) {
 
     if (cartArray.length === 0) {
         $('.shopping-list__empty-basket').show();
-        $('.shopping-list__buy-button-link').on('click', function (event) {
-            event.preventDefault();
-        });
+        $('.shopping-list__buy-button').css('pointer-events', 'none');
     }
 };
 
@@ -127,9 +125,7 @@ if ($('.shopping-list').length !== 0) {
 
 if (cartArray.length === 0) {
     $('.shopping-list__empty-basket').show();
-    $('.shopping-list__buy-button-link').on('click', function (event) {
-        event.preventDefault();
-    });
+    $('.shopping-list__buy-button').css('pointer-events', 'none');
 }
 
 $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', function () {

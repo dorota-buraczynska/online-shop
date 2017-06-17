@@ -92,38 +92,43 @@
     <button class="address-data__buy-button">proceed to billing</button>
 </section>
 
-<div class="cart-wrapper">
-    <section class="cart shopping-list shopping-list--form">
-        <div class="shopping-list__title">your cart</div>
-        <div class="shopping-list__headings">
-            <div class="shopping-list__product-heading">Product</div>
-            <div class="shopping-list__size-heading">Size</div>
-            <div class="shopping-list__amount-heading">Amount</div>
-            <div class="shopping-list__price-heading">Price</div>
-        </div>
-        <div class="shopping-list__empty-basket">your cart is empty</div>
-        <div class="shopping-list__wrapper">
-            <div class="shopping-list__delivery">cost of delivery (inPost): $<span class="shopping-list__delivery-price">30</span></div>
-            <div class="shopping-list__product-total-price">Total price: <span></span></div>
-        </div>
-    </section>
+<div class="container container--form">
+    <div class="container__sidebar container__sidebar--form">
+        <section class="cart shopping-list">
+            <div class="shopping-list__title">your cart</div>
+            <div class="shopping-list__headings">
+                <div class="shopping-list__product-heading">Product</div>
+                <div class="shopping-list__size-heading">Size</div>
+                <div class="shopping-list__amount-heading">Amount</div>
+                <div class="shopping-list__price-heading">Price</div>
+            </div>
+            <div class="shopping-list__empty-basket">your cart is empty</div>
+            <div class="shopping-list__wrapper">
+                <div class="shopping-list__delivery">cost of delivery (inPost): $<span class="shopping-list__delivery-price">30</span></div>
+                <div class="shopping-list__product-total-price">Total price: <span></span></div>
+            </div>
+        </section>
+    </div>
 
-    <section class="shipping-address">
-        <div class="shipping-address__title">shipping address:</div>
-        <div class="shipping-address__address">
-            <div class="shipping-address__name"></div>
-            <div class="shipping-address__street"></div>
-            <div class="shipping-address__postal-code"></div>
-            <div class="shipping-address__city"></div>
-            <div class="shipping-address__country"></div>
-            <div class="shipping-address__phone"></div>
-            <div class="shipping-address__email"></div>
-            <button class="shipping-address__edit-button">edit</button>
-        </div>
-        <a class="shipping-address__go-back-button" href="shop.html">back to shop</a>
-        <button class="shipping-address__buy-button" type="submit" form="address-data">buy</button>
-    </section>
+    <div class="container__main container__main--form">
+        <section class="shipping-address">
+            <div class="shipping-address__title">shipping address:</div>
+            <div class="shipping-address__address">
+                <div class="shipping-address__name"></div>
+                <div class="shipping-address__street"></div>
+                <div class="shipping-address__postal-code"></div>
+                <div class="shipping-address__city"></div>
+                <div class="shipping-address__country"></div>
+                <div class="shipping-address__phone"></div>
+                <div class="shipping-address__email"></div>
+                <button class="shipping-address__edit-button">edit</button>
+            </div>
+            <a class="shipping-address__go-back-button" href="shop.html">back to shop</a>
+            <button class="shipping-address__buy-button" type="submit" form="address-data">buy</button>
+        </section>
+    </div>
 </div>
+
 
 <section class="modal-box modal-box--form">
     <div class="modal-box__content purchase-details">

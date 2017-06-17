@@ -72,7 +72,7 @@
   }
 
   &__button {
-    display: block;
+    display: inline-block;
     border: 3px solid $third-color;
     background-color: white;
     padding: $common-padding/2;
