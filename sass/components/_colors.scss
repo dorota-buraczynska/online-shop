@@ -19,70 +19,44 @@
   }
 
   &__input {
+    width: 0;
+
+    &:checked + .colors__input-label {
+      border: 3px solid $main-color;
+    }
+  }
+
+  &__input-label {
     display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin-right: $common-padding/4;
+    width: 25px;
+    height: 25px;
+    margin-right: $common-padding/2;
     cursor: pointer;
+    border-radius: 50%;
 
-    &:before {
-      position: absolute;
-      content: '';
-      width: 30px;
-      height: 30px;
-      background-color: $menu-bg-color;
+    &[for='red'] {
+      background-color: red;
     }
 
-    &:checked {
-      &:after {
-        transform: translate(-5%, -5%);
-        border: 3px solid $main-color;
-      }
+    &[for='orange'] {
+      background-color: orange;
     }
 
-    &:after {
-      position: absolute;
-      content: '';
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+    &[for='blue'] {
+      background-color: navy;
     }
 
-    &[name='red'] {
-      &:after {
-        background-color: red;
-      }
+    &[for='black'] {
+      background-color: black;
     }
 
-    &[name='orange'] {
-      &:after {
-        background-color: orange;
-      }
+    &[for='white'] {
+      background-color: white;
+      border: 1px solid black;
     }
 
-    &[name='blue'] {
-      &:after {
-        background-color: navy;
-      }
-    }
-
-    &[name='black'] {
-      &:after {
-        background-color: black;
-      }
-    }
-
-    &[name='white'] {
-      &:after {
-        background-color: white;
-        border: 1px solid black;
-      }
-    }
-
-    &[name='yellow'] {
-      &:after {
-        background-color: yellow;
-      }
+    &[for='yellow'] {
+      background-color: yellow;
     }
   }
 }

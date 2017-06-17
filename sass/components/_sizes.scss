@@ -18,60 +18,22 @@
   }
 
   &__input {
-    width: 40px;
+    width: 0;
+
+    &:checked + .sizes__input-label {
+      color: $main-color;
+    }
+  }
+
+  &__input-label {
+    color: $secondary-color;
+    text-transform: uppercase;
+    margin-right: $common-padding/2;
     cursor: pointer;
-
-    &:before {
-      position: absolute;
-      content: '';
-      width: 40px;
-      height: 40px;
-      background-color: $menu-bg-color;
-    }
-
-    &:checked {
-      &:after {
-        color: $main-color;
-        font-size: 25px;
-      }
-    }
-
-    &:after {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      top: 25%;
-      left: 25%;
-      color: $secondary-color;
-      font: {
-        size: 20px;
-        family: $main-font;
-        weight: bold;
-      }
-    }
-
-    &[name='xs'] {
-      &:after {
-        content: 'XS';
-      }
-    }
-
-    &[name='s'] {
-      &:after {
-        content: 'S';
-      }
-    }
-
-    &[name='m'] {
-      &:after {
-        content: 'M';
-      }
-    }
-
-    &[name='l'] {
-      &:after {
-        content: 'L';
-      }
+    font: {
+      family: $main-font;
+      size: 20px;
+      weight: bold;
     }
   }
 }

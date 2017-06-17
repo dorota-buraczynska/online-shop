@@ -1,5 +1,6 @@
 .container {
   @extend %container;
+  font-size: 0;
 
   &--form {
     display: none;
@@ -9,8 +10,9 @@
   &__sidebar {
     @include large-screen {
       display: inline-block;
-      width: 30%;
+      width: 32%;
       vertical-align: top;
+      min-height: 1px;
     }
 
     &--form {
@@ -26,7 +28,7 @@
     @include large-screen {
       display: inline-block;
       text-align: center;
-      width: 69%;
+      width: 68%;
     }
 
     &--form{

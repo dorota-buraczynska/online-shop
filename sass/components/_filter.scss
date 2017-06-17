@@ -82,6 +82,7 @@
     @extend %button;
     @extend %button-secondary;
     @extend %hover-alternative;
+    margin-right: $common-padding/2;
   }
 
   &__reset-button {

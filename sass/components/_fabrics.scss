@@ -1,7 +1,6 @@
 .fabrics {
   text-align: center;
-  margin-top: $common-padding;
-
+  margin: $common-padding 0;
 
   &__title {
     text-align: left;
@@ -19,58 +18,26 @@
   }
 
   &__input {
-    width: 30%;
-    height: 40px;
+    width: 0;
+
+    &:checked + .fabrics__input-label {
+      color: $main-color;
+    }
+  }
+
+  &__input-label {
+    color: $third-color;
+    text-transform: uppercase;
+    margin-right: $common-padding/2;
     cursor: pointer;
-    text-align: center;
-
-    &:before {
-      position: absolute;
-      content: '';
-      width: 100px;
-      height: 40px;
-      background-color: $menu-bg-color;
+    font: {
+      size: 20px;
+      family: $main-font;
+      weight: bold;
     }
 
-    &:checked {
-      &:after {
-        color: $main-color;
-        font-size: 23px;
-      }
-    }
-
-    &:after {
-      position: relative;
-      width: 100px;
-      height: 40px;
-      color: $third-color;
-      font: {
-        size: 20px;
-        family: $main-font;
-        weight: bold;
-      }
-
-      @include large-screen {
-        font-size: 18px;
-      }
-    }
-
-    &[name='cotton'] {
-      &:after {
-        content: 'COTTON';
-      }
-    }
-
-    &[name='denim'] {
-      &:after {
-        content: 'DENIM';
-      }
-    }
-
-    &[name='jersey'] {
-      &:after {
-        content: 'JERSEY';
-      }
+    &:last-child {
+      margin-right: 0;
     }
   }
 }
