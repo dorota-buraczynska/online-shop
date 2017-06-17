@@ -81,12 +81,12 @@
     outline: none;
     text-decoration: none;
     color: $text-color;
-    width: 250px;
+    min-width: 250px;
     font: {
       size: 18px;
       family: $main-font;
     }
-    transition: 1s;
+    transition: $transition-duration;
 
     &:hover {
       background-color: $secondary-color;

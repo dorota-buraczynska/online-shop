@@ -36,23 +36,6 @@
   }
 
   &__button {
-    border: none;
-    background-color: $main-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 18px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $secondary-color;
-      color: white;
-      border-color: $secondary-color;
-    }
+    @extend %button;
   }
 }

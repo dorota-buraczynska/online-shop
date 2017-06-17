@@ -150,49 +150,14 @@
   }
 
   &__shopping-button {
-    border: none;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    margin-bottom: $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    width: 250px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $main-color;
-      color: white;
-      border-color: $third-color;
-    }
+    @extend %button;
+    @extend %button-third;
+    @extend %button-large;
   }
 
   &__basket-button {
-    border: none;
-    background-color: $third-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    margin: $common-padding/2 auto;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    width: 250px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $main-color;
-      border-color: $secondary-color;
-      color: white;
-    }
-
+    @extend %button;
+    @extend %button-secondary;
+    @extend %button-large;
   }
 }

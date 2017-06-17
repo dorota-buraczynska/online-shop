@@ -120,7 +120,7 @@
   &__menu-item {
     padding: $common-padding;
     cursor: pointer;
-    transition: 1s;
+    transition: $transition-duration;
 
     &:hover .nav__menu-link {
       color: $third-color;

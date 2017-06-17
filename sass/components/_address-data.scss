@@ -28,46 +28,13 @@
   }
 
   &__go-back-button {
-    display: inline-block;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2;
-    margin: $common-padding auto $common-padding/2 auto;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    color: $text-color;
-    width: 250px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $third-color;
-      color: white;
-    }
+    @extend %button;
+    @extend %button-medium;
+    @extend %button-secondary;
   }
 
   &__buy-button {
-    border: none;
-    background-color: $main-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    width: 250px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $third-color;
-      color: white;
-    }
+    @extend %button;
+    @extend %button-medium;
   }
 }

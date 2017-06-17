@@ -3,7 +3,7 @@
 
   &__wrapper {
     @include large-screen {
-      margin-top: $common-padding*3;
+      margin-top: $common-padding*2;
     }
   }
 
@@ -13,6 +13,7 @@
     font-size: 0;
     margin: 0 auto;
     position: relative;
+    margin-top: $common-padding;
 
     @include large-screen {
       width: 47%;
@@ -53,6 +54,7 @@
   &__info {
     border: 1px solid $main-color;
     border-top: none;
+    margin-bottom: $common-padding;
   }
 
   &__size-label {
@@ -83,26 +85,7 @@
   }
 
   &__button {
-    border: none;
-    background-color: $main-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    margin-top: $common-padding/2;
-    margin-bottom: $common-padding*2;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 18px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $secondary-color;
-      color: white;
-      border-color: $secondary-color;
-    }
+    @extend %button;
   }
 
   &__button-next {
@@ -148,7 +131,7 @@
     height: 50px;
     border-bottom-left-radius: $border-radius*8;
     cursor: pointer;
-    transition: 1s;
+    transition: $transition-duration;
 
     i {
       font-size: 25px;

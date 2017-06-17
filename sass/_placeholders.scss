@@ -18,3 +18,59 @@
     display: block;
   }
 }
+
+%button {
+  display: inline-block;
+  border: none;
+  background-color: $main-color;
+  border-radius: $border-radius;
+  padding: $common-padding/2 $common-padding;
+  margin-bottom: $common-padding/2;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  color: $text-color;
+  font: {
+    size: 18px;
+    family: $main-font;
+  }
+  transition: $transition-duration;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+  }
+}
+
+%button-medium {
+  width: 250px;
+  font-size: 15px;
+}
+
+%button-large {
+  width: 100%;
+  font-size: 15px;
+}
+
+%button-third {
+  background-color: $third-color;
+
+  &:hover {
+    background-color: $main-color;
+  }
+}
+
+%button-secondary {
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: $main-color;
+  }
+}
+
+%hover-alternative {
+  &:hover {
+    background-color: $third-color;
+  }
+}

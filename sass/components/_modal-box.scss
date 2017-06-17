@@ -38,7 +38,7 @@
 
   &__text {
     text-transform: capitalize;
-    margin-top: $common-padding*2;
+    margin: $common-padding*2 0 $common-padding 0;
     line-height: 1.7em;
     color: $main-color;
     font: {
@@ -48,49 +48,15 @@
   }
 
   &__shopping-button {
-    display: block;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2;
-    text-transform: uppercase;
-    margin: $common-padding auto $common-padding/2 auto;
-    outline: none;
-    width: 250px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $main-color;
-      color: white;
-      border-color: $third-color;
-    }
+    @extend %button;
+    @extend %button-medium;
+    @extend %button-secondary;
   }
 
   &__basket-button {
-    display: block;
-    background-color: $third-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2;
-    margin: $common-padding/2 auto $common-padding auto;
-    text-transform: uppercase;
-    text-decoration: none;
-    outline: none;
-    width: 250px;
-    color: $text-color;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $main-color;
-      border-color: $secondary-color;
-      color: white;
-    }
+    @extend %button;
+    @extend %button-medium;
+    @extend %button-third;
   }
 
 }

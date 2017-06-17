@@ -14,7 +14,7 @@
     height: 70px;
     position: relative;
     vertical-align: middle;
-    transition: 1s;
+    transition: $transition-duration;
 
     &:hover {
       background-color: $main-color;
@@ -34,7 +34,7 @@
     transform: translate(-50%, -50%);
     padding: $common-padding/2;
     cursor: pointer;
-    transition: 1s;
+    transition: $transition-duration;
     font-size: 20px;
   }
 }

@@ -25,7 +25,7 @@
       size: 30px;
       family: $main-font;
     }
-    transition: 1s;
+    transition: $transition-duration;
 
     &:hover {
       background-color: $secondary-color;
@@ -79,48 +79,13 @@
   }
 
   &__button {
-    border: none;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    margin-top: $common-padding;
-    margin-bottom: $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 18px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $main-color;
-      color: white;
-      border-color: $secondary-color;
-    }
+    @extend %button;
+    @extend %button-secondary;
+    @extend %hover-alternative;
   }
 
   &__reset-button {
-    border: none;
-    background-color: $main-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2 $common-padding;
-    margin-top: $common-padding;
-    margin-bottom: $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 18px;
-      family: $main-font;
-    }
-    transition: 1s;
-
-    &:hover {
-      background-color: $secondary-color;
-      color: white;
-      border-color: $secondary-color;
-    }
+    @extend %button;
+    @extend %hover-alternative;
   }
 }

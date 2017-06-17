@@ -11,7 +11,7 @@
     bottom: $common-padding*9;
     right: $common-padding;
     cursor: pointer;
-    transition: 1s;
+    transition: $transition-duration;
 
     &:hover {
       background-color: $secondary-color;
