@@ -23,6 +23,7 @@ var setFilterMaxHeight = function () {
 };
 
 var filteredProducts = function (products) {
+    $('.products__not-found').hide();
     $('.products__wrapper').html('');
     var max = parseInt($('.filter__price-range input[name=max]').val());
     var min = parseInt($('.filter__price-range input[name=min]').val());
@@ -36,6 +37,9 @@ var filteredProducts = function (products) {
     filtered = filterBySizes(filtered, sizeArray);
     filtered = filterByFabrics(filtered, fabricsArray);
     renderProducts(filtered);
+    if (filtered.length === 0) {
+        $('.products__not-found').show();
+    }
 };
 
 //filter products
@@ -133,4 +137,6 @@ $('.filter__reset-button').on('click', function () {
         this.checked = false;
     });
     $('.filter__price-range input[name=max]').val(100);
+    $('.filter__price-range input[name=min]').val(0);
+    $('.products__not-found').hide();
 });

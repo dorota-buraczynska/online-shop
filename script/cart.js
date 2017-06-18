@@ -30,13 +30,13 @@ function eraseCookie(name) {
 }
 
 var addProductToCart = function (productId) {
-   for (var i = 0; i < cartArray.length; i++) {
-       if (cartArray[i].id === productId) {
-           cartArray[i].amount++;
-           createCookie('cart', cartArray, 365);
-           return;
-       }
-   }
+    for (var i = 0; i < cartArray.length; i++) {
+        if (cartArray[i].id === productId) {
+            cartArray[i].amount++;
+            createCookie('cart', cartArray, 365);
+            return;
+        }
+    }
 
     var product = {
         path: products[productId].src,
@@ -52,12 +52,13 @@ var addProductToCart = function (productId) {
 };
 
 var renderCart = function () {
+    $('.shopping-list__product-wrapper').empty();
     var buttonsWrapper = ('<div class="shopping-list__buttons-wrapper"><div class="shopping-list__plus-button">&#43;</div><div class="shopping-list__minus-button">&#45;</div></div>');
     var deleteButton = ('<button class="shopping-list__delete-button">delete</button>');
 
     for (var i = 0; i < cartArray.length; i++) {
         var productPhoto = ('<img class="shopping-list__product-photo" src="' + cartArray[i].path + '">');
-        var productAmount = ('<div class="shopping-list__product-amount">' + cartArray[i].amount + buttonsWrapper + '</div>');
+        var productAmount = ('<div class="shopping-list__product-amount"><span>' + cartArray[i].amount + '</span>' + buttonsWrapper + '</div>');
         var productPrice = ('<div class="shopping-list__product-price">$' + (cartArray[i].price * cartArray[i].amount) + ' </div>');
         var productSize = ('<div class="shopping-list__product-size">' + cartArray[i].size + '</div>');
 
@@ -95,7 +96,6 @@ var deleteProductFromBasket = function (productId) {
         }
 
     }
-    $('.shopping-list__product-wrapper').empty();
     renderCart();
     createCookie('cart', cartArray, 365);
     $('.shopping-list__product-total-price span').text(totalSum());
@@ -106,6 +106,52 @@ var deleteProductFromBasket = function (productId) {
         $('.shopping-list__buy-button').css('pointer-events', 'none');
     }
 };
+
+var sumOfProducts = function () {
+    var sumOfProducts = 0;
+    for (var i = 0; i < cartArray.length; i++) {
+        sumOfProducts += cartArray[i].amount;
+    }
+    return sumOfProducts;
+};
+
+var increaseAmountOfProducts = function (productId) {
+    for (var i = 0; i < cartArray.length; i++) {
+        if (cartArray[i].id === productId) {
+            cartArray[i].amount++;
+            createCookie('cart', cartArray, 365);
+        }
+    }
+    renderCart();
+};
+
+var decreaseAmountOfProducts = function (productId) {
+    for (var i = 0; i < cartArray.length; i++) {
+        if (cartArray[i].id === productId) {
+            cartArray[i].amount--;
+            if (cartArray[i].amount === 0) {
+                deleteProductFromBasket(productId);
+            }
+            createCookie('cart', cartArray, 365);
+        }
+    }
+
+    renderCart();
+
+};
+
+$('.shopping-list__wrapper').on('click', '.shopping-list__plus-button', function () {
+    var productId = $(this.closest('.shopping-list__product-wrapper')).data('id');
+    increaseAmountOfProducts(productId);
+    $('.nav__basket-amount').text(sumOfProducts());
+});
+
+$('.shopping-list__wrapper').on('click', '.shopping-list__minus-button', function () {
+    var productId = $(this.closest('.shopping-list__product-wrapper')).data('id');
+    decreaseAmountOfProducts(productId);
+    $('.nav__basket-amount').text(sumOfProducts());
+});
+
 
 if ($('.shopping-list').length !== 0) {
     renderCart();
@@ -122,7 +168,7 @@ $('.shopping-list__wrapper').on('click', '.shopping-list__delete-button', functi
 });
 
 $('.shopping-list__product-total-price span').text(totalSum());
-$('.nav__basket-amount').text(cartArray.length);
+$('.nav__basket-amount').text(sumOfProducts());
 
 
 //add products to cart
@@ -130,6 +176,6 @@ $('.products__wrapper').on('click', '.products__button', function () {
     var productId = $(this).closest('.products__item').index();
     $('.modal-box').show();
     addProductToCart(productId);
-    $('.nav__basket-amount').text(cartArray.length);
+    $('.nav__basket-amount').text(sumOfProducts());
 });
 

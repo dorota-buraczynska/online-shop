@@ -9,7 +9,8 @@
       "size": "s",
       "fabric": "jersey",
       "price": "80",
-      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin."
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin.",
+      "inStock": 2
     },
     {
       "id": 1,
@@ -20,7 +21,8 @@
       "size": "m",
       "fabric": "cotton",
       "price": "100",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 3
     },
     {
       "id": 2,
@@ -31,7 +33,8 @@
       "size": "xs",
       "fabric": "cotton",
       "price": "150",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 2
     },
     {
       "id": 3,
@@ -42,7 +45,8 @@
       "size": "l",
       "fabric": "jersey",
       "price": "80",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 1
     },
     {
       "id": 4,
@@ -53,7 +57,8 @@
       "size": "s",
       "fabric": "denim",
       "price": "200",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 2
     },
     {
       "id": 5,
@@ -64,7 +69,8 @@
       "size": "m",
       "fabric": "jersey",
       "price": "60",
-      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin."
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin.",
+      "inStock": 1
     },
     {
       "id": 6,
@@ -75,7 +81,8 @@
       "size": "l",
       "fabric": "jersey",
       "price": "125",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 2
     },
     {
       "id": 7,
@@ -86,7 +93,8 @@
       "size": "m",
       "fabric": "cotton",
       "price": "120",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 3
     },
     {
       "id": 8,
@@ -97,7 +105,8 @@
       "size": "xs",
       "fabric": "cotton",
       "price": "45",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 1
     },
     {
       "id": 9,
@@ -108,7 +117,8 @@
       "size": "m",
       "fabric": "denim",
       "price": "220",
-      "description": "opis"
+      "description": "opis",
+      "inStock": 1
     }
   ]
 }
