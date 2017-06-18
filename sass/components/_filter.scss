@@ -4,6 +4,7 @@
   text-align: center;
   overflow-y: auto;
   overflow-x: hidden;
+  width: 280px;
 
   &--fixed {
     @include large-screen {

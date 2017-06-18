@@ -34,7 +34,6 @@ var startSlideshow = function () {
         if (currentIndex > photos.length - 1) {
             currentIndex = 0;
         }
-        // console.log(currentIndex);
         changeActivePhoto(currentIndex);
         changeActiveDot(currentIndex);
 

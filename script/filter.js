@@ -40,7 +40,6 @@ var filteredProducts = function (products) {
 
 //filter products
 var filterByBlingPrices = function (products, min, max) {
-    console.log(products);
     return products.filter(function (value) {
         return value.price >= min && value.price <= max;
     });

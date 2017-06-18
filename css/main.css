@@ -211,37 +211,37 @@
     .background__photo--form {
       background-image: url("../images/clip.jpg"); }
 
-.slider {
+.slider, .slider-2 {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px; }
-  .slider__wrapper {
+  .slider__wrapper, .slider-2__wrapper {
     min-height: 350px;
     overflow: hidden; }
-  .slider__title {
+  .slider__title, .slider-2__title {
     font-family: "Roboto", sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: #80a6ad;
     text-transform: uppercase;
     margin-bottom: 40px; }
-  .slider__items {
+  .slider__items, .slider-2__items {
     max-width: 450px;
     margin: 0 auto;
     position: relative; }
-  .slider__slide {
+  .slider__slide, .slider-2__slide {
     width: 100%;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0; }
-    .slider__slide--active {
+    .slider__slide--active, .slider-2__slide--active {
       opacity: 1; }
-  .slider__dots {
+  .slider__dots, .slider-2__dots {
     position: relative;
     top: 0;
     margin-top: 20px; }
-  .slider__dot {
+  .slider__dot, .slider-2__dot {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -249,9 +249,9 @@
     border-radius: 50%;
     margin-right: 5px;
     cursor: pointer; }
-    .slider__dot--active {
+    .slider__dot--active, .slider-2__dot--active {
       background-color: #80a6ad; }
-  .slider__button {
+  .slider__button, .slider-2__button {
     display: inline-block;
     position: relative;
     top: 0;
@@ -266,7 +266,7 @@
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     transition: 0.3s; }
-    .slider__button:hover {
+    .slider__button:hover, .slider-2__button:hover {
       background-color: #80a6ad;
       border-color: #80a6ad;
       color: white; }
@@ -506,7 +506,8 @@
   padding-bottom: 40px;
   text-align: center;
   overflow-y: auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  width: 280px; }
   @media (min-width: 920px) {
     .filter--fixed {
       position: fixed;

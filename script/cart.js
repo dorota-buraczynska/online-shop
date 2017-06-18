@@ -30,6 +30,14 @@ function eraseCookie(name) {
 }
 
 var addProductToCart = function (productId) {
+   for (var i = 0; i < cartArray.length; i++) {
+       if (cartArray[i].id === productId) {
+           cartArray[i].amount++;
+           createCookie('cart', cartArray, 365);
+           return;
+       }
+   }
+
     var product = {
         path: products[productId].src,
         price: products[productId].price,
@@ -38,24 +46,6 @@ var addProductToCart = function (productId) {
         amount: 1
     };
 
-    // if (cartArray.length === 0) {
-    //     cartArray.push(product);
-    //     createCookie('cart', cartArray, 365);
-    // }
-    // for (var i = 0; i < cartArray.length; i++) {
-    //     var newArray = [];
-    //     if (cartArray[i].id === productId) {
-    //         newArray.push(cartArray[i]);
-    //     }
-    //     console.log(newArray);
-    //     if (newArray.length === 0) {
-    //         console.log(newArray);
-    //
-    //         cartArray.push(product);
-    //         createCookie('cart', cartArray, 365);
-    //     }
-    //
-    // }
     cartArray.push(product);
     createCookie('cart', cartArray, 365);
 
@@ -68,7 +58,7 @@ var renderCart = function () {
     for (var i = 0; i < cartArray.length; i++) {
         var productPhoto = ('<img class="shopping-list__product-photo" src="' + cartArray[i].path + '">');
         var productAmount = ('<div class="shopping-list__product-amount">' + cartArray[i].amount + buttonsWrapper + '</div>');
-        var productPrice = ('<div class="shopping-list__product-price">$' + cartArray[i].price + ' </div>');
+        var productPrice = ('<div class="shopping-list__product-price">$' + (cartArray[i].price * cartArray[i].amount) + ' </div>');
         var productSize = ('<div class="shopping-list__product-size">' + cartArray[i].size + '</div>');
 
         $('.shopping-list__wrapper')
@@ -81,7 +71,7 @@ var totalSum = function () {
     var deliveryPrice = parseInt($('.shopping-list__delivery-price').text());
     var totalSum = 0;
     for (var i = 0; i < cartArray.length; i++) {
-        totalSum += parseInt(cartArray[i].price);
+        totalSum += parseInt(cartArray[i].price * cartArray[i].amount);
     }
     if (cartArray.length === 0) {
         deliveryPrice = 0;
@@ -101,14 +91,12 @@ var deleteProductFromBasket = function (productId) {
 
         if (cartArray[i].id === productId) {
             var index = cartArray.indexOf(cartArray[i]);
-            console.log(index);
             cartArray.remove(index);
         }
 
     }
     $('.shopping-list__product-wrapper').empty();
     renderCart();
-    console.log(cartArray);
     createCookie('cart', cartArray, 365);
     $('.shopping-list__product-total-price span').text(totalSum());
     $('.nav__basket-amount').text(cartArray.length);
