@@ -52,7 +52,7 @@ var addProductToCart = function (productId) {
 };
 
 var renderCart = function () {
-    $('.shopping-list__product-wrapper').empty();
+    $('.shopping-list__product-wrapper').remove();
     var buttonsWrapper = ('<div class="shopping-list__buttons-wrapper"><div class="shopping-list__plus-button">&#43;</div><div class="shopping-list__minus-button">&#45;</div></div>');
     var deleteButton = ('<button class="shopping-list__delete-button">delete</button>');
 

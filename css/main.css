@@ -211,37 +211,44 @@
     .background__photo--form {
       background-image: url("../images/clip.jpg"); }
 
-.slider, .slider-2 {
+.slick-slide {
+  outline: none; }
+
+.slick-dots {
+  position: relative;
+  top: 0;
+  margin-top: 20px; }
+  .slick-dots button {
+    display: none; }
+  .slick-dots li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #DAA520;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer; }
+    .slick-dots li.slick-active {
+      background-color: #80a6ad; }
+
+.slider {
   text-align: center;
   margin-top: 40px;
   margin-bottom: 60px; }
-  .slider__wrapper, .slider-2__wrapper {
-    min-height: 350px;
-    overflow: hidden; }
-  .slider__title, .slider-2__title {
+  .slider__wrapper {
+    margin-bottom: 20px;
+    padding: 0 10%; }
+  .slider__title {
     font-family: "Roboto", sans-serif;
     font-size: 30px;
     font-weight: bold;
     color: #80a6ad;
     text-transform: uppercase;
     margin-bottom: 40px; }
-  .slider__items, .slider-2__items {
-    max-width: 450px;
-    margin: 0 auto;
-    position: relative; }
-  .slider__slide, .slider-2__slide {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0; }
-    .slider__slide--active, .slider-2__slide--active {
-      opacity: 1; }
-  .slider__dots, .slider-2__dots {
-    position: relative;
-    top: 0;
-    margin-top: 20px; }
-  .slider__dot, .slider-2__dot {
+  .slider__slide {
+    width: 90%;
+    margin-left: 5%; }
+  .slider__dot {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -249,9 +256,9 @@
     border-radius: 50%;
     margin-right: 5px;
     cursor: pointer; }
-    .slider__dot--active, .slider-2__dot--active {
+    .slider__dot--active {
       background-color: #80a6ad; }
-  .slider__button, .slider-2__button {
+  .slider__button {
     display: inline-block;
     position: relative;
     top: 0;
@@ -266,7 +273,7 @@
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     transition: 0.3s; }
-    .slider__button:hover, .slider-2__button:hover {
+    .slider__button:hover {
       background-color: #80a6ad;
       border-color: #80a6ad;
       color: white; }

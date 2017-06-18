@@ -1,11 +1,39 @@
-.slider, .slider-2 {
+.slick-slide {
+  outline: none;
+}
+
+.slick-dots {
+  position: relative;
+  top: 0;
+  margin-top: $common-padding;
+
+  button {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: $main-color;
+    border-radius: 50%;
+    margin-right: $common-padding/2;
+    cursor: pointer;
+
+    &.slick-active {
+      background-color: $third-color;
+    }
+  }
+}
+
+.slider {
   text-align: center;
   margin-top: $common-padding * 2;
   margin-bottom: $common-padding*3;
 
   &__wrapper {
-    min-height: 350px;
-    overflow: hidden;
+    margin-bottom: $common-padding;
+    padding: 0 10%;
   }
 
   &__title {
@@ -19,28 +47,9 @@
     margin-bottom: $common-padding *2;
   }
 
-  &__items {
-    max-width: 450px;
-    margin: 0 auto;
-    position: relative;
-  }
-
   &__slide {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-
-    &--active {
-      opacity: 1;
-    }
-  }
-
-  &__dots {
-    position: relative;
-    top: 0;
-    margin-top: $common-padding;
+    width: 90%;
+    margin-left: 5%;
   }
 
   &__dot {
