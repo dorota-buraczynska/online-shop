@@ -78,5 +78,5 @@ $('.address-data__form').on('submit', function (event) {
     };
     console.log(dataToSend);
     cartArray = [];
-    createCookie('cart', cartArray, 365);
+    createCookie('cart', cartArray, 30);
 });

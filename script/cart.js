@@ -1,11 +1,11 @@
 var cartArray = readCookie('cart') || [];
 
 // cookies
-function createCookie(name, value, days) {
+function createCookie(name, value, minutes) {
     var expires = "";
-    if (days) {
+    if (minutes) {
         var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + JSON.stringify(value) + expires + "; path=/";
@@ -33,7 +33,7 @@ var addProductToCart = function (productId) {
     for (var i = 0; i < cartArray.length; i++) {
         if (cartArray[i].id === productId) {
             cartArray[i].amount++;
-            createCookie('cart', cartArray, 365);
+            createCookie('cart', cartArray, 30);
             return;
         }
     }
@@ -47,7 +47,7 @@ var addProductToCart = function (productId) {
     };
 
     cartArray.push(product);
-    createCookie('cart', cartArray, 365);
+    createCookie('cart', cartArray, 30);
 
 };
 
@@ -97,7 +97,7 @@ var deleteProductFromBasket = function (productId) {
 
     }
     renderCart();
-    createCookie('cart', cartArray, 365);
+    createCookie('cart', cartArray, 30);
     $('.shopping-list__product-total-price span').text(totalSum());
     $('.nav__basket-amount').text(cartArray.length);
     disableBuyButton();
@@ -120,7 +120,7 @@ var increaseAmountOfProducts = function (productId) {
     for (var i = 0; i < cartArray.length; i++) {
         if (cartArray[i].id === productId) {
             cartArray[i].amount++;
-            createCookie('cart', cartArray, 365);
+            createCookie('cart', cartArray, 30);
         }
     }
     $('.shopping-list__product-total-price span').text(totalSum());
@@ -135,7 +135,7 @@ var decreaseAmountOfProducts = function (productId) {
             if (cartArray[i].amount === 0) {
                 deleteProductFromBasket(productId);
             }
-            createCookie('cart', cartArray, 365);
+            createCookie('cart', cartArray, 30);
         }
     }
     $('.shopping-list__product-total-price span').text(totalSum());
