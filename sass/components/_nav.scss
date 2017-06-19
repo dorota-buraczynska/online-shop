@@ -95,10 +95,13 @@
 
   &__basket-amount {
     position: relative;
-    left: 46%;
+    left: 3px;
     top: 50%;
     color: white;
     font-size: 18px;
+    text-align: center;
+    width: 100%;
+    display: block;
   }
 
   &__menu {

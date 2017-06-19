@@ -1,6 +1,7 @@
 .container {
   @extend %container;
   font-size: 0;
+  margin-bottom: $common-padding*2;
 
   &--form {
     display: none;

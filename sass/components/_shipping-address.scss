@@ -63,5 +63,10 @@
     @extend %button;
     @extend %button-medium;
     @extend %hover-alternative;
+
+    &--disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
   }
 }

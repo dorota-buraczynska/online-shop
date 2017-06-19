@@ -26,3 +26,4 @@ $('.shipping-address__edit-button').on('click', function () {
     $('.container--form').hide();
     scrollToElement('.address-data');
 });
+
