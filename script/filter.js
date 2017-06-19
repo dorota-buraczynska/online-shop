@@ -117,11 +117,14 @@ var makeFabricsArray = function () {
     return selectedFabrics;
 };
 
-if ($(window).width() > 920) {
-    var filterHeight = $('.filter').height();
-    $('.container__sidebar').css('height', filterHeight);
-}
-
+var addHeightToContainerSidebar = function () {
+    if ($(window).width() > 920) {
+        var filterHeight = $('.filter').height();
+        $('.container__sidebar').css('height', filterHeight);
+    } else {
+        $('.container__sidebar').css('height', '');
+    }
+};
 
 $('.filter__button').on('click', function () {
     filteredProducts(products);
@@ -146,3 +149,5 @@ $('.filter__reset-button').on('click', function () {
     $('.filter__price-range input[name=min]').val(0);
     $('.products__not-found').hide();
 });
+
+addHeightToContainerSidebar();

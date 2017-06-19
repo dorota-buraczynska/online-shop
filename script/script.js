@@ -13,4 +13,5 @@ $(window).on('resize', function () {
     fixPreviewPosition();
     fixModalBoxPosition();
     setFilterMaxHeight();
+    addHeightToContainerSidebar();
 });

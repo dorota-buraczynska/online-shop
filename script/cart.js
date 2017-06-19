@@ -180,3 +180,4 @@ $('.products__wrapper').on('click', '.products__button', function () {
     $('.nav__basket-amount').text(sumOfProducts());
 });
 
+

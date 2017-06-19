@@ -76,13 +76,20 @@
     background-size: cover;
     width: 70px;
     height: 70px;
-    filter: hue-rotate(272deg);
     cursor: pointer;
     text-decoration: none;
 
     @include large-screen {
       display: inline-block;
       width: 7%;
+    }
+
+    &--active {
+      background-image: url("../images/cart-green.png");
+    }
+
+    &:hover {
+      background-image: url("../images/cart-blue.png");
     }
   }
 
@@ -114,6 +121,7 @@
       width: 66%;
       background-color: transparent;
       top: -4px;
+      transition: none;
     }
   }
 

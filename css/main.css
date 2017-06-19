@@ -117,13 +117,16 @@
     background-size: cover;
     width: 70px;
     height: 70px;
-    filter: hue-rotate(272deg);
     cursor: pointer;
     text-decoration: none; }
     @media (min-width: 920px) {
       .nav__basket {
         display: inline-block;
         width: 7%; } }
+    .nav__basket--active {
+      background-image: url("../images/cart-green.png"); }
+    .nav__basket:hover {
+      background-image: url("../images/cart-blue.png"); }
   .nav__basket-amount {
     position: relative;
     left: 46%;
@@ -149,7 +152,8 @@
         transform: none;
         width: 66%;
         background-color: transparent;
-        top: -4px; } }
+        top: -4px;
+        transition: none; } }
   .nav__menu-item {
     padding: 20px;
     cursor: pointer;

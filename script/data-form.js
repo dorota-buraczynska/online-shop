@@ -72,6 +72,9 @@ $('.address-data__form').on('submit', function (event) {
     event.preventDefault();
     fixModalBoxPosition();
     $('.modal-box--form').show();
-    var formData = getFormData('#address-data');
-    console.log(formData);
+    var dataToSend = {
+        contactData: getFormData('#address-data'),
+        cart: cartArray
+    };
+    console.log(dataToSend);
 });
