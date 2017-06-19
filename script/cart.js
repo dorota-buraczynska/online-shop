@@ -122,6 +122,7 @@ var increaseAmountOfProducts = function (productId) {
             createCookie('cart', cartArray, 365);
         }
     }
+    $('.shopping-list__product-total-price span').text(totalSum());
     renderCart();
 };
 
@@ -135,7 +136,7 @@ var decreaseAmountOfProducts = function (productId) {
             createCookie('cart', cartArray, 365);
         }
     }
-
+    $('.shopping-list__product-total-price span').text(totalSum());
     renderCart();
 
 };
