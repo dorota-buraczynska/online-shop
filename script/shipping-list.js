@@ -23,6 +23,6 @@ var completeShippingAddress = function () {
 $('.shipping-address__edit-button').on('click', function () {
     $('.address-data').show();
     $('.address-data__go-back-button').hide();
-    $('.cart-wrapper').hide();
+    $('.container--form').hide();
     scrollToElement('.address-data');
 });

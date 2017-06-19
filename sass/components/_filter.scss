@@ -5,6 +5,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   width: 290px;
+  margin: 0 auto;
 
   &--fixed {
     @include large-screen {

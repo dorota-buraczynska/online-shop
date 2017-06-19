@@ -117,6 +117,12 @@ var makeFabricsArray = function () {
     return selectedFabrics;
 };
 
+if ($(window).width() > 920) {
+    var filterHeight = $('.filter').height();
+    $('.container__sidebar').css('height', filterHeight);
+}
+
+
 $('.filter__button').on('click', function () {
     filteredProducts(products);
     scrollToElement('.products__wrapper');
@@ -126,7 +132,7 @@ setFilterMaxHeight();
 
 $('.filter__title-button').on('click', function () {
     var visibleClass = 'filter__wrapper--visible';
-    var buttonActiveClass = 'filter__title--active';
+    var buttonActiveClass = 'filter__title-button--active';
     $('.filter__wrapper').fadeToggle(visibleClass);
     $(this).toggleClass(buttonActiveClass);
 });

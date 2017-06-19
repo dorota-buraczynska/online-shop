@@ -1,5 +1,7 @@
 .products {
-  padding: 0 0 0 $common-padding;
+  @include large-screen {
+    padding: 0 0 0 $common-padding;
+  }
 
   &__wrapper {
     @include large-screen {

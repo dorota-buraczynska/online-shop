@@ -47,6 +47,7 @@ var validateForm = function () {
         $('.address-data').hide();
         completeShippingAddress();
         $('.container--form').show();
+        scrollToElement('.shopping-list');
     }
 };
 
@@ -65,7 +66,6 @@ function getFormData(form) {
 $('.address-data__buy-button').on('click', function (event) {
     validateForm();
     $('.shopping-list__product-total-price span').text(totalSum());
-    scrollToElement('.shopping-list');
 });
 
 $('.address-data__form').on('submit', function (event) {
