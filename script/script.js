@@ -7,6 +7,7 @@ var scrollToElement = function (element) {
 $(window).on('scroll', function () {
     toggleBackToTopButton();
     toggleFixedFilter();
+    stopFilterBeforeFooter();
 });
 
 $(window).on('resize', function () {

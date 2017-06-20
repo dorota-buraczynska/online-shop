@@ -5,12 +5,21 @@
   width: 290px;
   margin: 0 auto;
 
+  @include large-screen {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
   &--fixed {
     @include large-screen {
-      overflow-y: auto;
-      overflow-x: hidden;
       position: fixed;
       top: 0;
+    }
+  }
+
+  &--stop {
+    @include large-screen {
+      position:absolute;
     }
   }
 

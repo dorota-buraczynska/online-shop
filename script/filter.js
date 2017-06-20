@@ -126,6 +126,22 @@ var addHeightToContainerSidebar = function () {
     }
 };
 
+var stopFilterBeforeFooter = function () {
+    var filter = $('.filter');
+    var filterHeight = $('.filter').height();
+    var footerOffset = $('.social-links').offset().top - 100;
+    var footerHeight = $('.social-links').height();
+    var stopPoint = footerOffset - filterHeight;
+
+    if ($(this).scrollTop() >= stopPoint) {
+        filter.addClass('filter--stop');
+        filter.css('top', footerOffset - footerHeight - filterHeight );
+    } else {
+        filter.removeClass('filter--stop');
+        filter.css('top', '0');
+    }
+};
+
 $('.filter__button').on('click', function () {
     filteredProducts(products);
     scrollToElement('.products__wrapper');

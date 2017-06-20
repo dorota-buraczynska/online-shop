@@ -523,11 +523,16 @@
   width: 290px;
   margin: 0 auto; }
   @media (min-width: 920px) {
-    .filter--fixed {
+    .filter {
       overflow-y: auto;
-      overflow-x: hidden;
+      overflow-x: hidden; } }
+  @media (min-width: 920px) {
+    .filter--fixed {
       position: fixed;
       top: 0; } }
+  @media (min-width: 920px) {
+    .filter--stop {
+      position: absolute; } }
   .filter__title-button {
     border: 3px solid #80a6ad;
     background-color: white;
