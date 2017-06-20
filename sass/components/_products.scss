@@ -4,6 +4,8 @@
   }
 
   &__wrapper {
+    margin-bottom: $common-padding;
+
     @include large-screen {
       margin-top: $common-padding*2;
     }

@@ -128,14 +128,14 @@ var addHeightToContainerSidebar = function () {
 
 var stopFilterBeforeFooter = function () {
     var filter = $('.filter');
-    var filterHeight = $('.filter').height();
-    var footerOffset = $('.social-links').offset().top - 100;
-    var footerHeight = $('.social-links').height();
+    var filterHeight = $('.filter').outerHeight();
+    var footerOffset = $('.social-links').offset().top;
+    var footerHeight = $('.social-links').outerHeight() + $('.footer').outerHeight();
     var stopPoint = footerOffset - filterHeight;
 
     if ($(this).scrollTop() >= stopPoint) {
         filter.addClass('filter--stop');
-        filter.css('top', footerOffset - footerHeight - filterHeight );
+        filter.css('top', stopPoint);
     } else {
         filter.removeClass('filter--stop');
         filter.css('top', '0');

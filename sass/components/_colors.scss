@@ -23,12 +23,13 @@
     opacity: 0;
 
     &:checked + .colors__input-label {
-      border: 3px solid $main-color;
+      transform: scale(1.2);
     }
   }
 
   &__input-label {
     display: inline-block;
+    transform: scale(0.8);
     width: 25px;
     height: 25px;
     margin-right: $common-padding/2;
