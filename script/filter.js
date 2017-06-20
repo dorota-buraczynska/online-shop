@@ -131,7 +131,9 @@ $('.filter__button').on('click', function () {
     scrollToElement('.products__wrapper');
 });
 
-setFilterMaxHeight();
+if ($(window).width() > 920) {
+    setFilterMaxHeight();
+}
 
 $('.filter__title-button').on('click', function () {
     var visibleClass = 'filter__wrapper--visible';
