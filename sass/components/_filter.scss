@@ -2,13 +2,13 @@
   padding-top: $common-padding*2;
   padding-bottom: $common-padding*2;
   text-align: center;
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 290px;
   margin: 0 auto;
 
   &--fixed {
     @include large-screen {
+      overflow-y: auto;
+      overflow-x: hidden;
       position: fixed;
       top: 0;
     }

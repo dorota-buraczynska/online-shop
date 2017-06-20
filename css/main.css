@@ -520,12 +520,12 @@
   padding-top: 40px;
   padding-bottom: 40px;
   text-align: center;
-  overflow-y: auto;
-  overflow-x: hidden;
   width: 290px;
   margin: 0 auto; }
   @media (min-width: 920px) {
     .filter--fixed {
+      overflow-y: auto;
+      overflow-x: hidden;
       position: fixed;
       top: 0; } }
   .filter__title-button {
@@ -593,7 +593,8 @@
       .colors__title {
         font-size: 18px; } }
   .colors__input {
-    width: 0; }
+    position: absolute;
+    opacity: 0; }
     .colors__input:checked + .colors__input-label {
       border: 3px solid #DAA520; }
   .colors__input-label {
@@ -632,7 +633,7 @@
       .price-range__title {
         font-size: 18px; } }
   .price-range__input {
-    width: 60px;
+    width: 70px;
     padding: 5px;
     margin-right: 10px;
     text-align: center;
@@ -659,7 +660,8 @@
       .fabrics__title {
         font-size: 18px; } }
   .fabrics__input {
-    width: 0; }
+    position: absolute;
+    opacity: 0; }
     .fabrics__input:checked + .fabrics__input-label {
       color: #DAA520; }
   .fabrics__input-label {
@@ -687,7 +689,8 @@
       .sizes__title {
         font-size: 18px; } }
   .sizes__input {
-    width: 0; }
+    position: absolute;
+    opacity: 0; }
     .sizes__input:checked + .sizes__input-label {
       color: #DAA520; }
   .sizes__input-label {

@@ -18,7 +18,8 @@
   }
 
   &__input {
-    width: 0;
+    position: absolute;
+    opacity: 0;
 
     &:checked + .sizes__input-label {
       color: $main-color;
