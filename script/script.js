@@ -6,8 +6,8 @@ var scrollToElement = function (element) {
 
 $(window).on('scroll', function () {
     toggleBackToTopButton();
-    toggleFixedFilter();
     if ($(window).width() > 920) {
+        toggleFixedFilter();
         stopFilterBeforeFooter();
     }
 });
@@ -15,6 +15,8 @@ $(window).on('scroll', function () {
 $(window).on('resize', function () {
     fixPreviewPosition();
     fixModalBoxPosition();
-    setFilterMaxHeight();
-    addHeightToContainerSidebar();
+    if ($(window).width() > 920) {
+        setFilterMaxHeight();
+        addHeightToContainerSidebar();
+    }
 });

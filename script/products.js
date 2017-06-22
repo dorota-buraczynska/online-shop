@@ -81,3 +81,11 @@ loadProducts();
 $('.products__button-next').on('click', function () {
     showNextProducts('.products__wrapper .products__item:hidden');
 });
+
+//add products to cart
+productsWrapper.on('click', '.products__button', function () {
+    var productId = $(this).closest('.products__item').index();
+    $('.modal-box').show();
+    addProductToCart(productId);
+    $('.nav__basket-amount').text(sumOfProducts());
+});
