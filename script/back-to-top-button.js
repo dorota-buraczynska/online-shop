@@ -11,4 +11,5 @@ var toggleBackToTopButton = function () {
 $('.back-to-top__button').on('click', function () {
     renderProducts(products);
     $('html, body').animate({scrollTop: 0}, 1500);
+    $('.products__not-found').hide();
 });

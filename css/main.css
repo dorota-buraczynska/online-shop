@@ -875,6 +875,9 @@
     font-size: 15px; }
     .blog__entry-text:after {
       content: ' [...]'; }
+  .blog__button {
+    font-size: 15px;
+    padding: 5px 10px; }
   .blog__button-next {
     text-align: center;
     text-transform: uppercase;
@@ -1248,8 +1251,9 @@
   .shipping-address__email {
     text-transform: lowercase; }
   .shipping-address__edit-button {
-    padding: 5px 20px;
-    margin-top: 10px; }
+    padding: 4px 20px;
+    margin-top: 10px;
+    font-size: 15px; }
   .shipping-address__go-back-button {
     text-align: center; }
   .shipping-address__buy-button--disabled {

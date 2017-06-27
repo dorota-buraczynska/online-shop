@@ -81,6 +81,8 @@
 
   &__button {
     @extend %button;
+    font-size: 15px;
+    padding: $common-padding/4 $common-padding/2;
   }
 
   &__button-next {

@@ -119,7 +119,7 @@ var makeFabricsArray = function () {
 
 var addHeightToContainerSidebar = function () {
     if ($(window).width() > 920) {
-        var filterHeight = $('.filter').height();
+        var filterHeight = $('.filter').outerHeight();
         $('.container__sidebar').css('height', filterHeight);
     } else {
         $('.container__sidebar').css('height', '');
@@ -130,7 +130,6 @@ var stopFilterBeforeFooter = function () {
     var filter = $('.filter');
     var filterHeight = $('.filter').outerHeight();
     var footerOffset = $('.social-links').offset().top;
-    var footerHeight = $('.social-links').outerHeight() + $('.footer').outerHeight();
     var stopPoint = footerOffset - filterHeight;
 
     if ($(this).scrollTop() >= stopPoint) {

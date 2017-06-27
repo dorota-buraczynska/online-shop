@@ -47,8 +47,9 @@
 
   &__edit-button {
     @extend %button;
-    padding: $common-padding/4 $common-padding;
+    padding: $common-padding/5 $common-padding;
     margin-top: $common-padding/2;
+    font-size: 15px;
   }
 
   &__go-back-button {

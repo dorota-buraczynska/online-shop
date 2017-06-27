@@ -21,7 +21,7 @@
       "size": "m",
       "fabric": "cotton",
       "price": "100",
-      "description": "opis",
+      "description": "description",
       "inStock": 3
     },
     {
@@ -33,7 +33,7 @@
       "size": "xs",
       "fabric": "cotton",
       "price": "150",
-      "description": "opis",
+      "description": "description",
       "inStock": 2
     },
     {
@@ -45,7 +45,7 @@
       "size": "l",
       "fabric": "jersey",
       "price": "80",
-      "description": "opis",
+      "description": "description",
       "inStock": 1
     },
     {
@@ -57,7 +57,7 @@
       "size": "s",
       "fabric": "denim",
       "price": "200",
-      "description": "opis",
+      "description": "description",
       "inStock": 2
     },
     {
@@ -81,7 +81,7 @@
       "size": "l",
       "fabric": "cotton",
       "price": "125",
-      "description": "opis",
+      "description": "description",
       "inStock": 2
     },
     {
@@ -93,7 +93,7 @@
       "size": "m",
       "fabric": "cotton",
       "price": "120",
-      "description": "opis",
+      "description": "description",
       "inStock": 3
     },
     {
@@ -105,7 +105,7 @@
       "size": "xs",
       "fabric": "cotton",
       "price": "45",
-      "description": "opis",
+      "description": "description",
       "inStock": 1
     },
     {
@@ -117,7 +117,7 @@
       "size": "m",
       "fabric": "cotton",
       "price": "220",
-      "description": "opis",
+      "description": "description",
       "inStock": 1
     }
   ]

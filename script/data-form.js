@@ -1,7 +1,7 @@
 var validateForm = function () {
     var isValid = true;
 
-    var emailRe = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var emailRe = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var postalCodeRe = /[0-9]{2}\-[0-9]{3}/;
     var phoneNrRe = /[0-9]$/;
 
