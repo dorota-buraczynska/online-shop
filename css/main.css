@@ -20,7 +20,7 @@
   content: '';
   display: block; }
 
-.contact__button, .filter__button, .filter__reset-button, .products__button, .blog__button, .modal-box__shopping-button, .modal-box__basket-button, .preview__shopping-button, .preview__basket-button, .shopping-list__shopping-button, .shopping-list__buy-button, .address-data__go-back-button, .address-data__buy-button, .shipping-address__edit-button, .shipping-address__go-back-button, .shipping-address__buy-button {
+.contact__button, .filter__button, .filter__reset-button, .products__button, .blog__button, .modal-box__shopping-button, .modal-box__basket-button, .preview__shopping-button, .preview__basket-button, .shopping-list__shopping-button, .shopping-list__buy-button, .address-data__go-back-button, .address-data__buy-button, .shipping-address__edit-button, .shipping-address__go-back-button, .shipping-address__buy-button, .purchase-details__contact-button, .purchase-details__home-button, .purchase-details__go-back-button {
   display: inline-block;
   border: none;
   background-color: #DAA520;
@@ -35,11 +35,11 @@
   font-size: 18px;
   font-family: "Roboto", sans-serif;
   transition: 0.3s; }
-  .contact__button:hover, .filter__button:hover, .filter__reset-button:hover, .products__button:hover, .blog__button:hover, .modal-box__shopping-button:hover, .modal-box__basket-button:hover, .preview__shopping-button:hover, .preview__basket-button:hover, .shopping-list__shopping-button:hover, .shopping-list__buy-button:hover, .address-data__go-back-button:hover, .address-data__buy-button:hover, .shipping-address__edit-button:hover, .shipping-address__go-back-button:hover, .shipping-address__buy-button:hover {
+  .contact__button:hover, .filter__button:hover, .filter__reset-button:hover, .products__button:hover, .blog__button:hover, .modal-box__shopping-button:hover, .modal-box__basket-button:hover, .preview__shopping-button:hover, .preview__basket-button:hover, .shopping-list__shopping-button:hover, .shopping-list__buy-button:hover, .address-data__go-back-button:hover, .address-data__buy-button:hover, .shipping-address__edit-button:hover, .shipping-address__go-back-button:hover, .shipping-address__buy-button:hover, .purchase-details__contact-button:hover, .purchase-details__home-button:hover, .purchase-details__go-back-button:hover {
     background-color: #58b193;
     color: white; }
 
-.modal-box__shopping-button, .modal-box__basket-button, .shopping-list__shopping-button, .shopping-list__buy-button, .address-data__go-back-button, .address-data__buy-button, .shipping-address__go-back-button, .shipping-address__buy-button {
+.modal-box__shopping-button, .modal-box__basket-button, .shopping-list__shopping-button, .shopping-list__buy-button, .address-data__go-back-button, .address-data__buy-button, .shipping-address__go-back-button, .shipping-address__buy-button, .purchase-details__home-button, .purchase-details__go-back-button {
   width: 250px;
   font-size: 15px; }
 
@@ -47,14 +47,14 @@
   width: 100%;
   font-size: 15px; }
 
-.modal-box__basket-button, .preview__shopping-button {
+.modal-box__basket-button, .preview__shopping-button, .purchase-details__home-button {
   background-color: #80a6ad; }
-  .modal-box__basket-button:hover, .preview__shopping-button:hover {
+  .modal-box__basket-button:hover, .preview__shopping-button:hover, .purchase-details__home-button:hover {
     background-color: #DAA520; }
 
-.filter__button, .modal-box__shopping-button, .preview__basket-button, .shopping-list__shopping-button, .address-data__go-back-button, .shipping-address__go-back-button {
+.filter__button, .modal-box__shopping-button, .preview__basket-button, .shopping-list__shopping-button, .address-data__go-back-button, .shipping-address__go-back-button, .purchase-details__contact-button, .purchase-details__go-back-button {
   background-color: #58b193; }
-  .filter__button:hover, .modal-box__shopping-button:hover, .preview__basket-button:hover, .shopping-list__shopping-button:hover, .address-data__go-back-button:hover, .shipping-address__go-back-button:hover {
+  .filter__button:hover, .modal-box__shopping-button:hover, .preview__basket-button:hover, .shopping-list__shopping-button:hover, .address-data__go-back-button:hover, .shipping-address__go-back-button:hover, .purchase-details__contact-button:hover, .purchase-details__go-back-button:hover {
     background-color: #DAA520; }
 
 .filter__button:hover, .filter__reset-button:hover, .shopping-list__shopping-button:hover, .shopping-list__buy-button:hover, .shipping-address__go-back-button:hover, .shipping-address__buy-button:hover {
@@ -1277,67 +1277,12 @@
     font-size: 17px;
     font-family: "Roboto", sans-serif; }
   .purchase-details__contact-button {
-    border: none;
-    background-color: #58b193;
-    border-radius: 5px;
-    padding: 5px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font-size: 13px;
-    font-family: "Roboto", sans-serif;
-    transition: 0.3s; }
-    .purchase-details__contact-button:hover .purchase-details__contact-button-link {
-      color: black; }
-  .purchase-details__contact-button-link {
-    text-decoration: none;
-    color: white;
     padding: 5px 10px;
-    transition: 0.3s; }
-  .purchase-details__home-button {
-    border: none;
-    background-color: #80a6ad;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
     font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    transition: 0.3s; }
-    .purchase-details__home-button:hover {
-      background-color: #DAA520; }
-      .purchase-details__home-button:hover .purchase-details__home-button-link {
-        color: white; }
-  .purchase-details__home-button-link {
-    text-decoration: none;
-    color: black;
-    padding: 10px 60px;
-    transition: 0.3s; }
+    margin-top: 20px;
+    color: white; }
   .purchase-details__go-back-button {
-    border: none;
-    background-color: #58b193;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 40px auto 10px auto;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    width: 224px;
-    font-size: 15px;
-    font-family: "Roboto", sans-serif;
-    transition: 0.3s; }
-    .purchase-details__go-back-button:hover {
-      background-color: #DAA520; }
-      .purchase-details__go-back-button:hover .purchase-details__go-back-button-link {
-        color: white; }
-  .purchase-details__go-back-button-link {
-    text-decoration: none;
-    color: black;
-    padding: 10px 40px;
-    transition: 0.3s; }
+    margin-top: 20px; }
 
 .container {
   font-size: 0;

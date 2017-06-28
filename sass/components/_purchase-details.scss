@@ -24,95 +24,24 @@
   }
 
   &__contact-button {
-    border: none;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/4;
-    margin-top: $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 13px;
-      family: $main-font;
-    }
-    transition: $transition-duration;
-
-    &:hover {
-      .purchase-details__contact-button-link {
-        color: $text-color;
-      }
-
-    }
-  }
-
-  &__contact-button-link {
-    text-decoration: none;
-    color: white;
+    @extend %button;
+    @extend %button-secondary;
     padding: $common-padding/4 $common-padding/2;
-    transition: $transition-duration;
+    font-size: 15px;
+    margin-top: $common-padding;
+    color: white;
   }
 
   &__home-button {
-    border: none;
-    background-color: $third-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2;
-    margin-bottom: $common-padding;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: $transition-duration;
-
-    &:hover {
-      background-color: $main-color;
-
-      .purchase-details__home-button-link {
-        color: white;
-      }
-    }
-  }
-
-  &__home-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding*3;
-    transition: $transition-duration;
+    @extend %button;
+    @extend %button-third;
+    @extend %button-medium;
   }
 
   &__go-back-button {
-    border: none;
-    background-color: $secondary-color;
-    border-radius: $border-radius;
-    padding: $common-padding/2;
-    margin: $common-padding*2 auto $common-padding/2 auto;
-    text-transform: uppercase;
-    cursor: pointer;
-    outline: none;
-    width: 224px;
-    font: {
-      size: 15px;
-      family: $main-font;
-    }
-    transition: $transition-duration;
-
-    &:hover {
-      background-color: $main-color;
-
-      .purchase-details__go-back-button-link {
-        color: white;
-      }
-    }
-  }
-
-  &__go-back-button-link {
-    text-decoration: none;
-    color: $text-color;
-    padding: $common-padding/2 $common-padding*2;
-    transition: $transition-duration;
+    @extend %button;
+    @extend %button-secondary;
+    @extend %button-medium;
+    margin-top: $common-padding;
   }
 }
