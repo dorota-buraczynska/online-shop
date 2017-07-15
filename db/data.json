@@ -1,0 +1,161 @@
+{
+  "entries": [
+    {
+      "id": 0,
+      "title": "The bicycle is an excellent means of transport",
+      "img_src": "images/cycle.jpg",
+      "date": "22 May, 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 1,
+      "title": "Sewing history",
+      "img_src": "images/history.jpeg",
+      "date": "04 June, 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 2,
+      "title": "how to start sewing?",
+      "img_src": "images/sewing-machine.jpg",
+      "date": "04 June, 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 3,
+      "title": "how to spend your free time?",
+      "img_src": "images/mountains.jpeg",
+      "date": "07 June, 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    },
+    {
+      "id": 4,
+      "title": "Always is a good time for climbing",
+      "img_src": "images/climbing.jpeg",
+      "date": "18 June, 2017",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias esse neque nobis sed totam? Dolo"
+    }
+  ],
+  "products": [
+    {
+      "id": 0,
+      "src": "images/red-dress.jpeg",
+      "alt": "Red dress",
+      "title": "Red dress for every occasion",
+      "color": "red",
+      "size": "s",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin.",
+      "inStock": 2
+    },
+    {
+      "id": 1,
+      "src": "images/white-dress.jpeg",
+      "alt": "White dress",
+      "title": "White casul dress",
+      "color": "white",
+      "size": "m",
+      "fabric": "cotton",
+      "price": "100",
+      "description": "description",
+      "inStock": 3
+    },
+    {
+      "id": 2,
+      "src": "images/blue-shirt.jpeg",
+      "alt": "Blue shirt",
+      "title": "Always fashionable plaid shirt",
+      "color": "blue",
+      "size": "xs",
+      "fabric": "cotton",
+      "price": "150",
+      "description": "description",
+      "inStock": 2
+    },
+    {
+      "id": 3,
+      "src": "images/black-skirt.jpeg",
+      "alt": "Black skirt",
+      "title": "Short black skirt",
+      "color": "black",
+      "size": "l",
+      "fabric": "jersey",
+      "price": "80",
+      "description": "description",
+      "inStock": 1
+    },
+    {
+      "id": 4,
+      "src": "images/jeans.jpeg",
+      "alt": "Blue jeans",
+      "title": "Who doesn't like good jeans",
+      "color": "blue",
+      "size": "s",
+      "fabric": "denim",
+      "price": "200",
+      "description": "description",
+      "inStock": 2
+    },
+    {
+      "id": 5,
+      "src": "images/orange-dress.jpeg",
+      "alt": "Orange dress",
+      "title": "Orange casual dress",
+      "color": "orange",
+      "size": "m",
+      "fabric": "jersey",
+      "price": "60",
+      "description": "Very comfortable dress for every occasion. My firs project. Fabric is very soft and smooth. You can feel like in second skin.",
+      "inStock": 1
+    },
+    {
+      "id": 6,
+      "src": "images/red-shirt.jpeg",
+      "alt": "Red shirt",
+      "title": "Always fashionable plaid shirt",
+      "color": "red",
+      "size": "l",
+      "fabric": "cotton",
+      "price": "125",
+      "description": "description",
+      "inStock": 2
+    },
+    {
+      "id": 7,
+      "src": "images/blue-sweatshirt.jpeg",
+      "alt": "Blue sweatshirt",
+      "title": "Very comfortable sweatshirt",
+      "color": "blue",
+      "size": "m",
+      "fabric": "cotton",
+      "price": "120",
+      "description": "description",
+      "inStock": 3
+    },
+    {
+      "id": 8,
+      "src": "images/dress-with-black-white-stripes.jpg",
+      "alt": "Black and white dress",
+      "title": "Very comfortable dress",
+      "color": "black",
+      "size": "xs",
+      "fabric": "cotton",
+      "price": "45",
+      "description": "description",
+      "inStock": 1
+    },
+    {
+      "id": 9,
+      "src": "images/yellow-dress.jpeg",
+      "alt": "Yellow dress",
+      "title": "Sunny yellow dress",
+      "color": "yellow",
+      "size": "m",
+      "fabric": "cotton",
+      "price": "220",
+      "description": "description",
+      "inStock": 1
+    }
+  ]
+}

@@ -50,17 +50,22 @@ var renderProducts = function (products) {
     }
 };
 
+
 var loadProducts = function () {
-    $.ajax({
-        url: 'db/products.json',
-        method: 'GET',
-        dataType: 'json'
-    }).done(function (response) {
-        products = response.products;
+    database.ref('/products').once('value').then(function (snapshot) {
+        products = snapshot.val();
         renderProducts(products);
-    }).fail(function (error) {
-        console.log(error);
-    })
+    });
+    // $.ajax({
+    //     url: 'db/products.json',
+    //     method: 'GET',
+    //     dataType: 'json'
+    // }).done(function (response) {
+    //     products = response.products;
+    //     renderProducts(products);
+    // }).fail(function (error) {
+    //     console.log(error);
+    // })
 };
 
 //show next products

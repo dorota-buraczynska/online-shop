@@ -31,3 +31,5 @@ gulp.task('js', function () {
         .pipe(gulp.dest('js'))
         .pipe(livereload())
 });
+
+gulp.task('default', ['sass', 'js', 'watch']);

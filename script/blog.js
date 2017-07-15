@@ -1,3 +1,5 @@
+var database = firebase.database();
+
 var renderEntries = function (entries) {
     var blogWrapper = $('.blog__wrapper');
     blogWrapper.empty();
@@ -35,19 +37,23 @@ var renderEntries = function (entries) {
     $('.products__button-next').show();
 };
 
-var loadEntries = function () {
-    $.ajax({
-        url: 'db/entries.json',
-        method: 'GET',
-        dataType: 'json'
-    }).done(function (response) {
-        renderEntries(response.entries);
-    }).fail(function (error) {
-        console.log(error);
-    })
-};
+database.ref('/entries').once('value').then(function(snapshot) {
+    renderEntries(snapshot.val());
+});
 
-loadEntries();
+// var loadEntries = function () {
+//     $.ajax({
+//         url: 'db/entries.json',
+//         method: 'GET',
+//         dataType: 'json'
+//     }).done(function (response) {
+//         renderEntries(response.entries);
+//     }).fail(function (error) {
+//         console.log(error);
+//     })
+// };
+
+// loadEntries();
 
 $('.blog__button-next').on('click', function () {
     showNextProducts('.blog__wrapper .blog__entry:hidden');
