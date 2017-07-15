@@ -55,6 +55,7 @@ var validateForm = function () {
 function getFormData(form) {
     var out = {};
     var data = $(form).serializeArray();
+
     //transform into simple data/value object
     for (var i = 0; i < data.length; i++) {
         var record = data[i];
@@ -76,7 +77,13 @@ $('.address-data__form').on('submit', function (event) {
         contactData: getFormData('#address-data'),
         cart: cartArray
     };
-    console.log(dataToSend);
-    cartArray = [];
-    createCookie('cart', cartArray, 30);
+
+    database.ref('/order').push().set(dataToSend)
+        .then(function () {
+            cartArray = [];
+            createCookie('cart', cartArray, 30);
+        })
+        .catch(function () {
+            alert('We\'re very sorry, but something went wrong. Please try again later');
+        });
 });

@@ -52,7 +52,7 @@ var renderProducts = function (products) {
 
 
 var loadProducts = function () {
-    database.ref('/products').once('value').then(function (snapshot) {
+    database.ref('/products').on('value', function (snapshot) {
         products = snapshot.val();
         renderProducts(products);
     });
